@@ -14,8 +14,29 @@ const AGENCY_LABELS = {
 // Agencies use several phrasings for "we don't know the food yet".
 const UNIDENTIFIED = /^(not\s+yet\s+identified|not\s+identified|unknown|tbd|pending)$/i
 
+/**
+ * Render a date at the precision actually known.
+ *
+ * CDC's notices carry only a year, and a month where the notice URL encodes
+ * one, so `started_at` can be "2024", "2026-07" or a full "2026-07-22". Each is
+ * shown for what it is rather than being padded out to a day we don't have.
+ */
 function formatDate(iso) {
   if (!iso) return ''
+
+  if (/^\d{4}$/.test(iso)) return iso
+
+  if (/^\d{4}-\d{2}$/.test(iso)) {
+    const month = new Date(`${iso}-01T00:00:00Z`)
+    return Number.isNaN(month.getTime())
+      ? iso
+      : month.toLocaleDateString(undefined, {
+          year: 'numeric',
+          month: 'long',
+          timeZone: 'UTC',
+        })
+  }
+
   // Parsed as UTC so the displayed day matches the stored ISO date regardless
   // of the viewer's timezone.
   const date = new Date(`${iso}T00:00:00Z`)

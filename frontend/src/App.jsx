@@ -20,6 +20,8 @@ export default function App() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
   const [stats, setStats] = useState(null)
+  // How many advisories the same filters would return with the status cleared.
+  const [otherStatusTotal, setOtherStatusTotal] = useState(0)
 
   const load = useCallback(
     async (nextOffset, { append } = { append: false }) => {
@@ -37,6 +39,25 @@ export default function App() {
         setTotal(data.total)
         setOffset(nextOffset)
         setItems((current) => (append ? [...current, ...data.items] : data.items))
+
+        // Nothing matched, but the status filter may be what's hiding it. Most
+        // of the restaurant advisories CDC publishes are closed investigations,
+        // so filtering to Restaurant while Active is selected looks empty even
+        // though there is real history to read. Probe without the status and
+        // offer the wider result rather than leaving a dead end.
+        if (!append && data.total === 0 && status) {
+          const wider = await fetchAdvisories({
+            category,
+            type,
+            status: '',
+            search,
+            limit: 1,
+            offset: 0,
+          })
+          setOtherStatusTotal(wider.total)
+        } else if (!append) {
+          setOtherStatusTotal(0)
+        }
       } catch (err) {
         setError(err.message)
         if (!append) setItems([])
@@ -246,11 +267,32 @@ export default function App() {
                 ? `No brand or chain matching “${search}” has a record under the current filters.`
                 : 'Nothing is indexed under this combination of filters right now.'}
             </p>
-            {filtersActive && (
-              <button className="btn btn--primary" onClick={resetFilters}>
-                Reset filters
-              </button>
+
+            {otherStatusTotal > 0 && (
+              <p className="panel__hint">
+                {otherStatusTotal === 1
+                  ? 'There is 1 matching advisory'
+                  : `There are ${otherStatusTotal.toLocaleString()} matching advisories`}{' '}
+                under a different status — most restaurant outbreaks CDC publishes
+                are closed investigations.
+              </p>
             )}
+
+            <div className="panel__actions">
+              {otherStatusTotal > 0 && (
+                <button className="btn btn--primary" onClick={() => setStatus('')}>
+                  Show any status
+                </button>
+              )}
+              {filtersActive && (
+                <button
+                  className={otherStatusTotal > 0 ? 'btn btn--secondary' : 'btn btn--primary'}
+                  onClick={resetFilters}
+                >
+                  Reset filters
+                </button>
+              )}
+            </div>
           </div>
         )}
 
