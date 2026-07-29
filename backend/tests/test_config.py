@@ -45,3 +45,58 @@ def test_surrounding_whitespace_is_trimmed():
 
 def test_default_is_already_driver_qualified():
     assert Settings().database_url.startswith("postgresql+psycopg://")
+
+
+class TestBlankEnvironmentValues:
+    """An unset GitHub Actions secret arrives as "", not as an absent variable.
+
+    `SMTP_PORT: ${{ secrets.SMTP_PORT }}` in a workflow exports SMTP_PORT="" when
+    the secret does not exist. That took down the first scheduled ingest run:
+    pydantic could not parse "" as an int and the process died at import.
+    """
+
+    def test_blank_int_falls_back_to_the_default(self, monkeypatch):
+        monkeypatch.setenv("SMTP_PORT", "")
+        assert Settings().smtp_port == 587
+
+    def test_blank_optional_string_reads_as_unset(self, monkeypatch):
+        monkeypatch.setenv("SMTP_HOST", "")
+        assert Settings().smtp_host is None
+
+    def test_whitespace_only_is_also_treated_as_unset(self, monkeypatch):
+        monkeypatch.setenv("SMTP_PORT", "   ")
+        assert Settings().smtp_port == 587
+
+    def test_blank_bool_falls_back_to_the_default(self, monkeypatch):
+        monkeypatch.setenv("SMTP_USE_TLS", "")
+        assert Settings().smtp_use_tls is True
+
+    def test_blank_database_url_falls_back_rather_than_erroring(self, monkeypatch):
+        monkeypatch.setenv("DATABASE_URL", "")
+        assert Settings().database_url.startswith("postgresql+psycopg://")
+
+    def test_a_whole_workflow_of_unset_secrets_still_boots(self, monkeypatch):
+        """Every optional secret the ingest workflow forwards, all unset."""
+        for name in (
+            "OPENFDA_API_KEY",
+            "SMTP_HOST",
+            "SMTP_PORT",
+            "SMTP_USER",
+            "SMTP_PASSWORD",
+            "EMAIL_FROM",
+            "APP_BASE_URL",
+        ):
+            monkeypatch.setenv(name, "")
+
+        settings = Settings()
+        assert settings.smtp_port == 587
+        assert settings.smtp_host is None
+        assert settings.openfda_api_key is None
+        assert settings.app_base_url.startswith("http")
+
+    def test_real_values_are_still_read(self, monkeypatch):
+        monkeypatch.setenv("SMTP_PORT", "2525")
+        monkeypatch.setenv("SMTP_HOST", "smtp-relay.brevo.com")
+        settings = Settings()
+        assert settings.smtp_port == 2525
+        assert settings.smtp_host == "smtp-relay.brevo.com"

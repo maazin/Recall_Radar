@@ -1,4 +1,6 @@
-from pydantic import field_validator
+from typing import Any
+
+from pydantic import field_validator, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 # Schemes that managed Postgres providers hand out, mapped to the driver this
@@ -14,6 +16,29 @@ class Settings(BaseSettings):
     """Runtime configuration, read from environment / .env."""
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
+
+    @model_validator(mode="before")
+    @classmethod
+    def _ignore_blank_env_values(cls, data: Any) -> Any:
+        """Treat an empty environment variable as absent.
+
+        GitHub Actions substitutes an unset secret as the empty string rather
+        than omitting the variable, so a workflow that forwards optional
+        secrets — `SMTP_PORT: ${{ secrets.SMTP_PORT }}` — exports `SMTP_PORT=""`
+        when you have not configured mail. Pydantic then tries to parse "" as an
+        int and the process dies at import, nowhere near the actual cause. The
+        same thing happens with a key left blank in a dashboard or a `.env`.
+
+        Dropping blanks here lets the field default apply, which is what an
+        unset variable is supposed to mean.
+        """
+        if isinstance(data, dict):
+            return {
+                key: value
+                for key, value in data.items()
+                if not (isinstance(value, str) and not value.strip())
+            }
+        return data
 
     database_url: str = "postgresql+psycopg://recallradar:recallradar@localhost:5432/recallradar"
 
