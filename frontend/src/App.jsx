@@ -133,7 +133,7 @@ export default function App() {
             Food recalls and outbreak investigations, in one place
           </h1>
           <p className="hero__lede">
-            Records published by the FDA, USDA/FSIS and CDC — what to avoid, why, and
+            Records published by the FDA, USDA/FSIS and CDC: what to avoid, why, and
             where, in plain language.
           </p>
 
@@ -144,7 +144,7 @@ export default function App() {
           */}
           <p className="notice">
             RecallRadar is an independent aggregator. It does not issue health alerts.
-            Every entry links to the original agency record — always read that record
+            Every entry links to the original agency record. Always read that record
             for authoritative details.
           </p>
 
@@ -179,7 +179,7 @@ export default function App() {
               type="search"
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
-              placeholder="Search a brand or chain — e.g. Chipotle, Acme Foods"
+              placeholder="Search a brand or chain (e.g. Chipotle, Acme Foods)"
               aria-label="Search by brand or chain"
             />
             <button type="submit" className="btn btn--primary searchfield__go">
@@ -280,7 +280,7 @@ export default function App() {
                 {otherStatusTotal === 1
                   ? 'There is 1 matching advisory'
                   : `There are ${otherStatusTotal.toLocaleString()} matching advisories`}{' '}
-                under a different status — most restaurant outbreaks CDC publishes
+                under a different status. Most restaurant outbreaks CDC publishes
                 are closed investigations.
               </p>
             )}

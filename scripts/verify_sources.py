@@ -2,12 +2,15 @@
 """Check each live source against the parser written for it, and refresh fixtures.
 
 Why this exists: the PRD asks that field names be confirmed against a live
-response rather than taken from documentation. The FSIS and CDC endpoints were
-unreachable from the machine this project was built on (both return HTTP 403
-from their CDN edge), so their mappers are written from the published field
-names and guarded by strict structure assertions.
+response rather than taken from documentation, and this is what does that
+confirmation. All four mappers have since been verified this way — three of
+the four sources still block requests from cloud/CI IP ranges, though, so a
+"could not fetch" result here usually means you're running this from a
+datacenter rather than that the mapper has drifted. See the README's
+"blocked-IP problem" section.
 
-Run this from a network that can reach all four sources:
+Run this whenever you want to re-confirm a source, or after an ingest run logs
+a `SourceStructureError`, from a network that can reach all four sources:
 
     python scripts/verify_sources.py              # report only
     python scripts/verify_sources.py --write      # also refresh the fixtures
