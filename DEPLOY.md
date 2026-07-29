@@ -110,7 +110,8 @@ Brevo, free, no domain required:
    to that address. A personal address works; you do **not** need to own a
    domain. (Domain authentication is the alternative, not a prerequisite.)
 2. SMTP & API → generate an SMTP key.
-3. Set on both Render and GitHub Actions:
+3. Set these in **both** places — Render (so the form appears) and GitHub Actions
+   (so the ingest job can actually send):
 
    ```
    SMTP_HOST=smtp-relay.brevo.com
@@ -119,6 +120,18 @@ Brevo, free, no domain required:
    SMTP_PASSWORD=<the SMTP key, not your account password>
    EMAIL_FROM=RecallRadar <your-verified-sender@example.com>
    ```
+
+   Add `APP_BASE_URL` to GitHub Actions too — it is the "browse the full feed"
+   link inside the email, and it is the one variable Render wires up on its own
+   but Actions does not:
+
+   ```
+   APP_BASE_URL=https://recallradar-web.onrender.com
+   ```
+
+   Setting SMTP on Render but not on Actions produces a subscribe form that
+   accepts signups while no mail is ever sent — the exact dishonesty the 503
+   guard exists to prevent, reintroduced by half-configuring it.
 
 Restart the API afterwards so it picks up the new environment; the form appears
 on its own once `/api/config` flips.
@@ -138,13 +151,29 @@ Mail only goes out from the **ingest** job. The web service never sends.
 
 ## 5. Check it
 
+This deployment:
+
+- Frontend — https://recallradar-web.onrender.com
+- API — https://recallradar-api-amis.onrender.com
+
 ```bash
-curl https://recallradar-api.onrender.com/api/health
-curl https://recallradar-api.onrender.com/api/stats
+curl https://recallradar-api-amis.onrender.com/api/health   # {"status":"ok"}
+curl https://recallradar-api-amis.onrender.com/api/stats    # counts per type
+curl https://recallradar-api-amis.onrender.com/api/config   # notifications on/off
 ```
 
-Then load the static site and confirm the feed renders and a source link opens
-the agency's own page. Allow ~50s on the first call while the service wakes.
+Then load the frontend and confirm the feed renders and a source link opens the
+agency's own record. Allow ~50s on the first call while the service wakes.
+
+Verify CORS is scoped to your site rather than open to everyone:
+
+```bash
+curl -sD - -o /dev/null -H "Origin: https://evil.example.com" \
+  https://recallradar-api-amis.onrender.com/api/stats | grep -i access-control
+```
+
+That should print nothing. The same call with your real origin should echo it
+back.
 
 ---
 
