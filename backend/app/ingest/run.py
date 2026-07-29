@@ -4,11 +4,19 @@
     python -m app.ingest.run --source fda-recalls
 
 Exit codes:
-    0  every requested source ingested cleanly
-    1  at least one source failed a structure check or could not be fetched
+    0  at least one source ingested, and none had drifted
+    1  a source's structure changed, or nothing could be reached at all
 
 A structure failure is loud and fatal by design: a source whose shape has drifted
 produces no rows at all rather than partial ones.
+
+A source that simply cannot be reached is treated differently, and deliberately.
+fsis.usda.gov and cdc.gov answer 403 to datacenter IP ranges, and fda.gov
+redirects them to a bot-detection page; all three serve the same content to a
+residential connection. That is an availability fact about where the job runs,
+not a defect, and there is nothing in the repo to fix. Failing the run for it
+would leave the daily job permanently red — and a job that is always red is one
+nobody reads, which is precisely when a genuine structure break slips past.
 """
 
 from __future__ import annotations
@@ -21,7 +29,11 @@ from collections.abc import Callable
 from app.config import settings
 from app.db import SessionLocal
 from app.ingest import cdc_outbreaks, fda_outbreaks, fda_recalls, fsis_recalls
-from app.ingest.base import NormalizedAdvisory, SourceStructureError
+from app.ingest.base import (
+    NormalizedAdvisory,
+    SourceStructureError,
+    SourceUnavailableError,
+)
 from app.ingest.pipeline import ingest
 
 logger = logging.getLogger("app.ingest.run")
@@ -69,28 +81,54 @@ def main(argv: list[str] | None = None) -> int:
     )
 
     names = list(SOURCES) if args.source == "all" else [args.source]
-    failures: list[str] = []
+    succeeded: list[str] = []
+    unreachable: list[str] = []
+    broken: list[str] = []
 
     for name in names:
         try:
             run_source(name)
+            succeeded.append(name)
         except SourceStructureError as exc:
-            # The source changed shape. Nothing was written for it.
+            # The source changed shape. Nothing was written for it, and the
+            # mapper needs a human.
             logger.error(
                 "[%s] SOURCE STRUCTURE CHANGED — no data ingested from this source. %s",
                 name,
                 exc,
             )
-            failures.append(name)
+            broken.append(name)
+        except SourceUnavailableError as exc:
+            # The site refused us. Nothing is wrong with the code, and there is
+            # nothing to fix in the repo, so this must not read like a defect.
+            logger.warning("[%s] source unavailable, skipped: %s", name, exc)
+            unreachable.append(name)
         except Exception as exc:  # noqa: BLE001 - one bad source must not stop the rest
             logger.exception("[%s] ingestion failed: %s", name, exc)
-            failures.append(name)
+            broken.append(name)
 
-    if failures:
-        logger.error("Ingestion finished with failures: %s", ", ".join(failures))
+    if succeeded:
+        logger.info("Ingested: %s", ", ".join(succeeded))
+    if unreachable:
+        logger.warning(
+            "Unreachable this run (agency sites block datacenter IP ranges; "
+            "expected from CI runners and cloud hosts): %s",
+            ", ".join(unreachable),
+        )
+
+    # A drifted source is a data integrity problem and always fails the run.
+    if broken:
+        logger.error("Ingestion failed for: %s", ", ".join(broken))
         return 1
 
-    logger.info("Ingestion finished cleanly for: %s", ", ".join(names))
+    # Blocked sources alone do not fail the run, as long as something got in.
+    # Failing on them would mean a permanently red daily job, and a job that is
+    # always red is one nobody reads — which is exactly when a real structure
+    # break would slip past.
+    if unreachable and not succeeded:
+        logger.error("No source could be reached; nothing was ingested.")
+        return 1
+
     return 0
 
 

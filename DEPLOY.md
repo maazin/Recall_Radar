@@ -58,11 +58,39 @@ Settings → Secrets and variables → Actions:
 Run it once by hand: Actions → Scheduled ingestion → Run workflow. After that it
 runs daily at 09:17 UTC.
 
-**Watch this first run.** FSIS and CDC are blocked from the machine this was
-built on, so their mappers have only ever been exercised against archived
-snapshots. GitHub's runners are a different network and may reach both. This run
-is the first genuine live test of either. If a source has drifted, the job exits
-non-zero and fails loudly rather than writing bad rows.
+### Which sources actually work from CI
+
+Measured, not assumed — this is the result of a real run on a GitHub runner:
+
+| Source | From a CI runner | Why |
+|---|---|---|
+| FDA recalls (`api.fda.gov`) | ✅ works | A real API, no bot protection |
+| FDA outbreaks (`www.fda.gov`) | ❌ blocked | Redirects datacenter IPs to a bot-detection page |
+| USDA/FSIS (`www.fsis.usda.gov`) | ❌ 403 | Akamai blocks datacenter ranges |
+| CDC (`www.cdc.gov`) | ❌ 403 | Same |
+
+The three HTML sources serve the same content happily to a home connection and
+refuse cloud IPs. There is nothing to fix in the repo for this.
+
+So the job **does not fail when a source is merely unreachable**. It fails when a
+source's *structure* has drifted, or when nothing could be reached at all. That
+distinction is deliberate: blocked sites would otherwise leave the daily run
+permanently red, and a job that is always red is one nobody reads — which is
+exactly when a genuine structure break slips past.
+
+Expect the run to be green with warnings naming the blocked sources.
+
+**To get all four sources**, run the ingest from a residential connection
+instead of CI:
+
+```bash
+cd backend
+DATABASE_URL='<your neon string>' python -m app.ingest.run --source all
+```
+
+That writes to the same Neon database the deployed site reads, so the feed fills
+in immediately. A laptop cron entry or a one-off run whenever you want the
+outbreak data refreshed is enough.
 
 ## 4. Email — optional, and the site is honest without it
 

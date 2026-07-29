@@ -33,9 +33,11 @@ import httpx
 from bs4 import BeautifulSoup
 
 from app.ingest.base import (
+    BROWSER_HEADERS,
     NormalizedAdvisory,
     SourceStructureError,
     collapse,
+    fetch_url,
     iso_from_loose,
     parse_states,
     require,
@@ -269,13 +271,12 @@ def parse(payload: str | list[Any] | dict[str, Any]) -> list[NormalizedAdvisory]
 def fetch() -> str:
     """Download the FSIS recall feed."""
     headers = {
-        "User-Agent": (
-            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
-            "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
-        ),
+        **BROWSER_HEADERS,
         "Accept": "application/json, text/plain, */*",
+        "Referer": _RECALLS_PAGE,
+        "Sec-Fetch-Dest": "empty",
+        "Sec-Fetch-Mode": "cors",
+        "Sec-Fetch-Site": "same-origin",
     }
     with httpx.Client(timeout=90.0, follow_redirects=True, headers=headers) as client:
-        response = client.get(ENDPOINT)
-        response.raise_for_status()
-        return response.text
+        return fetch_url(client, ENDPOINT, "USDA/FSIS recall API").text

@@ -17,8 +17,10 @@ import logging
 from bs4 import BeautifulSoup
 
 from app.ingest.base import (
+    BROWSER_HEADERS,
     NormalizedAdvisory,
     collapse,
+    fetch_url,
     iso_from_loose,
     require,
     today_iso,
@@ -174,14 +176,7 @@ def fetch() -> str:
     """Download the investigations page."""
     import httpx
 
-    headers = {
-        "User-Agent": (
-            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
-            "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
-        ),
-        "Accept": "text/html,application/xhtml+xml",
-    }
-    with httpx.Client(timeout=45.0, follow_redirects=True, headers=headers) as client:
-        response = client.get(PAGE_URL)
-        response.raise_for_status()
-        return response.text
+    with httpx.Client(
+        timeout=45.0, follow_redirects=True, headers=BROWSER_HEADERS
+    ) as client:
+        return fetch_url(client, PAGE_URL, "FDA outbreak investigations").text

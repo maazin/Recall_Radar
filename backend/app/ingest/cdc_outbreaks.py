@@ -42,9 +42,11 @@ from urllib.parse import urljoin
 from bs4 import BeautifulSoup
 
 from app.ingest.base import (
+    BROWSER_HEADERS,
     NormalizedAdvisory,
     SourceStructureError,
     collapse,
+    fetch_url,
     iso_from_loose,
     require,
     today_iso,
@@ -295,22 +297,14 @@ def fetch() -> str:
     """Download the outbreaks page and the notices CSV it points at."""
     import httpx
 
-    headers = {
-        "User-Agent": (
-            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
-            "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
-        ),
-        "Accept": "text/html,application/xhtml+xml",
-    }
-    with httpx.Client(timeout=45.0, follow_redirects=True, headers=headers) as client:
-        page = client.get(PAGE_URL)
-        page.raise_for_status()
-        page_html = page.text
+    with httpx.Client(
+        timeout=45.0, follow_redirects=True, headers=BROWSER_HEADERS
+    ) as client:
+        page_html = fetch_url(client, PAGE_URL, "CDC outbreaks").text
 
         csv_url = find_notices_csv_url(page_html)
         logger.info("CDC notices CSV: %s", csv_url)
-        notices = client.get(csv_url)
-        notices.raise_for_status()
+        notices = fetch_url(client, csv_url, "CDC notices CSV")
 
     return json.dumps(
         {"page_html": page_html, "notices_csv": notices.text, "notices_csv_url": csv_url}

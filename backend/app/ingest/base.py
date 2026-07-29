@@ -28,6 +28,62 @@ class SourceStructureError(Exception):
     """
 
 
+class SourceUnavailableError(Exception):
+    """A source could not be fetched at all.
+
+    Deliberately distinct from `SourceStructureError`. A page that cannot be
+    reached is an availability problem; a page whose shape has changed is a data
+    integrity problem. Only the second means the mapper can no longer be
+    trusted, and only the second should page someone.
+
+    In practice this is mostly IP reputation: fsis.usda.gov and cdc.gov answer
+    403 to datacenter ranges, and fda.gov bounces them to a bot-detection page.
+    All three serve the same content happily to a residential connection.
+    """
+
+
+# Sent by the HTML scrapers. A bare user-agent is enough to get bounced by the
+# bot detection in front of several of these sites; this is the full set a real
+# Chrome navigation sends.
+BROWSER_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+    ),
+    "Accept": (
+        "text/html,application/xhtml+xml,application/xml;q=0.9,"
+        "image/avif,image/webp,*/*;q=0.8"
+    ),
+    "Accept-Language": "en-US,en;q=0.9",
+    "Cache-Control": "no-cache",
+    "Pragma": "no-cache",
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "none",
+    "Sec-Fetch-User": "?1",
+    "Upgrade-Insecure-Requests": "1",
+}
+
+# Paths agencies redirect to when they decide the caller is a bot. Following
+# one of these produces a 404 on a URL nobody asked for, which buries the real
+# cause; recognising them lets the error say what actually happened.
+_BOT_WALL_MARKERS = ("abuse-detection", "apology_objects", "access-denied", "distil")
+
+
+def check_not_bot_walled(response, source: str) -> None:
+    """Raise a legible error when a request was diverted to a bot wall."""
+    trail = [str(r.url) for r in response.history] + [str(response.url)]
+    for url in trail:
+        if any(marker in url.lower() for marker in _BOT_WALL_MARKERS):
+            raise SourceUnavailableError(
+                f"{source}: request was redirected to a bot-detection page "
+                f"({url}). The site is up but is refusing this network. Agency "
+                f"sites commonly block datacenter IP ranges, so this is expected "
+                f"from CI runners and cloud hosts, and does not indicate a "
+                f"problem with the mapper."
+            )
+
+
 @dataclass
 class NormalizedAdvisory:
     """One advisory in the shape the `advisories` table expects."""
@@ -166,3 +222,34 @@ def require(condition: bool, message: str) -> None:
     """Assert a structural expectation about a source, loudly."""
     if not condition:
         raise SourceStructureError(message)
+
+
+def fetch_url(client, url: str, source: str):
+    """GET a URL, turning any refusal into a SourceUnavailableError.
+
+    Keeps availability failures from masquerading as bugs: an httpx status error
+    surfacing raw from a fetch reads like something broke, when the ordinary
+    cause is an agency declining to serve this IP.
+    """
+    import httpx
+
+    try:
+        response = client.get(url)
+    except httpx.HTTPError as exc:
+        raise SourceUnavailableError(f"{source}: could not reach {url} — {exc}") from exc
+
+    check_not_bot_walled(response, source)
+
+    if response.status_code in (401, 403, 406, 429) or response.status_code >= 500:
+        raise SourceUnavailableError(
+            f"{source}: {url} returned HTTP {response.status_code}. The mapper is "
+            f"untouched; the site is refusing this request. 403 from an agency "
+            f"site is normally IP-based blocking of datacenter ranges."
+        )
+
+    try:
+        response.raise_for_status()
+    except httpx.HTTPStatusError as exc:
+        raise SourceUnavailableError(f"{source}: {url} — {exc}") from exc
+
+    return response
