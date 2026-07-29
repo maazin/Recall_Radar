@@ -25,16 +25,18 @@ export default function SubscribeForm() {
 
   return (
     <section className="subscribe" id="subscribe">
-      <h2>Get notified</h2>
-      <p className="subscribe__blurb">
-        Enter an email and an optional brand or chain. When RecallRadar indexes a newly
-        published agency record that matches, you&apos;ll get a message with a link to
-        the original record.
-      </p>
+      <div className="subscribe__intro">
+        <h2>Get notified</h2>
+        <p>
+          Enter an email and an optional brand or chain. When RecallRadar indexes a
+          newly published agency record that matches, you&apos;ll get a message with a
+          link to the original record.
+        </p>
+      </div>
 
       <form onSubmit={handleSubmit} className="subscribe__form">
-        <label>
-          <span>Email</span>
+        <label className="field">
+          <span className="field__label">Email</span>
           <input
             type="email"
             required
@@ -44,8 +46,8 @@ export default function SubscribeForm() {
           />
         </label>
 
-        <label>
-          <span>Category</span>
+        <label className="field">
+          <span className="field__label">Category</span>
           <select value={categoryFilter} onChange={(e) => setCategoryFilter(e.target.value)}>
             <option value="">All</option>
             <option value="grocery">Grocery</option>
@@ -53,8 +55,8 @@ export default function SubscribeForm() {
           </select>
         </label>
 
-        <label>
-          <span>Brand or keyword (optional)</span>
+        <label className="field">
+          <span className="field__label">Brand or keyword (optional)</span>
           <input
             type="text"
             value={keywordFilter}
@@ -63,7 +65,7 @@ export default function SubscribeForm() {
           />
         </label>
 
-        <button type="submit" disabled={state.status === 'saving'}>
+        <button type="submit" className="btn btn--primary" disabled={state.status === 'saving'}>
           {state.status === 'saving' ? 'Subscribing…' : 'Subscribe'}
         </button>
       </form>
