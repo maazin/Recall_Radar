@@ -32,7 +32,7 @@ services:
       - key: PYTHON_VERSION
         value: "3.11.9"
       # Neon connection string. Set in the Render dashboard, not here.
-      # Must use the psycopg driver: postgresql+psycopg://USER:PASS@HOST/DB?sslmode=require
+      # Paste it exactly as Neon gives it — app.config pins the psycopg driver.
       - key: DATABASE_URL
         sync: false
       # The static site's URL, so the browser is allowed to call this API.

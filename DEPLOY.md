@@ -24,15 +24,10 @@ in each step is already committed.
 ## 1. Database (Neon)
 
 1. Create a project at neon.tech. Any region; match Render's for lower latency.
-2. Copy the connection string.
-3. **Rewrite the scheme** — Neon hands you `postgresql://`, but this app uses the
-   psycopg 3 driver:
-
-   ```
-   postgresql+psycopg://USER:PASSWORD@HOST/DBNAME?sslmode=require
-   ```
-
-   Getting this wrong produces `ModuleNotFoundError: No module named 'psycopg2'`.
+   Say **no** to Neon Auth — this app has no user accounts.
+2. Copy the connection string. Paste it as-is; the app pins the psycopg 3 driver
+   onto `postgresql://` and `postgres://` itself, so you do not need to edit the
+   scheme.
 
 ## 2. Services (Render)
 
