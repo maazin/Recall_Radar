@@ -44,6 +44,15 @@ export function fetchStats() {
   return request('/api/stats')
 }
 
+/**
+ * What this deployment supports. Currently just whether a mail provider is
+ * configured — the subscribe form is hidden when it is not, so the page never
+ * asks for an address that could not be written to.
+ */
+export function fetchConfig() {
+  return request('/api/config')
+}
+
 export function createSubscription({ email, categoryFilter, keywordFilter }) {
   return request(
     '/api/subscriptions',

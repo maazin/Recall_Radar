@@ -5,6 +5,7 @@ from __future__ import annotations
 import pytest
 from sqlalchemy import select
 
+from app.config import settings
 from app.models import (
     AGENCY_CDC,
     AGENCY_FDA,
@@ -158,6 +159,52 @@ class TestSearch:
         assert client.get("/api/advisories/search", params={"q": ""}).status_code == 422
 
 
+@pytest.fixture
+def notifications_on(monkeypatch):
+    """Pretend a mail provider is configured.
+
+    Tests otherwise run with smtp_host unset, which is the state where the API
+    declines subscriptions outright.
+    """
+    monkeypatch.setattr(settings, "smtp_host", "smtp.example.test")
+
+
+class TestConfig:
+    def test_reports_notifications_off_when_no_mail_host(self, client):
+        body = client.get("/api/config").json()
+        assert body["notifications_enabled"] is False
+
+    def test_reports_notifications_on_once_configured(self, client, notifications_on):
+        body = client.get("/api/config").json()
+        assert body["notifications_enabled"] is True
+
+
+class TestSubscriptionsWithoutMailConfigured:
+    """The deployment must not collect addresses it cannot write to."""
+
+    def test_subscribing_is_refused(self, client):
+        response = client.post("/api/subscriptions", json={"email": "reader@example.com"})
+        assert response.status_code == 503
+
+    def test_refusal_says_nothing_was_stored(self, client):
+        detail = client.post(
+            "/api/subscriptions", json={"email": "reader@example.com"}
+        ).json()["detail"]
+        assert "No address was stored" in detail
+
+    def test_no_row_is_written(self, client, db):
+        client.post("/api/subscriptions", json={"email": "ghost@example.com"})
+        assert not db.scalar(
+            select(Subscription).where(Subscription.email == "ghost@example.com")
+        )
+
+    def test_a_malformed_address_is_still_rejected_first(self, client):
+        # Validation runs before the availability check, so a bad request stays
+        # a 422 rather than being masked as a 503.
+        assert client.post("/api/subscriptions", json={"email": "nope"}).status_code == 422
+
+
+@pytest.mark.usefixtures("notifications_on")
 class TestSubscriptions:
     def test_creates_a_subscription(self, client, db):
         response = client.post(

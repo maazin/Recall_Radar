@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from datetime import UTC, datetime
 
-from fastapi import APIRouter, Depends, Query
+from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy import func, or_, select
 from sqlalchemy.orm import Session
 
@@ -17,6 +17,7 @@ from app.models import (
     Advisory,
     Subscription,
 )
+from app.notify.email import notifications_enabled
 from app.schemas import AdvisoryOut, FeedResponse, SubscriptionCreate, SubscriptionOut
 
 router = APIRouter(prefix="/api")
@@ -138,6 +139,18 @@ def stats(db: Session = Depends(get_db)) -> dict[str, int]:
     }
 
 
+@router.get("/config")
+def config() -> dict[str, bool]:
+    """What this deployment can actually do.
+
+    The frontend reads this to decide whether to offer the subscribe form.
+    Without a mail provider configured there is nothing to offer, and asking
+    for an address anyway would be collecting personal data under a promise the
+    deployment cannot keep.
+    """
+    return {"notifications_enabled": notifications_enabled()}
+
+
 @router.post("/subscriptions", response_model=SubscriptionOut, status_code=201)
 def create_subscription(
     payload: SubscriptionCreate, db: Session = Depends(get_db)
@@ -148,6 +161,18 @@ def create_subscription(
     rather than creating a duplicate, so a double-submitted form does not cause
     duplicate emails.
     """
+    # Refuse rather than store an address that will never be written to. The
+    # UI hides the form in this state, so reaching here means a direct API call
+    # or a stale page.
+    if not notifications_enabled():
+        raise HTTPException(
+            status_code=503,
+            detail=(
+                "Email notifications are not enabled on this deployment, so "
+                "subscriptions are not being accepted. No address was stored."
+            ),
+        )
+
     existing = db.scalars(
         select(Subscription).where(
             Subscription.email == str(payload.email),

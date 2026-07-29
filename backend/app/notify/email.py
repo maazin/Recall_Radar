@@ -16,6 +16,19 @@ from app.config import settings
 logger = logging.getLogger(__name__)
 
 
+def notifications_enabled() -> bool:
+    """Whether this deployment can actually deliver mail.
+
+    A mail host is the one thing that cannot be defaulted: without it every
+    "notification" is a log line. The API refuses subscriptions and the UI hides
+    the form when this is False, so the site never asks for an address it has no
+    way to write to.
+
+    Read at call time rather than import time so tests can toggle the setting.
+    """
+    return bool(settings.smtp_host)
+
+
 class EmailSender:
     """Sends mail over SMTP, or logs it when SMTP is not configured.
 

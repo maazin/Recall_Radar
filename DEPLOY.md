@@ -69,17 +69,23 @@ snapshots. GitHub's runners are a different network and may reach both. This run
 is the first genuine live test of either. If a source has drifted, the job exits
 non-zero and fails loudly rather than writing bad rows.
 
-## 4. Email — read before enabling
+## 4. Email — optional, and the site is honest without it
 
-Right now `SMTP_HOST` is unset, so the app **logs what it would have sent and
-sends nothing**. The subscribe form still tells people they will be emailed. That
-is a promise the deployment does not keep, so either wire a provider or hide the
-form.
+Notifications are **off by default and the app says so**. With `SMTP_HOST` unset:
+
+- `GET /api/config` reports `notifications_enabled: false`
+- the frontend hides the subscribe form entirely
+- `POST /api/subscriptions` returns **503** and stores nothing
+
+So an un-configured deployment is a working read-only feed that never asks for
+an address it cannot write to. Setting the SMTP variables below is all it takes
+to turn the feature on — no code change, no redeploy of the frontend.
 
 Brevo, free, no domain required:
 
-1. Sign up, then Senders → add and verify a sender address (a personal address
-   works; no domain purchase needed).
+1. Sign up, then Senders → add a sender and verify it with the 6-digit code sent
+   to that address. A personal address works; you do **not** need to own a
+   domain. (Domain authentication is the alternative, not a prerequisite.)
 2. SMTP & API → generate an SMTP key.
 3. Set on both Render and GitHub Actions:
 
@@ -91,11 +97,21 @@ Brevo, free, no domain required:
    EMAIL_FROM=RecallRadar <your-verified-sender@example.com>
    ```
 
-Sending from an address on a domain you don't control hurts deliverability —
-expect spam folders. A ~$10/year domain with SPF and DKIM fixes it properly.
+Restart the API afterwards so it picks up the new environment; the form appears
+on its own once `/api/config` flips.
 
-Mail only goes out from the **ingest** job, when a genuinely new or newly-active
-advisory matches a subscription. The web service never sends.
+Two things to know about the free plan:
+
+- **300 emails a day, and it is a hard daily wall** — not a monthly pool. Fine
+  for this: mail only goes out when a genuinely new or newly-active advisory
+  matches a subscription.
+- **Free-plan messages carry a "Sent with Brevo" footer.** Removing it is a paid
+  add-on.
+
+Sending from an address on a domain you don't control also hurts deliverability —
+expect spam folders. A ~$10/year domain with SPF and DKIM fixes that properly.
+
+Mail only goes out from the **ingest** job. The web service never sends.
 
 ## 5. Check it
 

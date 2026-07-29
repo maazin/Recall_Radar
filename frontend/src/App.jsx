@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { fetchAdvisories, fetchStats } from './api'
+import { fetchAdvisories, fetchConfig, fetchStats } from './api'
 import AdvisoryCard from './components/AdvisoryCard'
 import SubscribeForm from './components/SubscribeForm'
 import { EmptyIcon, SearchIcon } from './components/Icons'
@@ -22,6 +22,9 @@ export default function App() {
   const [stats, setStats] = useState(null)
   // How many advisories the same filters would return with the status cleared.
   const [otherStatusTotal, setOtherStatusTotal] = useState(0)
+  // Whether this deployment has a mail provider. Defaults to false so the
+  // subscribe form is never shown before the answer is known.
+  const [notificationsEnabled, setNotificationsEnabled] = useState(false)
 
   const load = useCallback(
     async (nextOffset, { append } = { append: false }) => {
@@ -77,6 +80,10 @@ export default function App() {
     fetchStats()
       .then(setStats)
       .catch(() => setStats(null))
+
+    fetchConfig()
+      .then((c) => setNotificationsEnabled(Boolean(c.notifications_enabled)))
+      .catch(() => setNotificationsEnabled(false))
   }, [])
 
   function handleSearchSubmit(event) {
@@ -314,7 +321,8 @@ export default function App() {
           </button>
         )}
 
-        <SubscribeForm />
+        {/* Only offered when the deployment can actually send. */}
+        {notificationsEnabled && <SubscribeForm />}
       </main>
 
       <footer className="sitefoot">
