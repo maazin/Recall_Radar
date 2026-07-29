@@ -759,11 +759,19 @@ a:hover {
   color: var(--text-muted);
 }
 
+/* FSIS ships the full press release as the description — several hundred words.
+   Clamped so one advisory cannot swallow the feed; the full text is always one
+   click away on the agency's own page. */
 .card__body {
   margin: 0.5rem 0 0;
   font-size: 0.875rem;
   color: var(--text-muted);
   overflow-wrap: anywhere;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .meta {

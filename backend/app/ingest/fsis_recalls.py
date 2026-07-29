@@ -1,25 +1,32 @@
 """USDA/FSIS Recall API -> advisories (type=recall, source_agency=USDA-FSIS).
 
-!! VERIFICATION STATUS !!
-The PRD asks that these field names be confirmed against a live response rather
-than taken from documentation. That confirmation could not be completed from the
-build environment: www.fsis.usda.gov returns HTTP 403 from its Akamai edge for
-every request made here (curl, browser, and cloud fetchers alike), for the API,
-the docs PDF, and the site root.
+Field names and value shapes here were confirmed against a real response from
+https://www.fsis.usda.gov/fsis/api/recall/v/1 (2012 records), retrieved through
+the Wayback Machine because the origin answers 403 from this network.
 
-So the mapper is written against the field names published by FSIS, and the
-structure check below is deliberately self-diagnosing: if a required field is
-absent it raises with the field names that *were* present in the payload, so a
-single run from an unblocked network tells you exactly what to correct.
+Three things about the payload drive the code below:
 
-Run `python -m scripts.verify_sources` (repo root) from a network that can reach
-FSIS to confirm the mapping and regenerate the fixture from real data.
+* **Several fields are JSON arrays, not strings.** `field_states`,
+  `field_recall_reason`, `field_establishment` and `field_product_items` all
+  arrive as lists. Passing them through `str()` yields "['Import Violation']",
+  brackets and quotes included, which is what a previous version of this mapper
+  did.
+* **Every recall is published twice, once per language.** 1223 English records
+  and 789 Spanish ones share the same `field_recall_number`, so ingesting both
+  makes the Spanish copy fight the English one for the same `source_uid`. Only
+  `langcode == "English"` is emitted.
+* **There is no company field.** The recalling firm lives in
+  `field_establishment` where FSIS filled it in (1320 of 2012), and otherwise
+  has to come out of the headline, which follows a stable
+  "<Company> Recalls <product> Due to <reason>" pattern.
 """
 
 from __future__ import annotations
 
+import html
 import json
 import logging
+import re
 from typing import Any
 
 import httpx
@@ -43,60 +50,126 @@ ENDPOINT = "https://www.fsis.usda.gov/fsis/api/recall/v/1"
 _BASE = "https://www.fsis.usda.gov"
 _RECALLS_PAGE = f"{_BASE}/recalls"
 
-# The identity and content fields the mapper cannot work without. All six are
-# named in the PRD's source table.
+# Confirmed present on all 2012 records in the live response.
 REQUIRED_FIELDS = (
     "field_title",
     "field_recall_number",
     "field_recall_date",
     "field_recall_reason",
+    "langcode",
 )
 
+# FSIS publishes each recall in English and Spanish under one recall number.
+LANGUAGE = "English"
 
-def _first(record: dict[str, Any], *keys: str) -> str:
-    """Return the first key with a non-empty value, as trimmed text."""
+# "<Company> Recalls ..." / "FSIS Issues Public Health Alert for ..."
+_TITLE_SUBJECT = re.compile(
+    r"^\s*(?P<subject>.{2,90}?)\s+"
+    r"(?:Recalls|Recall|Recalled|Issues|Expands|Retracts|Announces|Updates)\b"
+)
+# Agency-issued alerts name no company; the product follows "Alert for".
+_ALERT_PRODUCT = re.compile(
+    r"(?:Alert|Notice)\s+for\s+(?P<product>.+?)"
+    r"(?:\s+Due\s+to\b|\s+That\s+May\b|\s+Because\b|$)",
+    re.I,
+)
+# A handful of alerts name the venue the food was served at.
+_SERVED_AT = re.compile(r"Served\s+at\s+(?P<venue>.+?)(?:\s+Due\s+to\b|$)", re.I)
+
+_CLOSED_TYPE = "closed recall"
+
+
+def _as_text(value: Any) -> str:
+    """Flatten an FSIS field to display text.
+
+    Handles the list-valued fields, unescapes HTML entities (FSIS double-encodes
+    apostrophes as &#039;) and strips any embedded markup.
+    """
+    if value is None:
+        return ""
+    if isinstance(value, bool):
+        return str(value)
+    if isinstance(value, list | tuple):
+        parts = [_as_text(item) for item in value]
+        return ", ".join(p for p in parts if p)
+
+    text = str(value)
+    if not text:
+        return ""
+    text = html.unescape(html.unescape(text))
+    if "<" in text:
+        text = BeautifulSoup(text, "lxml").get_text(" ")
+    text = collapse(text)
+    return "" if text.lower() in {"none", "null"} else text
+
+
+def _field(record: dict[str, Any], *keys: str) -> str:
     for key in keys:
-        value = record.get(key)
-        if value is None:
-            continue
-        text = collapse(str(value))
-        if text and text.lower() not in {"none", "null"}:
+        text = _as_text(record.get(key))
+        if text:
             return text
     return ""
 
 
-def _strip_html(value: str) -> str:
-    """FSIS summary/product fields carry embedded markup."""
-    if not value:
-        return ""
-    if "<" not in value:
-        return collapse(value)
-    return collapse(BeautifulSoup(value, "lxml").get_text(" "))
+def _brand(record: dict[str, Any], title: str) -> str:
+    """Best available name for the entity a reader would recognise.
+
+    Where the headline says the food was "Served at <venue>", the venue wins
+    over `field_establishment`. FSIS records the manufacturer there — for the
+    Kebab Shop alert that is "Olympia Food Industries, Inc." — but the food
+    reached people through the restaurant, so the restaurant is what someone
+    searching this feed is looking for. The manufacturer stays in the summary.
+
+    Otherwise: `field_establishment` where FSIS filled it in, then the subject
+    of the headline. Agency-issued alerts have no company as their subject, so
+    they fall back to the product named in the alert.
+    """
+    venue = _SERVED_AT.search(title)
+    if venue:
+        return collapse(venue.group("venue"))
+
+    establishment = _field(record, "field_establishment")
+    if establishment:
+        return establishment
+
+    match = _TITLE_SUBJECT.match(title)
+    subject = match.group("subject").strip(" ,") if match else ""
+
+    if subject and not subject.upper().startswith("FSIS"):
+        return subject
+
+    product = _ALERT_PRODUCT.search(title)
+    if product:
+        return collapse(product.group("product"))
+
+    return subject or title
 
 
 def _map_status(record: dict[str, Any]) -> str:
-    """Active unless FSIS marks the notice inactive or gives it a closed date."""
-    active_notice = _first(record, "field_active_notice").lower()
-    if active_notice in {"true", "1", "yes"}:
-        return STATUS_ACTIVE
-    if active_notice in {"false", "0", "no"}:
+    """Closed unless FSIS still lists the notice as live.
+
+    `field_recall_type` is the clearest signal: 1840 of 2012 records are
+    "Closed Recall". `field_active_notice` is blank on 189 records, so it is
+    only consulted as a secondary check.
+    """
+    if _field(record, "field_recall_type").lower() == _CLOSED_TYPE:
         return STATUS_RESOLVED
-    if _first(record, "field_closed_date", "field_closed_year"):
+    if _field(record, "field_active_notice").lower() in {"false", "0", "no"}:
         return STATUS_RESOLVED
     return STATUS_ACTIVE
 
 
 def _source_url(record: dict[str, Any]) -> str:
-    """Link to the FSIS press release for this recall."""
-    link = _first(record, "field_press_release", "field_en_press_release", "field_recall_url")
-    if link.startswith("http"):
+    """Link to the FSIS notice. Recall URLs are served as http; upgrade them."""
+    link = _field(record, "field_recall_url", "field_press_release", "field_en_press_release")
+    if link.startswith("http://"):
+        link = "https://" + link[len("http://") :]
+    if link.startswith("https://"):
         return link
     if link.startswith("/"):
         return f"{_BASE}{link}"
-    number = _first(record, "field_recall_number")
-    if number:
-        return f"{_RECALLS_PAGE}?field_recall_number={number}"
-    return _RECALLS_PAGE
+    number = _field(record, "field_recall_number")
+    return f"{_RECALLS_PAGE}?field_recall_number={number}" if number else _RECALLS_PAGE
 
 
 def parse(payload: str | list[Any] | dict[str, Any]) -> list[NormalizedAdvisory]:
@@ -124,6 +197,7 @@ def parse(payload: str | list[Any] | dict[str, Any]) -> list[NormalizedAdvisory]
         isinstance(data, list),
         f"FSIS payload is {type(data).__name__}, expected a JSON array of recalls.",
     )
+    require(bool(data), "FSIS payload is an empty array.")
 
     # Validate every record before emitting anything.
     for index, record in enumerate(data):
@@ -141,45 +215,47 @@ def parse(payload: str | list[Any] | dict[str, Any]) -> list[NormalizedAdvisory]
             f"app/ingest/fsis_recalls.py.",
         )
 
+    english = [r for r in data if _as_text(r.get("langcode")) == LANGUAGE]
+    require(
+        bool(english),
+        f"FSIS payload has {len(data)} record(s) but none with "
+        f"langcode={LANGUAGE!r}. Language tagging has changed.",
+    )
+
     advisories: list[NormalizedAdvisory] = []
-    for record in data:
-        number = _first(record, "field_recall_number")
+    for record in english:
+        number = _field(record, "field_recall_number")
         if not number:
             # Identity field present but empty: cannot key an upsert on it.
             raise SourceStructureError(
                 f"FSIS record has an empty field_recall_number: "
-                f"{_first(record, 'field_title')!r}"
+                f"{_field(record, 'field_title')!r}"
             )
 
-        title = _strip_html(_first(record, "field_title"))
-        establishment = _strip_html(_first(record, "field_establishment")) or title
-        summary = _strip_html(
-            _first(record, "field_summary", "field_product_items")
-        ) or title
+        title = _field(record, "field_title")
+        brand = _brand(record, title)
+        summary = _field(record, "field_summary", "field_product_items") or title
+        reason = _field(record, "field_recall_reason") or title
 
-        started = iso_from_loose(_first(record, "field_recall_date")) or today_iso()
-        updated = (
-            iso_from_loose(_first(record, "field_last_modified_date"))
-            or iso_from_loose(_first(record, "field_closed_date"))
-            or started
-        )
+        started = iso_from_loose(_field(record, "field_recall_date")) or today_iso()
+        updated = iso_from_loose(_field(record, "field_last_modified_date")) or started
 
         advisories.append(
             NormalizedAdvisory(
                 source_uid=f"{AGENCY_USDA_FSIS}:{number}",
                 type=TYPE_RECALL,
                 source_agency=AGENCY_USDA_FSIS,
-                category=categorize(establishment, summary),
-                brand_or_chain=establishment,
+                # Only the headline is offered as the secondary signal. The
+                # summary is a full press release, and these routinely name the
+                # chains a product was distributed to ("shipped to Boston
+                # Market"), which says nothing about who was recalled.
+                category=categorize(brand, title),
+                brand_or_chain=brand,
                 description=summary,
-                reason=_strip_html(_first(record, "field_recall_reason")),
-                severity=_first(
-                    record, "field_recall_classification", "field_risk_level"
-                )
+                reason=reason,
+                severity=_field(record, "field_recall_classification", "field_risk_level")
                 or None,
-                states_affected=parse_states(
-                    _first(record, "field_states", "field_distro_list")
-                ),
+                states_affected=parse_states(_field(record, "field_states")),
                 status=_map_status(record),
                 started_at=started,
                 updated_at=updated,
@@ -199,7 +275,7 @@ def fetch() -> str:
         ),
         "Accept": "application/json, text/plain, */*",
     }
-    with httpx.Client(timeout=45.0, follow_redirects=True, headers=headers) as client:
+    with httpx.Client(timeout=90.0, follow_redirects=True, headers=headers) as client:
         response = client.get(ENDPOINT)
         response.raise_for_status()
         return response.text

@@ -22,7 +22,10 @@ from app.models import CATEGORY_GROCERY, CATEGORY_RESTAURANT
 # "McDonald's" and "McDonalds" both hit.
 RESTAURANT_CHAINS = {
     "mcdonalds", "burger king", "wendys", "taco bell", "kfc", "kentucky fried chicken",
-    "chipotle", "subway", "starbucks", "dunkin", "popeyes", "chick fil a", "panera",
+    # "chipotle" on its own is a pepper, and turns up constantly in product
+    # names ("Smokey Chipotle Dry Rub"). Only the full company name counts.
+    "chipotle mexican grill", "subway", "starbucks", "dunkin", "popeyes",
+    "chick fil a", "panera",
     "olive garden", "applebees", "chilis", "dennys", "ihop", "sonic drive in", "arbys",
     "jack in the box", "del taco", "five guys", "shake shack", "panda express",
     "dominos", "papa johns", "pizza hut", "little caesars", "whataburger", "in n out",

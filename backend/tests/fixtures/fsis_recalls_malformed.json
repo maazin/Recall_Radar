@@ -1,48 +1,1328 @@
 [
-  {
-    "field_title": "Sunrise Meats Recalls Ground Beef Products Due to Possible E. coli O157:H7 Contamination",
-    "field_recall_number": "012-2026",
-    "field_recall_date": "2026-07-18",
-    "field_recall_reason": "Product Contamination",
-    "field_recall_classification": "Class I",
-    "field_summary": "<p>Sunrise Meats, a Nebraska establishment, is recalling approximately 24,000 pounds of ground beef products that may be contaminated with E. coli O157:H7.</p>",
-    "field_establishment": "Sunrise Meats",
-    "field_states": "Nebraska, Iowa, Kansas",
-    "field_active_notice": "True",
-    "field_press_release": "/recalls-alerts/sunrise-meats-recalls-ground-beef-products",
-    "field_last_modified_date": "2026-07-20",
-    "field_risk_level": "High",
-    "field_product_items": "10-lb chubs of GROUND BEEF 80/20",
-    "field_year": "2026"
-  },
-  {
-    "field_title": "Harbor Grill Restaurant Group Recalls Chicken Salad Due to Misbranding and Undeclared Allergens",
-    "field_recall_date": "2026-06-02",
-    "field_recall_reason": "Misbranding, Unreported Allergens",
-    "field_recall_classification": "Class II",
-    "field_summary": "Harbor Grill Restaurant Group is recalling chicken salad products because they contain milk, a known allergen, not declared on the label.",
-    "field_establishment": "Harbor Grill Restaurant Group",
-    "field_states": "CA, OR",
-    "field_active_notice": "False",
-    "field_closed_date": "2026-06-30",
-    "field_press_release": "/recalls-alerts/harbor-grill-recalls-chicken-salad",
-    "field_last_modified_date": "2026-06-30",
-    "field_product_items": "12-oz plastic tubs of CHICKEN SALAD",
-    "field_year": "2026"
-  },
-  {
-    "field_title": "Valley Foods Recalls Frozen Pizza Due to Foreign Matter Contamination",
-    "field_recall_number": "015-2026",
-    "field_recall_date": "2026-07-25",
-    "field_recall_reason": "Product Contamination",
-    "field_recall_classification": "Class II",
-    "field_summary": "Valley Foods is recalling frozen pepperoni pizza that may contain pieces of hard plastic.",
-    "field_establishment": "Valley Foods",
-    "field_states": "Nationwide",
-    "field_active_notice": "True",
-    "field_press_release": "https://www.fsis.usda.gov/recalls-alerts/valley-foods-frozen-pizza",
-    "field_last_modified_date": "2026-07-25",
-    "field_product_items": "22-oz cartons of PEPPERONI PIZZA",
-    "field_year": "2026"
-  }
+ {
+  "field_title": "BCI Foods, Inc. Recalls Chicken Noodle Soup Product Imported without the Benefit of Import Reinspection",
+  "field_recall_number_export": "010-2026",
+  "field_recall_url": "http://www.fsis.usda.gov/recalls-alerts/bci-foods-inc--recalls-chicken-noodle-soup-product-imported-without-benefit-import",
+  "field_active_notice": "True",
+  "field_states": [
+   "Oklahoma"
+  ],
+  "field_archive_recall": "False",
+  "field_closed_year": "",
+  "field_company_media_contact": [
+   "\n  Company Contact\n  \n    Vice President, Sales, BCI Foods, Inc.\n    Marie-Lou Corbin\n        514-218-7143\n              marie-lou.corbin@bcifoods.com\n      \n\n"
+  ],
+  "field_distro_list": [],
+  "field_en_press_release": [],
+  "field_establishment": [],
+  "field_labels": [
+   "Recall-010-2026-Labels.pdf"
+  ],
+  "field_media_contact": "Tai Thompson",
+  "field_risk_level": "High - Class I",
+  "field_last_modified_date": "2026-07-23",
+  "field_press_release": [],
+  "field_processing": [
+   "Thermally Processed - Commercially Sterile"
+  ],
+  "field_product_items": [
+   "10.5-oz can of &quot;tasty KITCHEN Chicken Noodle Condensed Soup PRODUCT OF CANADA&quot; with best by date of &quot;2028 FE 04&quot; and lot code &quot;5 9 2 26 035&quot;"
+  ],
+  "field_qty_recovered": "",
+  "field_recall_classification": "Class I",
+  "field_recall_date": "2026-07-23",
+  "field_recall_number": "010-2026",
+  "field_recall_reason": [
+   "Import Violation"
+  ],
+  "field_recall_type": "Active Recall",
+  "field_related_to_outbreak": "False",
+  "field_summary": "<p><strong>WASHINGTON, JULY 23, 2026 - </strong>BCI Foods, Inc., the importer of record located in Saint-Hyacinthe, Quebec, Canada, is recalling approximately 4,300 pounds of a chicken noodle soup product that was imported from Canada without the benefit of import reinspection into the United States, the U.S. Department of Agriculture's Food Safety and Inspection Service (FSIS) announced today.</p><p>The canned condensed chicken noodle soup product was produced on February 4, 2026. The following product is subject to recall <a href=\"/sites/default/files/food_label_pdf/2026-07/Recall-010-2026-Labels.pdf\">[view labels</a>]:</p><ul type=\"disc\"><li data-list-item-id=\"e94ebe754c7552c4d203079cb13757aab\">10.5-oz can of \"tasty KITCHEN Chicken Noodle Condensed Soup PRODUCT OF CANADA\" with best by date of \"2028 FE 04\" and lot code \"5 9 2 26 035\"</li></ul><p>The product subject to recall bears Canadian establishment number \"EST. 142\" printed on the can. This item was further distributed to food banks and food pantry locations in Oklahoma.</p><p>The problem was discovered when the firm notified FSIS that the canned chicken soup product imported from Canada was not presented for FSIS import reinspection.</p><p>There have been no confirmed reports of illness or injury due to consumption of these products. Anyone concerned about an illness or injury should contact a healthcare provider.</p><p>FSIS is concerned that some product may be in consumers' pantries. Consumers who have purchased these products are urged not to consume them. These products should be thrown away or returned to the place of purchase.</p><p>FSIS routinely conducts recall effectiveness checks to verify recalling firms notify their<strong> </strong>customers of the recall and that steps are taken to make certain that the product is no longer available to consumers. When available, the retail distribution list(s) will be posted on the FSIS website at <a href=\"http://www.fsis.usda.gov/recalls\">www.fsis.usda.gov/recalls</a>.</p><p>Media and consumers with questions regarding the public health alert can contact Marie-Lou Corbin, Vice President, Sales, BCI Foods, Inc., at 514-218-7143 or marie-lou.corbin@bcifoods.com.</p><p>Consumers with food safety questions can call the toll-free USDA Meat and Poultry Hotline at 888-MPHotline (888-674-6854) or send a question via email to <a href=\"mailto:MPHotline@usda.gov\">MPHotline@usda.gov</a>. For consumers that need to report a problem with a meat, poultry, or egg product, the online Electronic Consumer Complaint Monitoring System can be accessed 24 hours a day at <a href=\"https://foodcomplaint.fsis.usda.gov/eCCF/\">https://foodcomplaint.fsis.usda.gov/eCCF/</a>.</p>",
+  "field_year": "2026",
+  "langcode": "English",
+  "field_has_spanish": "False"
+ },
+ {
+  "field_title": " FSIS Issues Public Health Alert for A Ready-To-Eat Beef Jerky Product Due to Misbranding and Undeclared Allergen",
+  "field_recall_number_export": "PHA-07032026-01",
+  "field_recall_url": "http://www.fsis.usda.gov/recalls-alerts/fsis-issues-public-health-alert-a-ready-eat-beef-jerky-product-due-misbranding-and",
+  "field_active_notice": "False",
+  "field_states": [
+   "Oklahoma"
+  ],
+  "field_archive_recall": "False",
+  "field_closed_year": "",
+  "field_company_media_contact": [
+   "\n  Company Contact\n  \n    GoodTimes Beef Jerky\n     Allyson Moore, Owner/Operator\n         405-550-7657\n              goodtimesjerky@gmail.com\n      \n\n"
+  ],
+  "field_distro_list": [],
+  "field_en_press_release": [],
+  "field_establishment": [
+   "GoodTimes Beef Jerky"
+  ],
+  "field_labels": [
+   "PHA-07032026-01-labels"
+  ],
+  "field_media_contact": "Keith Komosinski",
+  "field_risk_level": "Public Health Alert",
+  "field_last_modified_date": "2026-07-03",
+  "field_press_release": [],
+  "field_processing": [
+   "Heat Treated - Shelf Stable"
+  ],
+  "field_product_items": [
+   "2.5-oz. plastic bag packages of \u201cSTREET\u2019S BEEF Jerky TERIYAKI FLAVOR\u201d with lot codes 0701271, 0520271, 04014271, 0415271, 0211271, 1015261, 1016261, 1029261, 0909261, 0806261, and 0820261 shown on a sticker on the packaging."
+  ],
+  "field_qty_recovered": "",
+  "field_recall_classification": "Public Health Alert",
+  "field_recall_date": "2026-07-03",
+  "field_recall_number": "PHA-07032026-01",
+  "field_recall_reason": [
+   "Unreported Allergens"
+  ],
+  "field_recall_type": "Public Health Alert",
+  "field_related_to_outbreak": "False",
+  "field_summary": "<p><strong>WASHINGTON, JULY 3, 2026</strong> \u2013 The U.S. Department of Agriculture\u2019s Food Safety and Inspection Service (FSIS) is issuing a public health alert for a beef jerky product due to misbranding and undeclared allergen. The product contains wheat, a known allergen, which is not declared on the product label.&nbsp;A recall was not requested because the product is no longer available for purchase.&nbsp;</p>\n<p>The ready-to-eat beef jerky item was produced on various dates between August 7, 2025, and July 1, 2026. The following product is subject to the public health alert [<a href=\"https://www.fsis.usda.gov/sites/default/files/food_label_pdf/2026-07/PHA-07032026-01-labels.pdf\">view labels</a>]:&nbsp;</p>\n<ul type=\"disc\">\n<li>2.5-oz. plastic bag packages of \u201cSTREET\u2019S BEEF Jerky TERIYAKI FLAVOR\u201d with lot codes 0701271, 0520271, 04014271, 0415271, 0211271, 1015261, 1016261, 1029261, 0909261, 0806261, and 0820261 shown on a sticker on the packaging.</li>\n</ul>\n<p>The product bears establishment number \u201cEST. 21827\u201d inside the USDA mark of inspection. This item was shipped to three retail locations in Oklahoma: Bordwine Hay, Feed &amp; Hardware, Grassroots Farm Store, and Bromide Trading Co.</p>\n<p>The problem was discovered during a routine FSIS label review.</p>\n<p>There have been no confirmed reports of adverse reactions due to consumption of this product. Anyone concerned about a reaction should contact a health care provider.&nbsp;</p>\n<p>FSIS is concerned that some product may be in consumers\u2019 pantries.&nbsp;Consumers who have purchased these products are urged not to consume them. These products should be thrown away or returned to the place of purchase.</p>\n<p>Media and consumers with questions regarding the public health alert can contact Allyson Moore, Owner/Operator of GoodTimes Beef Jerky, at 405-550-7657 or&nbsp;<a href=\"mailto:goodtimesjerky@gmail.com\">goodtimesjerky@gmail.com</a>.</p>\n<p>Consumers with food safety questions can call the toll-free USDA Meat and Poultry Hotline at 888-MPHotline (888-674-6854) or send a question via email to&nbsp;<a href=\"mailto:MPHotline@usda.gov\">MPHotline@usda.gov</a>.&nbsp;For consumers that need to report a problem with a meat, poultry, or egg product, the online Electronic Consumer Complaint Monitoring System can be accessed 24 hours a day at&nbsp;<a href=\"https://gcc02.safelinks.protection.outlook.com/?url=https%3A%2F%2Ffoodcomplaint.fsis.usda.gov%2FeCCF%2F&amp;data=05%7C01%7CMelissa.Cordell%40usda.gov%7C2ffd2d584176447889ea08dbb48bd749%7Ced5b36e701ee4ebc867ee03cfa0d4697%7C1%7C0%7C638302284933732023%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&amp;sdata=Jx%2BVgXbvTA0YVfEYBwKrSu9MQne%2BUQZ3bT04yRxlrAI%3D&amp;reserved=0\">https://foodcomplaint.fsis.usda.gov/eCCF/</a>.</p>\n",
+  "field_year": "2026",
+  "langcode": "English",
+  "field_has_spanish": "False"
+ },
+ {
+  "field_title": "FSIS Issues Public Health Alert for Boneless Chicken Breast Product Due to Misbranding and Undeclared Allergens",
+  "field_recall_number_export": "PHA-06252026-02",
+  "field_recall_url": "http://www.fsis.usda.gov/recalls-alerts/fsis-issues-public-health-alert-boneless-chicken-breast-product-due-misbranding-and",
+  "field_active_notice": "False",
+  "field_states": [
+   "Alabama",
+   "Alaska",
+   "Idaho",
+   "Illinois",
+   "Indiana",
+   "Kentucky",
+   "Tennessee",
+   "Oregon",
+   "Washington"
+  ],
+  "field_archive_recall": "False",
+  "field_closed_year": "",
+  "field_company_media_contact": [
+   "\n  Company Contact\n  \n    FW Farms LLC \n    Customer Service\n              cs@gwfg.com\n      \n\n"
+  ],
+  "field_distro_list": [],
+  "field_en_press_release": [],
+  "field_establishment": [
+   "FW Farms LLC."
+  ],
+  "field_labels": [
+   "PHA-06252026-02-Labels.pdf"
+  ],
+  "field_media_contact": "Meredith Carothers",
+  "field_risk_level": "Public Health Alert",
+  "field_last_modified_date": "2026-06-25",
+  "field_press_release": [],
+  "field_processing": [
+   "Raw - Non Intact"
+  ],
+  "field_product_items": [
+   "21-oz. vacuum-packed packages of \u201cPRIVATE SELECTION Honey Dijon Boneless Skinless Chicken Breasts with Rib Meat\u201d with \u201cBEST IF USED BY: JUN 28 2026\u201d and lot code \u201c15326A\u201d printed on the packaging. "
+  ],
+  "field_qty_recovered": "",
+  "field_recall_classification": "Public Health Alert",
+  "field_recall_date": "2026-06-25",
+  "field_recall_number": "PHA-06252026-02",
+  "field_recall_reason": [
+   "Misbranding",
+   "Unreported Allergens"
+  ],
+  "field_recall_type": "Public Health Alert",
+  "field_related_to_outbreak": "False",
+  "field_summary": "<p><strong>WASHINGTON, JUNE 25, 2026</strong> \u2013 The U.S. Department of Agriculture\u2019s Food Safety and Inspection Service (FSIS) is issuing a public health alert for raw boneless chicken breast products due to misbranding and undeclared allergens. The product contains eggs,&nbsp;a known allergen, which is not declared on the product label.&nbsp;A recall was not requested because the product is no longer available for purchase.</p>\n<p>The raw honey Dijon boneless chicken breast products were produced on June 2, 2026.&nbsp;The following product subject to the public health alert is [<a href=\"/sites/default/files/food_label_pdf/2026-06/PHA-06252026-02-Labels.pdf\">view labels</a>]:&nbsp;</p>\n<ul type=\"disc\">\n<li>21-oz. vacuum-packed packages of \u201cPRIVATE SELECTION Honey Dijon Boneless Skinless Chicken Breasts with Rib Meat\u201d with \u201cBEST IF USED BY: JUN 28 2026\u201d and lot code \u201c15326A\u201d printed on the packaging.&nbsp;</li>\n</ul>\n<p>The products bear establishment number \u201cP-45288B\u201d printed on the packaging. These items were shipped to Kroger and Fred Meyer retail stores in Alabama, Alaska, Idaho, Illinois, Indiana, Kentucky, Tennessee, Oregon, and Washington.</p>\n<p>The problem was discovered&nbsp;by a retailer after a store employee identified that the correct label was applied to the front of the product but the incorrect label, which contained the ingredients statement, was applied to the back of the product. The retailer reported the issue to the producing establishment, and the establishment notified FSIS.</p>\n<p>There have been no confirmed reports of adverse reactions due to consumption of these products. Anyone concerned about a reaction should contact a health care provider.&nbsp;</p>\n<p>FSIS is concerned that some product may be in consumers\u2019 refrigerators or freezers.&nbsp;Consumers who have purchased these products are urged not to consume them. These products should be thrown away or returned to the place of purchase.</p>\n<p>Consumers with questions regarding the public health alert can contact FW Farms LLC Customer Service at&nbsp;<a href=\"mailto:cs@gwfg.com\">cs@gwfg.com</a>. Members of the media with questions regarding the public health alert can contact FW Farms LLC at&nbsp;<a href=\"mailto:media@gwfg.com\">media@gwfg.com</a>.</p>\n<p>Consumers with food safety questions can call the toll-free USDA Meat and Poultry Hotline at 888-MPHotline (888-674-6854) or send a question via email to&nbsp;<a href=\"mailto:MPHotline@usda.gov\">MPHotline@usda.gov</a>.&nbsp;For consumers that need to report a problem with a meat, poultry, or egg product, the online Electronic Consumer Complaint Monitoring System can be accessed 24 hours a day at&nbsp;<a href=\"https://foodcomplaint.fsis.usda.gov/eCCF/\">https://foodcomplaint.fsis.usda.gov/eCCF/</a>.</p>\n",
+  "field_year": "2026",
+  "langcode": "English",
+  "field_has_spanish": "False"
+ },
+ {
+  "field_title": "Reser\u2019s Fine Foods, Inc. Recalls Ready-To-Eat Pasta Salad Product Due to Misbranding and Undeclared Allergens",
+  "field_recall_number_export": "009-2026",
+  "field_recall_url": "http://www.fsis.usda.gov/recalls-alerts/resers-fine-foods-inc--recalls-ready-eat-pasta-salad-product-due-misbranding-and",
+  "field_active_notice": "False",
+  "field_states": [
+   "Alabama",
+   "Florida",
+   "North Carolina",
+   "New Jersey",
+   "South Carolina",
+   "Tennessee",
+   "Virginia"
+  ],
+  "field_archive_recall": "False",
+  "field_closed_year": "",
+  "field_company_media_contact": [
+   "\n  Company Contact\n  \n    Reser\u2019s Fine Foods, Inc.\n    Consumer Affairs \n        888-223-2127 \n              consumeraffairs@resers.com\n      \n\n",
+   "\n  Company Contact\n  \n    Reser\u2019s Fine Foods, Inc.\n    Raquel Tadlock, Publicity Associate\n        619-234-0345 \n              Resers@HavasFormula.com\n      \n\n"
+  ],
+  "field_distro_list": [
+   "RC-009-2026-Retail-List.pdf"
+  ],
+  "field_en_press_release": [],
+  "field_establishment": [
+   "Reser&#039;s Fine Foods"
+  ],
+  "field_labels": [
+   "Recall-009-2026-Labels.pdf"
+  ],
+  "field_media_contact": "Meredith Carothers",
+  "field_risk_level": "High - Class I",
+  "field_last_modified_date": "2026-06-25",
+  "field_press_release": [],
+  "field_processing": [
+   "Fully Cooked - Not Shelf Stable"
+  ],
+  "field_product_items": [
+   "5-lb. plastic tub packages of \u201cMolly\u2019s Kitchen California Style Pasta Salad\u201d with \u201cUSE BY JUL/16/26 430\u201d printed on the side of the plastic tub."
+  ],
+  "field_qty_recovered": "",
+  "field_recall_classification": "Class I",
+  "field_recall_date": "2026-06-25",
+  "field_recall_reason": [
+   "Misbranding",
+   "Unreported Allergens"
+  ],
+  "field_recall_type": "Active Recall",
+  "field_related_to_outbreak": "False",
+  "field_summary": "<p><strong>WASHINGTON, June 25, 2026</strong> \u2013 Reser\u2019s Fine Foods, Inc., a Halifax, N.C. establishment, is recalling approximately 5,300 pounds of a&nbsp;ready-to-eat (RTE) product labeled as a pasta salad due to misbranding and undeclared allergens, the U.S. Department of Agriculture\u2019s Food Safety and Inspection Service (FSIS) announced today. The product labeled as pasta salad may actually contain chicken salad, which contains egg and milk, known allergens, that are not declared on the product label.</p>\n<p>The RTE product labeled as pasta salad that may contain chicken salad was&nbsp;produced on June 11, 2026. The following product is subject to recall [<a href=\"/sites/default/files/food_label_pdf/2026-06/Recall-009-2026-Labels.pdf\">view labels</a>]:&nbsp;</p>\n<ul type=\"disc\">\n<li>5-lb. plastic tub packages of \u201cMolly\u2019s Kitchen California Style Pasta Salad\u201d with \u201cUSE BY JUL/16/26 430\u201d printed on the side of the plastic tub.</li>\n</ul>\n<p>The product subject to recall bears establishment number \u201cP-00874\u201d printed on the side of the plastic tub. This item was shipped to distributors in Alabama, Florida, North Carolina, New Jersey, South Carolina, Tennessee, and Virginia for further distribution to foodservice locations.&nbsp;</p>\n<p>The problem was discovered when the establishment notified FSIS that they mislabeled RTE chicken salad products as RTE pasta salad products.</p>\n<p>There have been no confirmed reports of adverse reactions due to consumption of this product.&nbsp;Anyone concerned about a reaction should contact a healthcare provider.&nbsp;</p>\n<p>FSIS is concerned that some product may be in consumers\u2019 refrigerators.&nbsp;Consumers who have purchased these products are urged not to consume them. These products should be thrown away or returned to the place of purchase.</p>\n<p>FSIS routinely conducts recall effectiveness checks to verify recalling firms notify their customers of the recall and that steps are taken to make certain that the product is no longer available to consumers. When available, the retail distribution lists will be posted on the FSIS website at&nbsp;<a href=\"http://www.fsis.usda.gov/recalls\">www.fsis.usda.gov/recalls</a>.&nbsp;</p>\n<p>Consumers with questions about the recall can contact&nbsp;Reser\u2019s Fine Foods, Inc., Consumer Affairs at 888-223-2127 or&nbsp;<a href=\"mailto:consumeraffairs@resers.com\">consumeraffairs@resers.com</a>. Members of the media with questions about the recall can contact&nbsp;Raquel Tadlock, Publicity Associate, Reser\u2019s Fine Foods, Inc., at 619-234-0345 or&nbsp;<a href=\"mailto:Resers@HavasFormula.com\">Resers@HavasFormula.com</a>.</p>\n<p>Consumers with food safety questions can call the toll-free USDA Meat and Poultry Hotline at 888-MPHotline (888-674-6854) or send a question via email to&nbsp;<a href=\"mailto:MPHotline@usda.gov\">MPHotline@usda.gov</a>.&nbsp;For consumers that need to report a problem with a meat, poultry, or egg product, the online Electronic Consumer Complaint Monitoring System can be accessed 24 hours a day at&nbsp;<a href=\"https://foodcomplaint.fsis.usda.gov/eCCF/\">https://foodcomplaint.fsis.usda.gov/eCCF/</a>.</p>\n",
+  "field_year": "2026",
+  "langcode": "English",
+  "field_has_spanish": "False"
+ },
+ {
+  "field_title": "New York Firm Recalls Pork and Poultry Products Due To Lack of Inspection",
+  "field_recall_number_export": "028-2014",
+  "field_recall_url": "http://www.fsis.usda.gov/recalls-alerts/new-york-firm-recalls-pork-and-poultry-products-due-lack-inspection",
+  "field_active_notice": "False",
+  "field_states": [],
+  "field_archive_recall": "True",
+  "field_closed_year": "2016",
+  "field_company_media_contact": [],
+  "field_distro_list": [],
+  "field_en_press_release": [],
+  "field_establishment": [],
+  "field_labels": [],
+  "field_media_contact": "Stacy Kish",
+  "field_risk_level": "High - Class I",
+  "field_last_modified_date": "2014-05-16",
+  "field_press_release": [],
+  "field_processing": [
+   "Products with Secondary Inhibitors - Not Shelf Stable"
+  ],
+  "field_product_items": [
+   "The products subject to recall include: Duck fat, Bacon, Fresh Sausage"
+  ],
+  "field_qty_recovered": "1,098 pounds",
+  "field_recall_classification": "Class I",
+  "field_recall_date": "2014-05-16",
+  "field_recall_number": "028-2014",
+  "field_recall_reason": [
+   "Produced Without Benefit of Inspection"
+  ],
+  "field_recall_type": "Closed Recall",
+  "field_related_to_outbreak": "False",
+  "field_summary": "<p><strong>WASHINGTON, May 16, 2014 </strong> Transatlantic Foods, Inc., a New York company, is recalling approximately 222,000 pounds of pork and poultry products that did not receive the full benefit of inspection, the U.S. Department of Agriculture's Food Safety and Inspection Service (FSIS) announced today.</p>\n<p>Transatlantic Foods, Inc. operates two establishments\u2014one in Scranton, Pa. and one in Andover, N.J. This recall is being issued because the Andover, N.J. establishment had not been issued a FSIS Grant of Inspection. Without the Grant of Inspection, FSIS inspection program personnel were not assigned to the establishment. However, the Andover N.J. establishment was producing product and using labels approved for use by, and bearing the establishment number of, the Scranton, Pa. establishment. Products produced without inspection are considered unfit for human consumption and must be recalled. In addition, products were produced in undisclosed locations without the benefit of inspection.</p>\n<p>The products subject to recall include:</p>\n<p>Duck fat</p>\n<ul type=\"disc\">\n<li>7-oz. tubs of iAux Delices des Bois Natural Duck Fat\u201d with package code (T-001 through 365; H-001 through 365; or F-001 through 136)</li>\n</ul>\n<p>Bacon</p>\n<ul type=\"disc\">\n<li>10-oz. packages of iAux Delices des Bois Artisanal Uncured Bacon Herbes de Provence Uncured Bacon\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>10-oz. packages of iAux Delices des Bois Artisanal Uncured Bacon Farmhouse Country Uncured Bacon\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>10-oz. packages of iAux Delices des Bois Artisanal Uncured Bacon Southwestern Style Uncured Bacon\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>10-oz. packages of iAux Delices des Bois Artisanal Uncured Bacon Pepper &amp; Garlic Uncured Bacon\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n</ul>\n<p>Fresh Sausage</p>\n<ul type=\"disc\">\n<li>various weight packages of iAux Delices des Bois Breakfast Sage Sausage\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iChestnut Valley Breakfast Sage Sausage\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iAux Delices des Bois Brooklyn Lager Cheddar Bratwurst\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iChestnut Valley Brooklyn Lager Cheddar Bratwurst\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iAux Delices des Bois Pork Brooklyn Bratwurst\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iChestnut Valley Pork Brooklyn Bratwurst\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iAux Delices des Bois Chorizo Sausage\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iChestnut Valley Chorizo Sausage\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iChestnut Valley Irish Banger Sausage\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iAux Delices des Bois Pork &amp; Broccoli Rabe Sausage\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iChestnut Valley Pork &amp; Broccoli Rabe Sausage\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iAux Delices des Bois Cheese &amp; Parsley Sausage\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iChestnut Valley Cheese &amp; Parsley Sausage\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iAux Delices des Bois Pork &amp; Smokey Bacon Sausage\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iChestnut Valley Pork &amp; Smokey Uncured Bacon Sausage\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iAux Delices des Bois Hot Italian Sausage\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iChestnut Valley Hot Italian Sausage\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iAux Delices des Bois Sweet Italian Sausage\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iChestnut Valley Sweet Italian Sausage\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iChestnut Valley Fresh Kielbasa\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iAux Delices des Bois Chicken Breakfast Sausage\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iChestnut Valley Chicken Breakfast Sausage\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iAux Delices des Bois Chipotle Honey Flavored Chicken Sausage\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iChestnut Valley Chipotle Honey Flavored Chicken Sausage\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iAux Delices des Bois Chicken Spinach &amp; Feta Sausage\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iChestnut Valley Chicken Spinach &amp; Feta Sausage\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iAux Delices des Bois Buffalo Style Chicken Sausage\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iChestnut Valley Buffalo Style Chicken Sausage\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iChestnut Valley Turkey Breakfast Sausage\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iAux Delices des Bois Chicken Marsala &amp; Mushrooms Sausage\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iChestnut Valley Chicken Marsala &amp; Mushrooms Sausage\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iAux Delices des Bois Chicken Apple Sausage\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n<li>various weight packages of iChestnut Valley Chicken Apple Sausage\u201d with package code (T-001 through 365 or H-001 through 290)</li>\n</ul>\n<p>FSIS and the company have received no reports of illnesses due to consumption of these products.</p>\n<p>The duck fat included in the recall was produced from January 2012 through May 2014 and bears the establishment number iP-39954.\u201d The remaining products were produced prior to October 18, 2013 and bear the establishment number iEst. 33806\u201d or iEst. 45100,\u201d iP-33806\u201d or iP-45100\u201d inside the USDA Mark of Inspection. These products were shipped to retail, internet and wholesale locations nationwide.</p>\n<p>The problem was discovered when FSIS received an anonymous tip and began an investigation into the establishment.</p>\n<p>FSIS routinely conducts recall effectiveness checks to verify recalling firms notify their<strong> </strong>customers of the recall and that steps are taken to make certain that the product is no longer available to consumers. When available, the retail distribution list(s) will be posted on the FSIS website at<a href=\"http://www.fsis.usda.gov/recalls\">www.fsis.usda.gov/recalls</a>.</p>\n<p>Media with questions regarding the recall can contact Cynthia Chovet at (212) 330-8286 extension 1010. Consumers with questions regarding the recall can contact Amy Farges at (212) 330-8285 extension 1003.</p>\n<p>Consumers with food safety questions can iAsk Karen,\u201d the FSIS virtual representative available 24 hours a day at <a href=\"http://AskKaren.gov\">AskKaren.gov</a> or via smartphone at <a href=\"http://m.AskKaren.gov\">m.askkaren.gov</a>.The toll-free USDA Meat and Poultry Hotline 1-888-MPHotline (1-888-674-6854) is available in English and Spanish and can be reached from 10 a.m. to 4 p.m. (Eastern Time) Monday through Friday. Recorded food safety messages are available 24 hours a day. The online Electronic Consumer Complaint Monitoring System can be accessed 24 hours a day at <a href=\"http://www.fsis.usda.gov/reportproblem\">http://www.fsis.usda.gov/reportproblem</a>.</p>\n",
+  "field_year": "2014",
+  "langcode": "English",
+  "field_has_spanish": "True"
+ },
+ {
+  "field_title": "Firma De Nueva York Retira Del Mercado Productos De Cerdo Y De Pollo Debido A Falta De Inspecci\u00f3n",
+  "field_recall_number_export": "028-2014",
+  "field_recall_url": "http://www.fsis.usda.gov/es/retirada/firma-de-nueva-york-retira-del-mercado-productos-de-cerdo-y-de-pollo-debido-a-falta-de",
+  "field_active_notice": "False",
+  "field_states": [],
+  "field_archive_recall": "True",
+  "field_closed_year": "2016",
+  "field_company_media_contact": [],
+  "field_distro_list": [],
+  "field_en_press_release": [],
+  "field_establishment": [],
+  "field_labels": [],
+  "field_media_contact": "Stacy Kish",
+  "field_risk_level": "High - Class I",
+  "field_last_modified_date": "2014-05-16",
+  "field_press_release": [],
+  "field_processing": [
+   "Products with Secondary Inhibitors - Not Shelf Stable"
+  ],
+  "field_product_items": [
+   "Los productos sujetos a la retirada son (los nombres est\u00e1n mencionados en ingl\u00e9s): Grasa de pato, Tocineta, ..."
+  ],
+  "field_qty_recovered": "1,098 pounds",
+  "field_recall_classification": "Class I",
+  "field_recall_date": "2014-05-16",
+  "field_recall_number": "028-2014",
+  "field_recall_reason": [
+   "Produced Without Benefit of Inspection"
+  ],
+  "field_recall_type": "Closed Recall",
+  "field_related_to_outbreak": "False",
+  "field_summary": "<p><strong>WASHINGTON, 16 de mayo del 2014&nbsp;</strong>\u2013 Transatlantic Foods, Inc., una compa\u00f1\u00eda de Nueva York, est\u00e1 retirando del mercado aproximadamente 222,000 libras de productos de carne de cerdo y carne de pollo debido a que dichos producto fueron producidos sin el aval de una inspecci\u00f3n completa, anunci\u00f3 hoy el Servicio de Inocuidad e Inspecci\u00f3n &nbsp;del Departamento de Agricultura (U.S. Department of Agriculture\u2019s Food Safety and Inspection Service -- FSIS por sus siglas en ingl\u00e9s).&nbsp;</p>\n\n<p>Transatlantic Foods, Inc. opera dos establecimientos distintos\u2014uno localizado en Scranton, Pa. y el otro en Andover, N.J. &nbsp;La raz\u00f3n por la que se est\u00e1 efectuando esta retirada se debe a que el establecimiento de Andover, N.J. no posee los permisos de inspecci\u00f3n adecuados de FSIS para procesar alimentos. Al no poseer dichos permisos este establecimiento tampoco tiene inspectores asignados que efect\u00faen las inspecciones debidas de sus productos. Aun as\u00ed, la compa\u00f1\u00eda continu\u00f3 produciendo productos en el establecimiento de Andover, N.J. pero usando etiquetas aprobadas para ser usadas en y&nbsp; portando el n\u00famero del establecimiento de la localidad de Scranton, Pa. Adicionalmente, algunos de estos productos fueron producidos sin el aval de una inspecci\u00f3n completa en otras localidades no identificadas.</p>\n\n<p>Los productos sujetos a la retirada son (los nombres est\u00e1n mencionados en ingl\u00e9s):</p>\n\n<p>Grasa de pato</p>\n\n<ul>\n\t<li>Paquetes de 10-oz. de \u201cAux Delices des Bois Natural Duck Fat\u201d con c\u00f3digos de empaque (T-001 al 365; H-001 al 365; \u00f3 F-001 al 136)</li>\n</ul>\n\n<p>Tocineta</p>\n\n<ul>\n\t<li>Contenedores de pl\u00e1stico de 10-oz. de \u201cAux Delices des Bois Artisanal Uncured Bacon Herbes de Provence Uncured Bacon\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>Contenedores de pl\u00e1stico de 10-oz. de \u201cAux Delices des Bois Artisanal Uncured Bacon Farmhouse Country Uncured Bacon\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>Contenedores de pl\u00e1stico de 10-oz. de \u201cAux Delices des Bois Artisanal Uncured Bacon Southwestern Style Uncured Bacon\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>Contenedores de pl\u00e1stico de 10-oz. de \u201cAux Delices des Bois Artisanal Uncured Bacon Pepper &amp; Garlic Uncured Bacon\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n</ul>\n\n<p>Salchichas Frescas</p>\n\n<ul>\n\t<li>varios paquetes de pesos diversos de \u201cAux Delices des Bois Breakfast Sage Sausage\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cChestnut Valley Breakfast Sage Sausage\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cAux Delices des Bois Brooklyn Lager Cheddar Bratwurst\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cChestnut Valley Brooklyn Lager Cheddar Bratwurst\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cAux Delices des Bois Pork Brooklyn Bratwurst\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cChestnut Valley Pork Brooklyn Bratwurst\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cAux Delices des Bois Chorizo Sausage\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cChestnut Valley Chorizo Sausage\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cChestnut Valley Irish Banger Sausage\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cAux Delices des Bois Pork &amp; Broccoli Rabe Sausage\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cChestnut Valley Pork &amp; Broccoli Rabe Sausage\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cAux Delices des Bois Cheese &amp; Parsley Sausage\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cChestnut Valley Cheese &amp; Parsley Sausage\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cAux Delices des Bois Pork &amp; Smokey Bacon Sausage\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cChestnut Valley Pork &amp; Smokey Uncured Bacon Sausage\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cAux Delices des Bois Hot Italian Sausage\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cChestnut Valley Hot Italian Sausage\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cAux Delices des Bois Sweet Italian Sausage\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cChestnut Valley Sweet Italian Sausage\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cChestnut Valley Fresh Kielbasa\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cAux Delices des Bois Chicken Breakfast Sausage\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cChestnut Valley Chicken Breakfast Sausage\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cAux Delices des Bois Chipotle Honey Flavored Chicken Sausage\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cChestnut Valley Chipotle Honey Flavored Chicken Sausage\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cChestnut Valley Chipotle Honey Flavored Chicken Sausage\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cAux Delices des Bois Chicken Spinach &amp; Feta Sausage\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cChestnut Valley Chicken Spinach &amp; Feta Sausage\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cAux Delices des Bois Buffalo Style Chicken Sausage\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cChestnut Valley Buffalo Style Chicken Sausage\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cChestnut Valley Turkey Breakfast Sausage\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cAux Delices des Bois Chicken Marsala &amp; Mushrooms Sausage\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cChestnut Valley Chicken Marsala &amp; Mushrooms Sausage\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cAux Delices des Bois Chicken Apple Sausage\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n\t<li>varios paquetes de pesos diversos de \u201cChestnut Valley Chicken Apple Sausage\u201d con c\u00f3digos de empaque (T-001 al 365 o H-001 al 290)</li>\n</ul>\n\n<p>Tanto FSIS como la compa\u00f1\u00eda no han recibido informes de enfermedades vinculadas al consumo de estos productos.</p>\n\n<p>La grasa de pato incluida en esta retirada fue producida desde enero del 2012 hasta mayo del 2014 y porta el n\u00famero de establecimiento \u201cP-39954.\u201d El resto de los productos fueron producidos antes del 18 de octubre del 2013 y portan el n\u00famero de establecimiento \u201cEst. 33806\u201d o \u201cEst. 45100,\u201d \u201cP-33806\u201d o \u201cP-45100\u201d dentro de la marca de inspecci\u00f3n de USDA. Estos productos fueron distribuidos a establecimientos de ventas al por menor, locales de ventas al mayoreo y ventas por intenet a nivel nacional.</p>\n\n<p>El problema fue descubierto luego que FSIS recibiera una notificaci\u00f3n an\u00f3nima y comenzara una investigaci\u00f3n en el establecimiento vinculado.</p>\n\n<p>FSIS conduce rutinariamente cotejos de efectividad para asegurarse que se est\u00e9n tomando los&nbsp; pasos necesarios para asegurarse que el producto no est\u00e9 m\u00e1s disponible a los consumidores.&nbsp; Conforme est\u00e9 disponible, un(os)&nbsp; listado(s) de distribuci\u00f3n ser\u00e1n colocados en la p\u00e1gina de internet del FSIS en:&nbsp;<a href=\"http://www.fsis.usda.gov/avisos\">http://www.fsis.usda.gov/avisos</a></p>\n\n<p>Miembros de los medios de comunicaci\u00f3n que tengan preguntas con respecto a esta retirada de producto deben contactar a Cynthia Chovet al (212) 330-8286, extensi\u00f3n 1010. Consumidores que tengan preguntas con respecto a esta retirada de producto deben contactar a Amy Farges al (212) 330-8285, extensi\u00f3n 1003.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>\n\n\n",
+  "field_year": "2014",
+  "langcode": "Spanish",
+  "field_has_spanish": "True"
+ },
+ {
+  "field_title": "FSIS Issues Public Health Alert for Beef Kofta Products Served at The Kebab Shop Restaurant Locations Due to Possible E. Coli O157:H7 Contamination",
+  "field_recall_number_export": "PHA-05242026-01",
+  "field_recall_url": "http://www.fsis.usda.gov/recalls-alerts/fsis-issues-public-health-alert-beef-kofta-products-served-kebab-shop-restaurant",
+  "field_active_notice": "False",
+  "field_states": [
+   "California",
+   "Texas",
+   "Florida"
+  ],
+  "field_archive_recall": "False",
+  "field_closed_year": "",
+  "field_company_media_contact": [
+   "\n  Company Contact\n  \n    The Kebab Shop\n    \n        888-965-5821\n              FoodSafety@thekebabshop.com\n      \n\n"
+  ],
+  "field_distro_list": [],
+  "field_en_press_release": [],
+  "field_establishment": [
+   "Olympia Food Industries, Inc."
+  ],
+  "field_labels": [],
+  "field_media_contact": "Ethan Pickrell",
+  "field_risk_level": "Public Health Alert",
+  "field_last_modified_date": "2026-06-01",
+  "field_press_release": [],
+  "field_processing": [
+   "Raw - Non Intact"
+  ],
+  "field_product_items": [],
+  "field_qty_recovered": "",
+  "field_recall_classification": "Public Health Alert",
+  "field_recall_date": "2026-05-24",
+  "field_recall_number": "PHA-05242026-01",
+  "field_recall_reason": [
+   "Product Contamination"
+  ],
+  "field_recall_type": "Public Health Alert",
+  "field_related_to_outbreak": "False",
+  "field_summary": "<p><strong>Editor's Note - June 1, 2026: </strong>Whole genome sequencing results show that the beef kofta samples collected by FSIS and produced at Olympia Food Industries (Est. 18743) matched the outbreak strain of <em>E. coli&nbsp;</em>O157:H7. FSIS continues to coordinate with the California Department of Public Health and local health departments in California on the outbreak investigation.</p>\n<p><strong>WASHINGTON, May 24, 2026 -</strong> The U.S. Department of Agriculture's Food Safety and Inspection Service (FSIS) is issuing a public health alert due to concerns that beef kofta products served at The Kebab Shop restaurant locations may be contaminated with Shiga toxin-producing <em>E. coli</em> (STEC) O157:H7. A recall was not requested because the products are no longer available for purchase.</p>\n<p>The beef kofta was produced as a raw ground beef product by Olympia Food Industries, Inc. dba Olympia Foods (Est. 18743) in Franklin Park, Illinois, on January 6, 2026, and supplied to The Kebab Shop restaurant locations in California, Texas, and Florida.<br>The problem was discovered as part of an ongoing illness outbreak investigation. FSIS, the California Department of Public Health (CDPH), and local health departments in California are investigating a localized outbreak of <em>E. coli</em> O157:H7 that includes 9 sick people in California. As of May 24, 2026, illness onset dates have been reported ranging from March 27, 2026, to April 30, 2026. Because the identified illnesses are limited to California, CDPH is leading this investigation with FSIS. FSIS continues to keep its federal partners informed as the investigation progresses. FSIS collected raw ground beef kofta product samples that tested positive for <em>E. coli</em> O157:H7. Further testing is ongoing to determine if the product samples are related to the specific outbreak strain.</p>\n<p>FSIS is issuing this public health alert to ensure that consumers in California, Texas, and Florida are aware of the outbreak. The Kebab Shop stopped selling beef kofta at all of its restaurant locations on May 18, 2026.</p>\n<p><em>E. coli</em> O157:H7 is a potentially deadly bacterium that can cause dehydration, bloody diarrhea and abdominal cramps 2 to 8 days (3 to 4 days, on average) after exposure to the organism. While most people recover within a week, some develop a type of kidney failure called hemolytic uremic syndrome (HUS). This condition can occur among persons of any age but is most common in children under 5 years old and older adults. It is marked by easy bruising, pallor, and decreased urine output. Consumers who ate beef kofta from any location of The Kebab Shop and develop symptoms of STEC infection within 10 days of exposure should contact their health care provider. Consumers should discard any leftover beef kofta from The Kebab Shop.</p>\n<p>As a general food safety practice, FSIS advises consumers to cook all ground beef products to an internal temperature of 160 degrees F, verified with a food thermometer. More information is available at <a href=\"https://www.fsis.usda.gov/safetempchart\">https://www.fsis.usda.gov/safetempchart</a>.</p>\n<p>Media and consumers with questions regarding the public health alert can contact The Kebab Shop at 888-965-5821 or <a href=\"mailto:FoodSafety@thekebabshop.com\">FoodSafety@thekebabshop.com</a>.</p>\n<p>Consumers with food safety questions can call the toll-free USDA Meat and Poultry Hotline at 888-MPHotline (888-674-6854) or send a question via email to <a href=\"mailto:MPHotline@usda.gov\">MPHotline@usda.gov</a>. For consumers that need to report a problem with a meat, poultry, or egg product, the online Electronic Consumer Complaint Monitoring System can be accessed 24 hours a day at <a href=\"https://foodcomplaint.fsis.usda.gov/eCCF/\">https://foodcomplaint.fsis.usda.gov/eCCF/</a>.</p>\n",
+  "field_year": "2026",
+  "langcode": "English",
+  "field_has_spanish": "False"
+ },
+ {
+  "field_title": "Papa John&#039;s Salads and Produce Recalls Ready-To-Eat Salad with Chicken Products Due To Possible Listeria Contamination",
+  "field_recall_number_export": "043-2016",
+  "field_recall_url": "http://www.fsis.usda.gov/recalls-alerts/papa-johns-salads-and-produce-recalls-ready-eat-salad-chicken-products-due-possible",
+  "field_active_notice": "False",
+  "field_states": [
+   "Colorado",
+   "Idaho",
+   "Minnesota",
+   "Montana",
+   "Nebraska",
+   "New Mexico",
+   "South Dakota",
+   "Wyoming"
+  ],
+  "field_archive_recall": "True",
+  "field_closed_year": "2016",
+  "field_company_media_contact": [],
+  "field_distro_list": [],
+  "field_en_press_release": [],
+  "field_establishment": [
+   "Taylor Farms Southwest Inc."
+  ],
+  "field_labels": [
+   "043-2016-label"
+  ],
+  "field_media_contact": "Kristen Booze",
+  "field_risk_level": "High - Class I",
+  "field_last_modified_date": "",
+  "field_press_release": [],
+  "field_processing": [
+   "Fully Cooked - Not Shelf Stable"
+  ],
+  "field_product_items": [],
+  "field_qty_recovered": "219 pounds",
+  "field_recall_classification": "Class I",
+  "field_recall_date": "2016-05-20",
+  "field_recall_number": "043-2016",
+  "field_recall_reason": [
+   "Product Contamination"
+  ],
+  "field_recall_type": "Closed Recall",
+  "field_related_to_outbreak": "False",
+  "field_summary": "<p><strong>WASHINGTON, May 20, 2016 </strong> Papa Johns Salads and Produce, a Tolleson, Ariz. establishment, is recalling approximately 373 pounds of ready-to-eat salad with chicken products that may be adulterated with<em> Listeria monocytogenes</em>, the U.S. Department of Agricultures Food Safety and Inspection Service (FSIS) announced today.</p>\n<p>The Signature Caf\u00c3\u2021 Citrus Kale Salad with Chicken items were produced from May 10 through May 17, 2016. The following products are subject to recall: [<a href=\"/sites/default/files/import/043-2016-label.pdf\">View Label</a> (PDF Only)]</p>\n<ul type=\"disc\">\n<li>7.5-oz. plastic packages of Signature Caf\u00c3\u2021 Citrus Kale Salad with Chicken Dress with Lemon, Salt and Pepper with Use By dates of May 17 through May 24, 2016. The packages will have the following UPC code of 2113008148.</li>\n</ul>\n<p>The products subject to recall bear establishment number P-40280 inside the USDA mark of inspection. These items were shipped to retail locations in Colorado, Idaho, Minnesota, Montana, Nebraska, New Mexico, South Dakota and Wyoming.</p>\n<p>The problem was discovered on May 19, 2016, when the establishment was notified by SunOpta that its sunflower kernel products used in Papa Johns Salads and Produce products were involved in a recall due to possible contamination with <em>Listeria monocytogenes.</em> There have been no confirmed reports of adverse reactions due to consumption of these products.</p>\n<p>SunOptas recall can be found at: <a href=\"http://www.fda.gov/Safety/Recalls/ucm502184.htm\">http://www.fda.gov/Safety/Recalls/ucm502184.htm</a>.</p>\n<p>Consumption of food contaminated with <em>Listeria monocytogenes </em>can cause listeriosis, a serious infection that primarily affects older adults, persons with weakened immune systems, and pregnant women and their newborns. Less commonly, persons outside these risk groups are affected.</p>\n<p>Listeriosis can cause fever, muscle aches, headache, stiff neck, confusion, loss of balance and convulsions sometimes preceded by diarrhea or other gastrointestinal symptoms. An invasive infection spreads beyond the gastrointestinal tract. In pregnant women, the infection can cause miscarriages, stillbirths, premature delivery or life-threatening infection of the newborn. In addition, serious and sometimes fatal infections in older adults and persons with weakened immune systems. Listeriosis is treated with antibiotics. Persons in the higher-risk categories who experience flu-like symptoms within two months after eating contaminated food should seek medical care and tell the health care provider about eating the contaminated food.</p>\n<p>Consumers who have purchased these products are urged not to consume them. These products should be thrown away or returned to the place of purchase.</p>\n<p>FSIS routinely conducts recall effectiveness checks to verify recalling firms notify their<strong> </strong>customers of the recall and that steps are taken to make certain that the product is no longer available to consumers. When available, the retail distribution list(s) will be posted on the FSIS website at <a href=\"http://www.fsis.usda.gov/recalls\">www.fsis.usda.gov/recalls</a>.</p>\n<p>Media and consumers with questions regarding the recall can contact Brandy Rousselle, Consumer Relations Manager, at (480) 894-6885 ext. 125.</p>\n<p>Consumers with food safety questions can \"Ask Karen,\" the FSIS virtual representative available 24 hours a day at <a href=\"http://AskKaren.gov\">AskKaren.gov</a> or via smartphone at <a href=\"http://m.AskKaren.gov\">m.askkaren.gov</a>. The toll-free USDA Meat and Poultry Hotline 1-888-MPHotline (1-888-674-6854) is available in English and Spanish and can be reached from 10 a.m. to 4 p.m. (Eastern Time) Monday through Friday. Recorded food safety messages are available 24 hours a day. The online Electronic Consumer Complaint Monitoring System can be accessed 24 hours a day at: <a href=\"http://www.fsis.usda.gov/reportproblem\">http://www.fsis.usda.gov/reportproblem</a>.</p>\n<p dir=\"ltr\">&nbsp;</p>\n<p><strong>PREPARING PRODUCT FOR SAFE CONSUMPTION<br><br>\nUSDA Meat and Poultry Hotline<br><br>\n1-888-MPHOTLINE or visit<br><br>\n<a href=\"http://www.fsis.usda.gov\">www.fsis.usda.gov</a></strong></p>\n<p>Wash hands with warm, soapy water before and after handling raw meat and poultry for at least 20 seconds. Wash cutting boards, dishes and utensils with hot, soapy water. Immediately clean spills.</p>\n<p>Do not eat hot dogs, luncheon meats, bologna or other deli meats unless reheated until steaming hot.</p>\n<p>Do not eat refrigerated pate, meat spreads from a meat counter or smoked seafood found in the refrigerated section of the store. Foods that do not need refrigeration, like canned tuna and canned salmon, are safe to eat. Refrigerate after opening.</p>\n<p>Do not drink raw (unpasteurized) milk and do not eat foods that have unpasteurized milk in them.</p>\n<p>Do not eat salads made in the store, such as ham salad, chicken salad, egg salad, tuna salad or seafood salad.</p>\n<p>Do not eat soft cheeses, such as Feta, queso blanco, queso fresco, Brie, Camembert cheeses, blue-veined cheeses and Panela, unless it is labeled as made with pasteurized milk.</p>\n<p>Use precooked or ready-to-eat food as soon as you can. <em>Listeria monocytogenes</em> can grow in the refrigerator. The refrigerator should be 40\u00c3\u0178 F or cooler and the freezer 0\u00c3\u0178 F or colder. Use an appliance thermometer to check the temperature of your refrigerator.</p>\n",
+  "field_year": "2016",
+  "langcode": "English",
+  "field_has_spanish": "False"
+ },
+ {
+  "field_title": "Power Plate Meals, LLC Recalls Frozen Meatloaf Products Due to Misbranding and Undeclared Allergens",
+  "field_recall_number_export": "008-2026",
+  "field_recall_url": "http://www.fsis.usda.gov/recalls-alerts/power-plate-meals-llc-recalls-frozen-meatloaf-products-due-misbranding-and",
+  "field_active_notice": "False",
+  "field_states": [
+   "Minnesota",
+   "North Dakota",
+   "South Dakota"
+  ],
+  "field_archive_recall": "False",
+  "field_closed_year": "",
+  "field_company_media_contact": [
+   "\n  Company Contact\n  \n    Power Plate Meals, LLC, customer service\n    \n              hungry2help@powerplatemeals.com\n      \n\n"
+  ],
+  "field_distro_list": [],
+  "field_en_press_release": [],
+  "field_establishment": [],
+  "field_labels": [
+   "Recall-008-2026-Labels.pdf"
+  ],
+  "field_media_contact": "Meredith Carothers",
+  "field_risk_level": "Low - Class II",
+  "field_last_modified_date": "2026-06-18",
+  "field_press_release": [],
+  "field_processing": [
+   "Fully Cooked - Not Shelf Stable"
+  ],
+  "field_product_items": [
+   "13.3-oz. vacuum sealed plastic tray packages containing \u201cPOWER PLATE MEALS MEATLOAF WITH GARLIC MASHED POTATOES\u201d and \u201cUSE BY\u201d dates between 6/25/26 and 6/10/27."
+  ],
+  "field_qty_recovered": "",
+  "field_recall_classification": "Class II",
+  "field_recall_date": "2026-06-18",
+  "field_recall_number": "008-2026",
+  "field_recall_reason": [
+   "Unreported Allergens"
+  ],
+  "field_recall_type": "Active Recall",
+  "field_related_to_outbreak": "False",
+  "field_summary": "<p><strong>WASHINGTON, June 18, 2026 -</strong> Power Plate Meals, LLC, a West Fargo, N.D. Cooperative Interstate Shipping establishment, is recalling approximately 5,795 pounds of frozen meatloaf with garlic mashed potatoes products due to misbranding and an undeclared allergen, the U.S. Department of Agriculture's Food Safety and Inspection Service (FSIS) announced today. The product contains soy, a known allergen, which is not declared on the product label.</p>\n<p>The frozen meatloaf with garlic mashed potatoes items were produced June 25, 2025, to June 10, 2026. The following products are subject to recall [<a href=\"/sites/default/files/food_label_pdf/2026-06/Recall-008-2026-Labels.pdf\">view labels</a>]:</p>\n<ul type=\"disc\">\n<li>13.3-oz. vacuum sealed plastic tray packages containing \"POWER PLATE MEALS MEATLOAF WITH GARLIC MASHED POTATOES\" and \"USE BY\" dates between 6/25/26 and 6/10/27.</li>\n</ul>\n<p>The products subject to recall bear establishment number \"217SEND\" inside the USDA mark of inspection. These items were shipped to distributors in Minnesota, North Dakota and South Dakota.</p>\n<p>The problem was discovered when a state inspector notified FSIS that the final label did not contain soy in the ingredients list.</p>\n<p>There have been no confirmed reports of adverse reactions due to consumption of these products. Anyone concerned about a reaction should contact a healthcare provider.</p>\n<p>FSIS is concerned that some product may be in consumers' freezers. Consumers who have purchased these products are urged not to consume them. These products should be thrown away or returned to the place of purchase.</p>\n<p>FSIS routinely conducts recall effectiveness checks to verify recalling firms notify their customers of the recall and that steps are taken to make certain that the product is no longer available to consumers.</p>\n<p>Consumers and members of the media with questions about the recall can contact Power Plate Meals, LLC, customer service <a href=\"mailto:hungry2help@powerplatemeals.com\">hungry2help@powerplatemeals.com</a>.</p>\n<p>Consumers with food safety questions can call the toll-free USDA Meat and Poultry Hotline at 888-MPHotline (888-674-6854) or send a question via email to <a href=\"mailto:MPHotline@usda.gov\">MPHotline@usda.gov</a>. For consumers that need to report a problem with a meat, poultry, or egg product, the online Electronic Consumer Complaint Monitoring System can be accessed 24 hours a day at <a href=\"https://foodcomplaint.fsis.usda.gov/eCCF/\">https://foodcomplaint.fsis.usda.gov/eCCF/</a>.</p>\n<p>&nbsp;</p>\n",
+  "field_year": "2026",
+  "langcode": "English",
+  "field_has_spanish": "False"
+ },
+ {
+  "field_title": "Gaiser&#039;s European Style Provisions Inc. Recalls Ready-To-Eat Meat and Poultry Bologna Products Due to Misbranding ",
+  "field_recall_number_export": "024-2025",
+  "field_recall_url": "http://www.fsis.usda.gov/recalls-alerts/gaisers-european-style-provisions-inc--recalls-ready-eat-meat-and-poultry-bologna",
+  "field_active_notice": "False",
+  "field_states": [
+   "Nationwide"
+  ],
+  "field_archive_recall": "True",
+  "field_closed_year": "2025",
+  "field_company_media_contact": [
+   "\n  Company Contact\n  \n    Gaiser&#039;s European Style Provisions Inc.\n    Steven Shuchinski, Manager\n        908-656-3421\n              gaisers@verizon.net\n      \n\n"
+  ],
+  "field_distro_list": [],
+  "field_en_press_release": [],
+  "field_establishment": [
+   "Gaiser&#039;s European Style Provisions Inc."
+  ],
+  "field_labels": [
+   "Recall-024-2025-Labels.pdf"
+  ],
+  "field_media_contact": "Okechi Chigewe",
+  "field_risk_level": "Marginal - Class III",
+  "field_last_modified_date": "2025-06-27",
+  "field_press_release": [],
+  "field_processing": [
+   "Fully Cooked - Not Shelf Stable"
+  ],
+  "field_product_items": [
+   " \u2022 Vacuum-packed packages of \u201cFAMILY TREE BOLOGNA VEAL\u201d containing undeclared pork.",
+   " \u2022 Plastic-wrapped packages of \u201cBABUSHKA\u2019S RECIPE CHICKEN BOLOGNA\u201d containing undeclared pork.",
+   "\u2022 Plastic-wrapped packages of \u201cFANCY BOLOGNA\u201d labeled with pork as an ingredient but containing undeclared beef and chicken.",
+   "\u2022 Vacuum-packed packages of \u201cGAISERS RUSSIAN BRAND DOKTORSKAYA BOLOGNA\u201d containing undeclared beef.",
+   "\u2022 Plastic-wrapped packages of \u201cGAISERS BOLOGNA VEAL\u201d containing undeclared chicken and pork.",
+   "\u2022 Plastic-wrapped packages of \u201cGAISERS TURKEY BOLOGNA\u201d containing undeclared chicken and pork.",
+   "\u2022 Plastic-wrapped packages of \u201cCHICKEN BOLOGNA KYPOYKA PABA\u201d containing undeclared pork."
+  ],
+  "field_qty_recovered": "12,030 lbs",
+  "field_recall_classification": "Class III",
+  "field_recall_date": "2025-06-27",
+  "field_recall_number": "024-2025",
+  "field_recall_reason": [
+   "Misbranding"
+  ],
+  "field_recall_type": "Closed Recall",
+  "field_related_to_outbreak": "False",
+  "field_summary": "<p><strong>WASHINGTON, June 27, 2025 </strong>\u2013 Gaiser's European Style Provisions Inc., a Union, N.J., establishment, is recalling approximately 143,416 pounds of ready-to-eat bologna due to misbranding, the U.S. Department of Agriculture\u2019s Food Safety and Inspection Service (FSIS) announced today. The various bologna products subject to recall contain meat or poultry source materials that are not declared on the product labels.</p>\n<p>The ready-to-eat bologna items were produced between March 20 and June 20, 2025. The following products are subject to recall [<a href=\"https://www.fsis.usda.gov/sites/default/files/food_label_pdf/2025-06/Recall-024-2025-Labels.pdf\">view labels</a>]:</p>\n<ul>\n<li>Vacuum-packed packages of \u201cFAMILY TREE BOLOGNA VEAL\u201d containing undeclared pork.</li>\n<li>Plastic-wrapped packages of \u201cBABUSHKA\u2019S RECIPE CHICKEN BOLOGNA\u201d containing undeclared pork.</li>\n<li>Plastic-wrapped packages of \u201cFANCY BOLOGNA\u201d labeled with pork as an ingredient but containing undeclared beef and chicken.</li>\n<li>Vacuum-packed packages of \u201cGAISERS RUSSIAN BRAND DOKTORSKAYA BOLOGNA\u201d containing undeclared beef.</li>\n<li>Plastic-wrapped packages of \u201cGAISERS BOLOGNA VEAL\u201d containing undeclared chicken and pork.</li>\n<li>Plastic-wrapped packages of \u201cGAISERS TURKEY BOLOGNA\u201d containing undeclared chicken and pork.</li>\n<li>Plastic-wrapped packages of \u201cCHICKEN BOLOGNA KYPOYKA PABA\u201d containing undeclared pork.</li>\n</ul>\n<p>The products subject to recall were distributed to wholesale and retail locations nationwide and bare establishment number \u201cEST. 5385\u201d inside the USDA mark of inspection on the product labels.&nbsp; Some products would have been weighed, wrapped, and labeled in retail store locations at the time of purchase.</p>\n<p>The problem was discovered when FSIS was notified by the Office of Inspector General (OIG) of a complaint received through the OIG\u2019s hotline. FSIS investigated the complaint and determined that the products contained source materials that were not declared on the label.</p>\n<p>Although FSIS does not expect any adverse health effects for Class III recalled products and there have been no confirmed reports of adverse reactions due to consumption of these products, anyone concerned about an illness should contact a healthcare provider.</p>\n<p>FSIS is concerned that the products may be in consumers\u2019 refrigerators and freezers. Consumers who have purchased these products are urged not to consume them. Restaurants and institutions are urged not to serve these products. These products should be thrown away or returned to the place of purchase.</p>\n<p>FSIS routinely conducts recall effectiveness checks to verify recalling firms notify their customers of the recall and that steps are taken to make certain that the product is no longer available to consumers.</p>\n<p>Consumers and members of the media with questions about the recall can contact Steven Shuchinski, Manager, Gaiser's European Style Provisions Inc., at (908) 686-3421 or <a href=\"mailto:gaisers@verizon.net\">gaisers@verizon.net</a>. &nbsp;</p>\n<p>Consumers with food safety questions can call the toll-free USDA Meat and Poultry Hotline at 888-MPHotline (888-674-6854) or send a question via email to <a href=\"mailto:MPHotline@usda.gov\">MPHotline@usda.gov</a>. For consumers that need to report a problem with a meat, poultry, or egg product, the online Electronic Consumer Complaint Monitoring System can be accessed 24 hours a day at <a href=\"https://gcc02.safelinks.protection.outlook.com/?url=https%3A%2F%2Ffoodcomplaint.fsis.usda.gov%2FeCCF%2F&amp;data=05%7C01%7CMelissa.Cordell%40usda.gov%7C2ffd2d584176447889ea08dbb48bd749%7Ced5b36e701ee4ebc867ee03cfa0d4697%7C1%7C0%7C638302284933732023%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&amp;sdata=Jx%2BVgXbvTA0YVfEYBwKrSu9MQne%2BUQZ3bT04yRxlrAI%3D&amp;reserved=0\">https://foodcomplaint.fsis.usda.gov/eCCF/</a>.</p>\n",
+  "field_year": "2025",
+  "langcode": "English",
+  "field_has_spanish": "False"
+ },
+ {
+  "field_title": "LPK1 Recalls Ready-to-Eat Chicken Caesar Wrap Products Due to Misbranding and Undeclared Allergen",
+  "field_recall_number_export": "006-2025",
+  "field_recall_url": "http://www.fsis.usda.gov/recalls-alerts/lpk1-recalls-ready-eat-chicken-caesar-wrap-products-due-misbranding-and-undeclared",
+  "field_active_notice": "False",
+  "field_states": [],
+  "field_archive_recall": "True",
+  "field_closed_year": "2025",
+  "field_company_media_contact": [
+   "\n  Company Contact\n  \n    Media Relations Specialist\n    Kristin Elder\n              kristin.elder@hkstrategies.com\n      \n\n",
+   "\n  Company Contact\n  \n    Consumers with questions can contact \n    Ryan Calbreath\n        925-457-6738\n              customerservice@freshandreadyfoods.com\n      \n\n"
+  ],
+  "field_distro_list": [],
+  "field_en_press_release": [],
+  "field_establishment": [
+   "Fresh &amp; Ready Foods LLC"
+  ],
+  "field_labels": [
+   "Recall-06-2025-Labels.pdf"
+  ],
+  "field_media_contact": "Soledad Calvino",
+  "field_risk_level": "Low - Class II",
+  "field_last_modified_date": "2025-02-23",
+  "field_press_release": [],
+  "field_processing": [
+   "Fully Cooked - Not Shelf Stable"
+  ],
+  "field_product_items": [
+   "\u2022\t10-oz. clear clamshell containers containing \u201cthoughtfully handmade just for you Chicken Caesar Wrap with parmesan cheese, lettuce, Caesar dressing\u201d with Best By dates of 21 FEB, 23 FEB, 25 FEB, and lot codes LPK1WA046, LPK1WA048, LPK1WA050 printed on t"
+  ],
+  "field_qty_recovered": "89 lbs",
+  "field_recall_classification": "Class II",
+  "field_recall_date": "2025-02-23",
+  "field_recall_number": "006-2025",
+  "field_recall_reason": [
+   "Misbranding",
+   "Unreported Allergens"
+  ],
+  "field_recall_type": "Closed Recall",
+  "field_related_to_outbreak": "False",
+  "field_summary": "<p><strong>EDITOR'S NOTE: Feb. 24, 2025</strong> - Details of this recall release were updated to reflect updated contact information for consumers. Consumers with questions about the recall can contact Ryan Calbreath, Quality Assurance Manager, LPK1, at 925-457-6738 or <a href=\"mailto:customerservice@freshandreadyfoods.com\">customerservice@freshandreadyfoods.com</a>.</p>\n\n<p dir=\"ltr\">&nbsp;</p>\n\n<p>WASHINGTON, Feb. 23, 2025 \u2013 LPK1, a Renton, Wash. establishment, is recalling approximately 303 pounds of ready-to-eat chicken Caesar wrap products due to misbranding and an undeclared allergen, the U.S. Department of Agriculture\u2019s Food Safety and Inspection Service (FSIS) announced today. The product\u2019s individually-wrapped Caesar dressing packet contains fish (anchovies), a known allergen, which is not declared on the product label.&nbsp;</p>\n\n<p>The ready-to-eat chicken Caesar wrap products were produced on February 15, 2025, February 17, 2025, and February 19, 2025. The following products are subject to recall [<a href=\"/sites/default/files/food_label_pdf/2025-02/Recall-06-2025-Labels.pdf\">view labels]</a>:</p>\n\n<ul>\n\t<li>10-oz. clear clamshell containers containing \u201cthoughtfully handmade just for you Chicken Caesar Wrap with parmesan cheese, lettuce, Caesar dressing\u201d with Best By dates of 21 FEB, 23 FEB, 25 FEB, and lot codes LPK1WA046, LPK1WA048, LPK1WA050 printed on the label.</li>\n</ul>\n\n<p>The products subject to recall bear establishment number \u201cP2276\u201d inside the USDA mark of inspection. These items were distributed to vending machines in office buildings in the state of Washington.</p>\n\n<p>The problem was discovered by the establishment during a routine quality assurance check of ingredient labels. The establishment then notified FSIS that the product may contain fish (anchovy), which is not declared on the label.</p>\n\n<p>There have been no confirmed reports of adverse reactions due to consumption of these products. Anyone concerned about an illness should contact a healthcare provider.</p>\n\n<p>FSIS is concerned that some product may be in office building vending machines. Consumers who have purchased these products are urged not to consume them and offices are urged not to serve these products. These products should be thrown away or returned to the vending machine owners.</p>\n\n<p>FSIS routinely conducts recall effectiveness checks to verify recalling firms notify their customers of the recall and that steps are taken to make certain that the product is no longer available to consumers.</p>\n\n<p>Members of the media with questions about the recall can contact Kristin Elder, Media Relations Specialist, H+K Strategies, at <a href=\"mailto:kristin.elder@hkstrategies.com\">kristin.elder@hkstrategies.com</a>. Consumers with questions can contact Ryan Calbreath, Quality Assurance Manager, LPK1, at 925-457-6738 or <a href=\"mailto:customerservice@freshandreadyfoods.com\">customerservice@freshandreadyfoods.com</a>.</p>\n\n<p>Consumers with food safety questions can call the toll-free USDA Meat and Poultry Hotline at 888-MPHotline (888-674-6854) or send a question via email to <a href=\"mailto:MPHotline@usda.gov\">MPHotline@usda.gov</a>. For consumers that need to report a problem with a meat, poultry, or egg product, the online Electronic Consumer Complaint Monitoring System can be accessed 24 hours a day at <a href=\"https://foodcomplaint.fsis.usda.gov/eCCF/\">https://foodcomplaint.fsis.usda.gov/eCCF/</a>.</p>\n",
+  "field_year": "2025",
+  "langcode": "English",
+  "field_has_spanish": "True"
+ },
+ {
+  "field_title": "LPK1 Retira Productos De Rollo De C\u00e9sar De Pollo Listos Para Consumir Debido A Un Error De Rotulaci\u00f3n Y Un Alergenos No Declarado  ",
+  "field_recall_number_export": "006-2025",
+  "field_recall_url": "http://www.fsis.usda.gov/es/retirada/lpk1-retira-productos-de-rollo-de-cesar-de-pollo-listos-para-consumir-debido-a-un-error-de",
+  "field_active_notice": "False",
+  "field_states": [],
+  "field_archive_recall": "True",
+  "field_closed_year": "2025",
+  "field_company_media_contact": [
+   "\n  Company Contact\n  \n    Media Relations Specialist\n    Kristin Elder\n              kristin.elder@hkstrategies.com\n      \n\n",
+   "\n  Company Contact\n  \n    Consumers with questions can contact \n    Ryan Calbreath\n        925-457-6738\n              customerservice@freshandreadyfoods.com\n      \n\n"
+  ],
+  "field_distro_list": [],
+  "field_en_press_release": [],
+  "field_establishment": [
+   "Fresh &amp; Ready Foods LLC"
+  ],
+  "field_labels": [
+   "Recall-06-2025-Labels.pdf"
+  ],
+  "field_media_contact": "Soledad Calvino",
+  "field_risk_level": "Low - Class II",
+  "field_last_modified_date": "2025-02-23",
+  "field_press_release": [],
+  "field_processing": [
+   "Fully Cooked - Not Shelf Stable"
+  ],
+  "field_product_items": [
+   "\u2022 Envases transparentes tipo concha de 10 oz. que contienen \u201cthoughtfully handmade just for you Chicken Caesar Wrap with parmesan cheese lettuce, Caesar dressing&quot; (Rollo de C\u00e9sar de Pollo con queso parmesano, lechuga, aderezo C\u00e9sar, cuidadosamente hechos "
+  ],
+  "field_qty_recovered": "89 lbs",
+  "field_recall_classification": "Class II",
+  "field_recall_date": "2025-02-23",
+  "field_recall_number": "006-2025",
+  "field_recall_reason": [
+   "Misbranding",
+   "Unreported Allergens"
+  ],
+  "field_recall_type": "Closed Recall",
+  "field_related_to_outbreak": "False",
+  "field_summary": "<p><strong>WASHINGTON, 23 de feb. de 2025 \u2013 </strong>LPK1, una compa\u00f1\u00eda en Renton, Wash., est\u00e1 retirando aproximadamente 303 libras de productos de rollo de c\u00e9sar de pollo listos para consumir debido a un error de rotulaci\u00f3n y un al\u00e9rgeno no declarado, anunci\u00f3 hoy el Servicio de Inocuidad e Inspecci\u00f3n de Alimentos (FSIS, por sus siglas en ingl\u00e9s) del Departamento de Agricultura de los EE.UU.&nbsp; El aderezo C\u00e9sar del producto, empacado individualmente, contiene pescado (anchoas), un al\u00e9rgeno conocido, que no esta declarado en la etiqueta del producto.&nbsp;</p>\n\n<p>Los productos listos para consumir de rollo de c\u00e9sar de pollo fueron producidos el 15 de febrero de 2025, el 17 de febrero de 2025 y el 19 de febrero de 2025. Los siguientes productos son objeto de la retirada:: [<a href=\"/sites/default/files/food_label_pdf/2025-02/Recall-06-2025-Labels.pdf\">Ver las Etiquetas</a>]:</p>\n\n<ul>\n\t<li>Envases transparentes tipo concha de 10 oz. que contienen \u201cthoughtfully handmade just for you Chicken Caesar Wrap with parmesan cheese lettuce, Caesar dressing\" (Rollo de C\u00e9sar de Pollo con queso parmesano, lechuga, aderezo C\u00e9sar, cuidadosamente hechos a mano para ti) con fechas de \"mejor consumir antes del\" 21 FEB, 23 FEB, 25 FEB, y c\u00f3digos de lote LPK1WA046, LPK1WA048, LPK1WA050 impresos en la etiqueta.</li>\n</ul>\n\n<p>Los productos objeto de la retirada est\u00e1n marcados con el n\u00famero de establecimiento \"P2276\" dentro del sello de inspecci\u00f3n del USDA. Estos art\u00edculos fueron distribuidos a m\u00e1quinas expendedoras en edificios de oficinas en el estado de Washington.</p>\n\n<p>El problema fue descubierto por la empresa al realizar la revisi\u00f3n de rutina de las etiquetas de ingredientes en el proceso de aseguramiento de la calidad. El establecimiento subsecuentemente le notific\u00f3 al FSIS que el producto pod\u00eda contener pescado (anchoas), el cual no est\u00e1 declarado en la etiqueta.</p>\n\n<p>No ha habido reportes confirmados de reacciones adversas debido al consumo de estos productos. Cualquier persona que tenga inquietudes acerca de una enfermedad debe contactar a un proveedor de servicios de salud.&nbsp;</p>\n\n<p>El FSIS muestra preocupaci\u00f3n debido a que parte del producto puede estar en las m\u00e1quinas expendedoras en los edificios de oficinas. Se le urge a los consumidores que compraron estos productos que no los consuman y, a las oficinas, que no los sirvan. Estos productos deben ser desechados o devueltos a los propietarios de las m\u00e1quinas expendedoras.</p>\n\n<p>El FSIS realiza revisiones sobre la efectividad de retirada de manera rutinaria para verificar que las empresas que realizan una retirada le notifiquen a sus clientes de esta y que se sigan los pasos necesarios para asegurarse de que el producto ya no est\u00e9 al alcance de los consumidores.</p>\n\n<p>Los medios con preguntas acerca de la retirada pueden contactar Kristin Elder, Especialista en relaciones p\u00fablicas, H+K Strategies, en <a href=\"mailto:kristin.elder@hkstrategies.com\">kristin.elder@hkstrategies.com</a>.Los consumidores con preguntas acerca de la retirada pueden contactar a Ryan Calbreath, Gerente de Aseguramiento de la Calidad, LPK1, al 925-457-6738 o en&nbsp;<a href=\"Mailto:ryan.calbreath@compass-usa.com\">ryan.calbreath@compass-usa.com</a>.</p>\n\n<p>Los consumidores que tengan preguntas sobre inocuidad de alimentos pueden llamar a la l\u00ednea directa gratuita del USDA sobre Carnes y Aves al 888-MPHotline (888-674-6854) o enviar una pregunta por correo electr\u00f3nico a <a href=\"mailto:MPHotline@usda.gov\">MPHotline@usda.gov</a>.. Los consumidores que necesiten reportar un problema con productos de carne, aves o de huevos, pueden acceder al Sistema Electr\u00f3nico de Seguimiento de Quejas de Consumidores las 24 horas del d\u00eda en <a href=\"https://foodcomplaint.fsis.usda.gov/eCCF/\">https://foodcomplaint.fsis.usda.gov/eCCF/</a>.</p>\n",
+  "field_year": "2025",
+  "langcode": "Spanish",
+  "field_has_spanish": "True"
+ },
+ {
+  "field_title": "H.J. Heinz Co. Recalls Products Incorrectly Labeled As Pork Gravy Due To Misbranding and Undeclared Allergens",
+  "field_recall_number_export": "111-2016",
+  "field_recall_url": "http://www.fsis.usda.gov/recalls-alerts/h.j.-heinz-co.-recalls-products-incorrectly-labeled-pork-gravy-due-misbranding-and",
+  "field_active_notice": "",
+  "field_states": [],
+  "field_archive_recall": "True",
+  "field_closed_year": "2017",
+  "field_company_media_contact": [],
+  "field_distro_list": [],
+  "field_en_press_release": [],
+  "field_establishment": [],
+  "field_labels": [
+   "111-2016-labels"
+  ],
+  "field_media_contact": "Felicia Thompson",
+  "field_risk_level": "High - Class I",
+  "field_last_modified_date": "",
+  "field_press_release": [],
+  "field_processing": [],
+  "field_product_items": [],
+  "field_qty_recovered": "0 pounds",
+  "field_recall_classification": "Class I",
+  "field_recall_date": "2016-11-22",
+  "field_recall_number": "111-2016",
+  "field_recall_reason": [],
+  "field_recall_type": "Closed Recall",
+  "field_related_to_outbreak": "",
+  "field_summary": "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\" \"http://www.w3.org/TR/REC-html40/loose.dtd\"><html><body><p><strong>WASHINGTON, Nov. 22, 2016 </strong> H.J. Heinz Co., a Muscatine, Iowa, establishment, initiated a recall on Nov. 19, 2016, of approximately 5,022 pounds of bistro au jus gravy product that is incorrectly labeled as pork gravy due to misbranding and undeclared allergens, the U.S. Department of Agricultures Food Safety and Inspection Service (FSIS) announced today. The au jus gravy product contains milk and soy, known allergens, which are not declared on the incorrect labeling for pork gravy.</p><p>The au jus gravy labeled incorrectly as pork gravy was produced on June 4, 2016. The following products are subject to recall: [<a href=\"/sites/default/files/import/111-2016-labels.pdf\">View Labels</a> (PDF Only)]</p><ul type=\"disc\"><li>558 cases containing 12 - 12-oz. jars (per case) of HEINZ HOMESTYLE BISTRO AU JUS GRAVY that is mislabeled with Homestyle Pork Gravy labels with Best By 12/28/2017 MU6F04 on the jar cap and Case Best By 12/28/17 MU6F04 on the cases.</li></ul><p>The products subject to recall bear establishment number M2041 inside the USDA mark of inspection. These items were shipped to a distributor and to retail locations nationwide.                                 </p><p>The problem was discovered by the company on Nov. 17, 2016, after they were notified by a customer that a jar labeled as Heinz Homestyle Pork Gravy looked darker than expected. The company determined the mislabeling incident occurred on June 4, 2016, when  a box of labels for the companys Heinz  Homestyle Pork Gravy product was brought to the processing line and used during the production and packaging of the au jus gravy. When the company initiated the recall, they contacted all of their customers that may have received the mislabeled gravy product (including more than 1,000 retail stores) informing them to remove the products from their store shelves. The company also provided a press release about the incident and initiation of a voluntary recall of incorrectly labelled products to the Food and Drug Administration (FDA). FSIS was notified of the issue by a FDA representative on Nov. 21, 2016 and, out an abundance of caution, FSIS is issuing its own press release.</p><p>There have been no confirmed reports of adverse reactions due to consumption of these products. Anyone concerned about a reaction should contact a healthcare provider.  </p><p>Consumers who have purchased these products are urged not to consume them. These products should be thrown away or returned to the place of purchase.</p><p>FSIS routinely conducts recall effectiveness checks to verify recalling firms notify their<strong> </strong>customers of the recall and that steps are taken to make certain that the product is no longer available to consumers. When available, the retail distribution list(s) will be posted on the FSIS website at <a href=\"http://www.fsis.usda.gov/recalls\">www.fsis.usda.gov/recalls</a>.</p><p>Consumers with questions about the recall can contact 1-866-572-3808.  Media with questions about the recall should contact Lynne Galia, Corporate Affairs Specialist at (847)-646-4396 or <a href=\"mailto:lynne.galia@kraftheinzcompany.com\">lynne.galia@kraftheinzcompany.com</a>.</p><p>Consumers with food safety questions can \"Ask Karen,\" the FSIS virtual representative available 24 hours a day at <a href=\"http://AskKaren.gov\">AskKaren.gov</a> or via smartphone at <a href=\"http://m.AskKaren.gov\">m.askkaren.gov</a>. The toll-free USDA Meat and Poultry Hotline 1-888-MPHotline (1-888-674-6854) is available in English and Spanish and can be reached from 10 a.m. to 4 p.m. (Eastern Time) Monday through Friday. Recorded food safety messages are available 24 hours a day. The online Electronic Consumer Complaint Monitoring System can be accessed 24 hours a day at: <a href=\"http://www.fsis.usda.gov/reportproblem\">http://www.fsis.usda.gov/reportproblem</a>.</p></body></html>",
+  "field_year": "2016",
+  "langcode": "English",
+  "field_has_spanish": "True"
+ },
+ {
+  "field_title": "H.J. Heinz Co., Inc Retira Productos Etiquetados Incorrectamente Como Salsa De Cerdo  Por Error De Rotulacion Y Alergenos No Declarados",
+  "field_recall_number_export": "111-2016",
+  "field_recall_url": "http://www.fsis.usda.gov/es/retirada/h.j.-heinz-co.-inc-retira-productos-etiquetados-incorrectamente-como-salsa-de-cerdo-por",
+  "field_active_notice": "",
+  "field_states": [],
+  "field_archive_recall": "True",
+  "field_closed_year": "2017",
+  "field_company_media_contact": [],
+  "field_distro_list": [],
+  "field_en_press_release": [],
+  "field_establishment": [],
+  "field_labels": [
+   "111-2016-labels"
+  ],
+  "field_media_contact": "Felicia Thompson",
+  "field_risk_level": "High - Class I",
+  "field_last_modified_date": "",
+  "field_press_release": [],
+  "field_processing": [],
+  "field_product_items": [],
+  "field_qty_recovered": "0 pounds",
+  "field_recall_classification": "Class I",
+  "field_recall_date": "2016-11-22",
+  "field_recall_number": "111-2016",
+  "field_recall_reason": [],
+  "field_recall_type": "Closed Recall",
+  "field_related_to_outbreak": "",
+  "field_summary": "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\" \"http://www.w3.org/TR/REC-html40/loose.dtd\"><html><body><p><strong>WASHINGTON, 22 de noviembre de 2016 &Atilde;&plusmn; </strong>H.J. Heinz Co., un establecimiento localizado en Muscatine, Iowa., est&Acirc;&middot; retirando del mercado aproximadamente 5,022 libras de productos de salsa (&Atilde;&not;bistro au jus&Atilde;&reg;) etiquetado incorrectamente como salsa de cerdo (&Atilde;&not;pork gravy&Atilde;&reg;), debido a un error de rotulaci&Atilde;&#155;n y al&Atilde;&#136;rgenos no declarados, anunci&Atilde;&#155; hoy el Servicio de Inocuidad e Inspecci&Atilde;&#155;n de Alimentos del Departamento de Agricultura (<em>U.S. Department of Agriculture&Atilde;&shy;s Food Safety and Inspection Service - FSIS</em> por sus siglas en ingl&Atilde;&#136;s). El producto contiene leche y soya, al&Atilde;&#136;rgenos conocidos no declarados en la etiqueta incorrecta para el  producto de salsa de cerdo. </p><p>La salsa &Atilde;&not;au jus&Atilde;&reg; incorrectamente etiquetada como salsa de cerdo (&Atilde;&not;pork gravy&Atilde;&reg;) fue producida el 4 de junio de 2016. Los siguientes productos est&Acirc;&middot;n sujetos a esta retirada (los nombres est&Acirc;&middot;n mencionados en ingl&Atilde;&#136;s): [<a href=\"/sites/default/files/import/111-2016-labels_0.pdf\">Etiquetas</a> (formato PDF)]</p><ul><li>558 cajas, cada una conteniendo 12 frascos de 12 oz., de &Atilde;&not;HEINZ HOMESTYLE BISTRO AU JUS GRAVY&Atilde;&reg; incorrectamente etiquetados con la etiqueta de &Atilde;&not;Homestyle Pork Gravy&Atilde;&reg; con las letras &Atilde;&not;Best By 12/28/2017 MU6F04&Atilde;&reg; en las tapas de los frascos y las letras &Atilde;&not;Case Best By 12/28/17 MU6F04&Atilde;&reg; en las cajas.</li></ul><p>Los productos sujetos a esta retirada portan el n&Euml;&#153;mero de establecimiento &Atilde;&not;M2041&Atilde;&reg; dentro del sello de inspecci&Atilde;&#155;n de USDA. Estos productos fueron enviados a distribuidores y puntos deventa a nivel nacional.</p><p>El problema fue descubierto por la compa&Atilde;&#146;&Atilde;&#140;a el 17 de noviembre de 2016 despu&Atilde;&#136;s de que un consumidor notific&Atilde;&#155; a la compa&Atilde;&#146;&Atilde;&#140;a que un frasco etiquetado como &Atilde;&not;Heinz Homestyle Pork Gravy&Atilde;&reg; le parec&Atilde;&#140;a m&Acirc;&middot;s oscuro de lo esperado. La compa&Atilde;&#146;&Atilde;&#140;a determin&Atilde;&#155; que el error de rotulaci&Atilde;&#155;n ocurri&Atilde;&#155; el 4 de junio de 2016 cuando se trajo una caja de etiquetas del producto, &Atilde;&not;Heinz Homestyle Pork Gravy,&Atilde;&reg; a la l&Atilde;&#140;nea de procesamiento y utilizada durante de la producci&Atilde;&#155;n y empaque de los productos de salsa &Atilde;&not;au jus.&Atilde;&reg;  Cuando la compa&Atilde;&#146;&Atilde;&#140;a comenz&Atilde;&#155; la retirada, contact&Atilde;&#155; a todos los clientes que podr&Atilde;&#140;an haber recibido el producto de salsa con el error en la etiqueta (incluyendo a m&Acirc;&middot;s de 1,000 puntos de venta) informando que removieran el mismo de los estantes.  La compa&Atilde;&#146;&Atilde;&#140;a tambi&Atilde;&#136;n facilit&Atilde;&#155; un comunicado de prensa sobre el incidente y el inicio de una retirada voluntaria por error de rotulaci&Atilde;&#155;n a la Administraci&Atilde;&#155;n de Alimentos y Medicamentos (FDA, por sus siglas en ingl&Atilde;&#136;s).  FSIS fue notificado por un representante de FDA el 21 de noviembre de 2016 y como una precauci&Atilde;&#155;n adicional, FSIS est&Acirc;&middot; emitiendo su propio comunicado de prensa.</p><p>No se han recibido informes confirmando reacciones adversas por causa del consumo de estos productos. Cualquier persona que tenga dudas o preocupaciones relacionadas con alguna reacci&Atilde;&#155;n deber&Acirc;&middot; comunicarse con su proveedor de servicios de salud.</p><p>Se le recomienda a los consumidores que hayan comprado estos productos no consumirlos. Estos productos deben ser desechados o devueltos al establecimiento comercial donde fueron comprados.</p><p>FSIS conduce rutinariamente cotejos de efectividad para asegurarse de que la compa&Atilde;&#146;&Atilde;&#140;a notifique a sus clientes acerca de la retirada y est&Atilde;&#136; tomando los pasos necesarios para que el producto ya no est&Atilde;&#136; disponible a los consumidores. Cuando est&Atilde;&#136; disponible, la lista (s) de distribuci&Atilde;&#155;n de puntos de venta ser&Acirc;&middot; publicada en la p&Acirc;&middot;gina de internet de FSIS en <a href=\"http://www.fsis.usda.gov/avisos\">www.fsis.usda.gov/avisos</a>.</p><p>Consumidores que tengan preguntas con respecto a esta retirada deben contactar a la compa&Atilde;&#146;&Atilde;&#140;a, al 1-866-572-3808. Miembros de la prensa con preguntas deben contactar a Lynne Galia, especialista de asuntos corporativos, al (847) 646-4396 o <a href=\"mailto:lynne.galia@kraftheinzcompany.com\">lynne.galia@kraftheinzcompany.com</a>.</p><p>Los consumidores que a&Euml;&#153;n tengan preguntas pueden utilizar el servicio de &Atilde;&not;Preg&Euml;&#153;ntele a Karen&Atilde;&reg;, la representante virtual de FSIS disponible 24 horas al d&Atilde;&#140;a en <a href=\"http://www.pregunteleakaren.gov/\">pregunteleakaren.gov</a> o v&Atilde;&#140;a tel&Atilde;&#136;fono inteligente en <a href=\"http://preguntaleakaren.custhelp.com/\">m.pregunteleakaren.gov</a>. Servicios de chat en vivo est&Acirc;&middot;n disponibles de lunes a viernes de 10 a.m. a 4 p.m. (hora del este). El n&Euml;&#153;mero libre de costos para la L&Atilde;&#140;nea de Informaci&Atilde;&#155;n sobre Carnes y Aves del USDA: 1-888-674-6854, disponible en ingl&Atilde;&#136;s y en espa&Atilde;&#146;ol, est&Acirc;&middot; disponible de 10 a.m. a 4 p.m. (hora del este) de lunes a viernes. Mensajes sobre la inocuidad de alimentos est&Acirc;&middot;n disponibles 24 horas al d&Atilde;&#140;a. El sistema en l&Atilde;&#140;nea de Monitor&Atilde;&#140;a Electr&Atilde;&#155;nica de Querellas de Consumidores est&Acirc;&middot; disponible 24 horas al d&Atilde;&#140;a en: <a href=\"http://ow.ly/haYg302bICw\">http://ow.ly/haYg302bICw</a>.</p></body></html>",
+  "field_year": "2016",
+  "langcode": "Spanish",
+  "field_has_spanish": "True"
+ },
+ {
+  "field_title": "FSIS Issues Public Health Alert for Ready-To-Eat Chicken Caesar Wrap Products That May Be Contaminated With Listeria",
+  "field_recall_number_export": "PHA-06252026-01",
+  "field_recall_url": "http://www.fsis.usda.gov/recalls-alerts/fsis-issues-public-health-alert-ready-eat-chicken-caesar-wrap-products-may-be",
+  "field_active_notice": "False",
+  "field_states": [
+   "Minnesota",
+   "Wisconsin"
+  ],
+  "field_archive_recall": "False",
+  "field_closed_year": "",
+  "field_company_media_contact": [
+   "\n  Company Contact\n  \n    Taher Inc.\n    Jill Teut, Communications\n              communications@taher.com\n      \n\n"
+  ],
+  "field_distro_list": [],
+  "field_en_press_release": [],
+  "field_establishment": [
+   "Taher, Inc."
+  ],
+  "field_labels": [
+   "PHA-06252026-01-Labels.pdf"
+  ],
+  "field_media_contact": "Meredith Carothers",
+  "field_risk_level": "Public Health Alert",
+  "field_last_modified_date": "2026-06-25",
+  "field_press_release": [],
+  "field_processing": [
+   "Fully Cooked - Not Shelf Stable"
+  ],
+  "field_product_items": [
+   "8.7-oz. clear plastic wrapped packages of \u201cFRESH SEASONS Kitchen Chicken Caesar Wrap\u201d with \u201cSell By:6/24/2026\u201d printed on the back label above the ingredients. "
+  ],
+  "field_qty_recovered": "",
+  "field_recall_classification": "Public Health Alert",
+  "field_recall_date": "2026-06-25",
+  "field_recall_number": "PHA-06252026-01",
+  "field_recall_reason": [
+   "Product Contamination"
+  ],
+  "field_recall_type": "Public Health Alert",
+  "field_related_to_outbreak": "False",
+  "field_summary": "<p><strong>WASHINGTON, June 25, 2026</strong> \u2013 The U.S. Department of Agriculture\u2019s Food Safety and Inspection Service (FSIS) is issuing a public health alert for&nbsp;ready-to-eat chicken Caesar wrap products due to concerns that the product may be contaminated with <em>Listeria monocytogenes</em> (<em>Lm</em>). A recall was not requested because the products are no longer available for purchase.</p>\n<p>The&nbsp;ready-to-eat chicken Caesar wrap items were produced on June 16, 2026. The following products subject to the public health alert are [<a href=\"/sites/default/files/food_label_pdf/2026-06/PHA-06252026-01-Labels.pdf\">view labels</a>]:&nbsp;</p>\n<ul type=\"disc\">\n<li>8.7-oz. clear plastic wrapped packages of \u201cFRESH SEASONS Kitchen Chicken Caesar Wrap\u201d with \u201cSell By:6/24/2026\u201d printed on the back label above the ingredients.&nbsp;</li>\n</ul>\n<p>The products bear establishment number \u201cP- 45091\u201d inside the USDA mark of inspection. These products were shipped to Holiday convenience stores in Minnesota and Wisconsin.</p>\n<p>The problem was discovered during routine FSIS product testing when a sample confirmed positive for the presence of <em>Listeria monocytogenes</em>.&nbsp;</p>\n<p>There have been no confirmed reports of illness due to consumption of these products. Anyone concerned about an illness should contact a health care provider.&nbsp;</p>\n<p>Consumption of food contaminated with <em>Lm&nbsp;</em>can cause listeriosis, a serious infection that primarily affects older adults, persons with weakened immune systems, and pregnant women and their newborns. Less commonly, persons outside these risk groups are affected.</p>\n<p>Listeriosis can cause fever, muscle aches, headache, stiff neck, confusion, loss of balance and convulsions sometimes preceded by diarrhea or other gastrointestinal symptoms. An invasive infection spreads beyond the gastrointestinal tract. In pregnant women, the infection can cause miscarriages, stillbirths, premature delivery or life-threatening infection of the newborn. In addition, serious and sometimes fatal infections can occur in older adults and persons with weakened immune systems. Listeriosis is treated with antibiotics. Persons in the higher-risk categories who experience flu-like symptoms within two months after eating contaminated food should seek medical care and tell the health care provider about eating the contaminated food.</p>\n<p>FSIS is concerned that some product may be in consumers\u2019 refrigerators.&nbsp;Consumers who have purchased these products are urged not to consume them. These products should be thrown away or returned to the place of purchase.</p>\n<p>Media and consumers with questions regarding the public health alert can contact Jill Teut, Communications, Taher Inc., at&nbsp;<a href=\"mailto:communications@taher.com\">communications@taher.com</a>.&nbsp;</p>\n<p>Consumers with food safety questions can call the toll-free USDA Meat and Poultry Hotline at 888-MPHotline (888-674-6854) or send a question via email to&nbsp;<a href=\"mailto:MPHotline@usda.gov\">MPHotline@usda.gov</a>.&nbsp;For consumers that need to report a problem with a meat, poultry, or egg product, the online Electronic Consumer Complaint Monitoring System can be accessed 24 hours a day at&nbsp;<a href=\"https://foodcomplaint.fsis.usda.gov/eCCF/\">https://foodcomplaint.fsis.usda.gov/eCCF/</a>.</p>\n",
+  "field_year": "2026",
+  "langcode": "English",
+  "field_has_spanish": "False"
+ },
+ {
+  "field_title": "Synear Foods USA, LLC Recalls Frozen Pork and Crab Soup Dumpling Products Due to Misbranding and Undeclared Allergens",
+  "field_recall_number_export": "007-2026",
+  "field_recall_url": "http://www.fsis.usda.gov/recalls-alerts/synear-foods-usa-llc-recalls-frozen-pork-and-crab-soup-dumpling-products-due",
+  "field_active_notice": "False",
+  "field_states": [
+   "California",
+   "New Jersey",
+   "Washington"
+  ],
+  "field_archive_recall": "True",
+  "field_closed_year": "2026",
+  "field_company_media_contact": [
+   "\n  Company Contact\n  \n    Synear Foods USA, LLC\n    Judy Zhu, CEO\n        818-341-3588 EXT. 101 \n              judyz@synearfoodsusa.com\n      \n\n"
+  ],
+  "field_distro_list": [
+   "RC-007-2026-Retail-List.pdf "
+  ],
+  "field_en_press_release": [],
+  "field_establishment": [
+   "Synear Foods USA, LLC"
+  ],
+  "field_labels": [
+   "Recall-007-2026-Labels.pdf"
+  ],
+  "field_media_contact": "Meredith Carothers",
+  "field_risk_level": "High - Class I",
+  "field_last_modified_date": "2026-06-12",
+  "field_press_release": [],
+  "field_processing": [
+   "Raw - Non Intact"
+  ],
+  "field_product_items": [
+   "13.23-oz. plastic bag packages containing \u201cSynear SUPREME SOUP DUMPLING PORK &amp; CRAB\u201d and \u201cBEST BY\u201d dates 15 OCT 2026, 10 NOV 2026, 23 DEC 2026, 26 JAN 2027, or 23 FEB 2027.",
+   "375-g. plastic bag packages containing \u201cSynear SUPREME SOUP DUMPLING DUMPLINGS \u00c0 LA SOUPE SUPR\u00caME PORK &amp; CRAB PORC ET CRABE\u201d with \u201cProduct of USA/Produit des E.-U\u201d and best by dates 2026 OC 15 or 2027 JA 26. "
+  ],
+  "field_qty_recovered": "23,505 lbs",
+  "field_recall_classification": "Class I",
+  "field_recall_date": "2026-05-31",
+  "field_recall_number": "007-2026",
+  "field_recall_reason": [
+   "Misbranding",
+   "Unreported Allergens"
+  ],
+  "field_recall_type": "Closed Recall",
+  "field_related_to_outbreak": "False",
+  "field_summary": "<p><strong>Editor\u2019s Note: </strong>June 12, 2026 \u2013 This release has been revised to reflect the accurate BEST BY date for the first product listed. The correct date is 13 DEC 2026, replacing the incorrect date of 23 DEC 2026.</p>\n<p><strong>WASHINGTON, May 31, 2026</strong>&nbsp;\u2013 Synear Foods USA, LLC, a Chatsworth, Calif. establishment, is recalling approximately 71,603&nbsp;pounds of frozen not-ready-to-eat (NRTE) pork and crab soup dumpling products due to misbranding and undeclared allergens,&nbsp;the U.S. Department of Agriculture\u2019s Food Safety and Inspection Service (FSIS) announced today. The product contains peanut,&nbsp;a known allergen, which is not declared on the product label.&nbsp;&nbsp;</p>\n<p>The frozen NRTE pork and crab soup dumpling products&nbsp;were produced between October 15, 2025, and February 23, 2026. &nbsp;The following products are subject to recall [<a href=\"/sites/default/files/food_label_pdf/2026-05/Recall-007-2026-Labels.pdf\">view labels</a>]:&nbsp;</p>\n<ul type=\"disc\">\n<li>13.23-oz. plastic bag packages containing \u201cSynear SUPREME SOUP DUMPLING PORK &amp; CRAB\u201d and \u201cBEST BY\u201d dates 15 OCT 2026, 10 NOV 2026, 13 DEC 2026, 26 JAN 2027, or 23 FEB 2027.</li>\n<li>375-g. plastic bag packages containing \u201cSynear SUPREME SOUP DUMPLING DUMPLINGS \u00c0 LA SOUPE SUPR\u00caME PORK &amp; CRAB PORC ET CRABE\u201d with&nbsp;\u201cProduct of USA/Produit des E.-U\u201d and best by dates 2026 OC 15 or 2027 JA 26.&nbsp;</li>\n</ul>\n<p>The products subject to recall bear establishment number \u201cEST. 45942\u201d inside&nbsp;the USDA mark of inspection. These items were shipped to retail locations in California, New Jersey, and Washington. These products were also exported to Canada.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</p>\n<p>The problem was discovered by FSIS inspection personnel during a routine allergen verification task. FSIS personnel identified that the products were formulated with peanut oil, but peanuts were not declared on the finished product label. The establishment determined that a formulation change led to the mislabeling.</p>\n<p>There have been no confirmed reports of adverse reactions due to consumption of these products.&nbsp;Anyone&nbsp;concerned about a reaction should contact a healthcare provider.&nbsp;&nbsp;</p>\n<p>FSIS is concerned that some product may be in consumers\u2019 freezers.&nbsp;Consumers who have purchased these products are urged not to consume them. These products should be thrown away or returned to the place of purchase.</p>\n<p>FSIS routinely conducts recall effectiveness checks to verify recalling firms notify their customers of the recall and that steps are taken to make certain that the product is no longer available to consumers. When available, the retail distribution lists will be posted on the FSIS website at&nbsp;<a href=\"/recalls\" data-entity-type=\"node\" data-entity-uuid=\"44ea4e6a-ea7d-43e2-af2e-d3d6d5c412e8\" data-entity-substitution=\"canonical\">www.fsis.usda.gov/recalls</a>.&nbsp;</p>\n<p>Consumers and members of the media with questions about the recall can contact&nbsp;Judy Zhu, CEO, Synear Foods USA, LLC, at 818-341-3588 EXT. 101 or&nbsp;<a href=\"mailto:judyz@synearfoodsusa.com\">judyz@synearfoodsusa.com</a>.&nbsp;</p>\n<p>Consumers with food safety questions can call the toll-free USDA Meat and Poultry Hotline at 888-MPHotline (888-674-6854) or send a question via email to&nbsp;<a href=\"mailto:MPHotline@usda.gov\">MPHotline@usda.gov</a>.&nbsp;For consumers that need to report a problem with a meat, poultry, or egg product, the online Electronic Consumer Complaint Monitoring System can be accessed 24 hours a day at&nbsp;<a href=\"https://foodcomplaint.fsis.usda.gov/eCCF/\">https://foodcomplaint.fsis.usda.gov/eCCF/</a>.</p>\n",
+  "field_year": "2026",
+  "langcode": "English",
+  "field_has_spanish": "False"
+ },
+ {
+  "field_title": "FSIS Issues Public Health Alert for Headcheese Deli Meat Products That May Be Contaminated With Listeria",
+  "field_recall_number_export": "PHA-05092026-01",
+  "field_recall_url": "http://www.fsis.usda.gov/recalls-alerts/fsis-issues-public-health-alert-headcheese-deli-meat-products-may-be-contaminated",
+  "field_active_notice": "False",
+  "field_states": [
+   "Indiana",
+   "Illinois"
+  ],
+  "field_archive_recall": "False",
+  "field_closed_year": "",
+  "field_company_media_contact": [
+   "\n  Company Contact\n  \n    Crawford Sausage Co., Inc. \n    \n        (773) 277 3095\n          \n\n"
+  ],
+  "field_distro_list": [],
+  "field_en_press_release": [],
+  "field_establishment": [
+   "Crawford Sausage Co., Inc."
+  ],
+  "field_labels": [
+   "pha-05092026-01-labels.pdf"
+  ],
+  "field_media_contact": "Bailey McWilliams",
+  "field_risk_level": "Public Health Alert",
+  "field_last_modified_date": "2026-05-09",
+  "field_press_release": [],
+  "field_processing": [
+   "Fully Cooked - Not Shelf Stable"
+  ],
+  "field_product_items": [
+   "Various weight packages packed or sliced in retail delis, containing \u201cDAISY BRAND Meat Products HEADCHEESE,\u201d with a \u201cUSE BY\u201d date of \u201cMAR 26 2026.\u201d ",
+   "Various weight packages packed or sliced in retail delis, containing \u201cDAISY BRAND Meat Products HEADCHEESE,\u201d with a red sticker indicating \u201cHOT\u201d and a \u201cUSE BY\u201d date of \u201cMAR 26 2026.\u201d  "
+  ],
+  "field_qty_recovered": "",
+  "field_recall_classification": "Public Health Alert",
+  "field_recall_date": "2026-05-09",
+  "field_recall_number": "PHA-05092026-01",
+  "field_recall_reason": [
+   "Product Contamination"
+  ],
+  "field_recall_type": "Public Health Alert",
+  "field_related_to_outbreak": "False",
+  "field_summary": "<p><strong>Editor\u2019s Note \u2013 May 14, 2026:</strong> Whole genome sequencing results show that headcheese samples collected by FSIS and produced at Crawford Sausage Co. (Est. 21406) tested positive for the outbreak strain of <em>Listeria monocytogenes</em>. FSIS continues to coordinate with the Illinois public health and agriculture partners on the outbreak investigation.</p>\n<p><strong>WASHINGTON, May 9, 2026 \u2013 </strong>The U.S. Department of Agriculture\u2019s Food Safety and Inspection Service (FSIS) is issuing a public health alert for headcheese that may be contaminated with <em>Listeria monocytogenes</em> (<em>Lm</em>). A recall was not requested because the products are no longer available for purchase. Headcheese is a ready-to-eat (RTE), pork deli meat product typically made from meat and seasonings that are cooked together and formed into a loaf or jelly-style product.</p>\n<p>The fully cooked pork headcheese products were produced on January 20, 2026. These products are intended for slicing at retail delis and some deli purchases may only show the producer\u2019s brand without the affected date. The following products are subject to the public health alert [<a href=\"https://www.fsis.usda.gov/sites/default/files/food_label_pdf/2026-05/pha-05092026-01-labels.pdf\">view labels</a>]:</p>\n<ul>\n<li>Various weight packages packed or sliced in retail delis, containing \u201cDAISY BRAND Meat Products HEADCHEESE,\u201d with a \u201cUSE BY\u201d date of \u201cMAR 26 2026.\u201d</li>\n<li>Various weight packages packed or sliced in retail delis, containing \u201cDAISY BRAND Meat Products HEADCHEESE,\u201d with a red sticker indicating \u201cHOT\u201d and a \u201cUSE BY\u201d date of \u201cMAR 26 2026.\u201d&nbsp;</li>\n</ul>\n<p>The products bear establishment number \u201cEST. 21406\u201d inside the USDA mark of inspection. These items were distributed to retail deli locations in Illinois and Indiana.</p>\n<p>The problem was discovered as part of an ongoing illness outbreak investigation. FSIS, the Illinois Department of Public Health, and local health departments in Illinois are investigating a localized outbreak of <em>Lm</em> that includes three sick people in Illinois. Because the outbreak is contained within the state, Illinois is leading this investigation with FSIS. FSIS continues to keep its federal partners at the Centers for Disease Control and Prevention informed as the investigation progresses.&nbsp;FSIS collected an unopened headcheese product sample that tested positive for <em>Lm</em>. Further testing is ongoing to determine if the product samples are related to the specific outbreak strain.</p>\n<p>FSIS is concerned that recently purchased product may remain in consumer refrigerators. Consumers who have purchased these products are urged not to consume them. These products should be thrown away or returned to the place of purchase. Consumers who have purchased these products are also urged to&nbsp;<a href=\"https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/refrigeration#11:~:text=the%20inner%20lining.-,Keeping%20the%20Refrigerator%20Clean,-One%20very%20important\">clean refrigerators thoroughly</a>&nbsp;to prevent the risk of cross-contamination.</p>\n<p>Consumption of food contaminated with <em>Lm </em>can cause listeriosis, a serious infection that primarily affects older adults, persons with weakened immune systems, and pregnant women and their newborns. Less commonly, persons outside these risk groups are affected.</p>\n<p>Listeriosis can cause fever, muscle aches, headache, stiff neck, confusion, loss of balance and convulsions sometimes preceded by diarrhea or other gastrointestinal symptoms. An invasive infection spreads beyond the gastrointestinal tract. In pregnant women, the infection can cause miscarriages, stillbirths, premature delivery or life-threatening infection of the newborn. In addition, serious and sometimes fatal infections can occur in older adults and persons with weakened immune systems. Listeriosis is treated with antibiotics. Persons in the higher-risk categories who experience flu-like symptoms within two months after eating contaminated food should seek medical care and tell the health care provider about eating the contaminated food.</p>\n<p>FSIS recommends retail delis clean and sanitize all food and non-food surfaces and discard any open meats and cheeses in the deli that housed the products subject to this alert. Retailers may refer to FSIS\u2019 guideline,&nbsp;<a href=\"https://www.fsis.usda.gov/guidelines/2023-0004\"><em>Best Practices Guidance for Controlling</em>&nbsp;<em>Listeria monocytogenes in Retail Delicatessens</em></a>, for information on steps to prevent <em>Lm</em> contamination in RTE foods that are prepared or sliced in retail delis and consumed in the home, such as deli meats and deli salads<em>.</em></p>\n<p>Media and consumers with questions regarding the public health alert can contact the Crawford Sausage Co., Inc. at (773) 277 3095.</p>\n<p>Consumers with food safety questions can call the toll-free USDA Meat and Poultry Hotline at 888-MPHotline (888-674-6854) or send a question via email to <a href=\"mailto:MPHotline@usda.gov\">MPHotline@usda.gov</a>. For consumers that need to report a problem with a meat, poultry, or egg product, the online Electronic Consumer Complaint Monitoring System can be accessed 24 hours a day at <a href=\"https://gcc02.safelinks.protection.outlook.com/?url=https%3A%2F%2Ffoodcomplaint.fsis.usda.gov%2FeCCF%2F&amp;data=05%7C01%7CMelissa.Cordell%40usda.gov%7C2ffd2d584176447889ea08dbb48bd749%7Ced5b36e701ee4ebc867ee03cfa0d4697%7C1%7C0%7C638302284933732023%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&amp;sdata=Jx%2BVgXbvTA0YVfEYBwKrSu9MQne%2BUQZ3bT04yRxlrAI%3D&amp;reserved=0\">https://foodcomplaint.fsis.usda.gov/eCCF/</a>.</p>\n",
+  "field_year": "2026",
+  "langcode": "English",
+  "field_has_spanish": "False"
+ },
+ {
+  "field_title": "FSIS Issues Public Health Alert for Ravioli Pasta With Beef Sauce Due to Misbranding and Undeclared Allergens",
+  "field_recall_number_export": "PHA-05042026-01",
+  "field_recall_url": "http://www.fsis.usda.gov/recalls-alerts/fsis-issues-public-health-alert-ravioli-pasta-beef-sauce-due-misbranding-and",
+  "field_active_notice": "False",
+  "field_states": [
+   "Maryland",
+   "New Jersey"
+  ],
+  "field_archive_recall": "False",
+  "field_closed_year": "",
+  "field_company_media_contact": [
+   "\n  Company Contact\n  \n    Customer Service Manager, Rana Meal Solutions\n    April Klein\n              aklein@ranausa.us\n      \n\n"
+  ],
+  "field_distro_list": [],
+  "field_en_press_release": [],
+  "field_establishment": [
+   "Rana Meal Solutions, LLC"
+  ],
+  "field_labels": [
+   "pha-05042026-01-labels"
+  ],
+  "field_media_contact": "Bailey McWilliams",
+  "field_risk_level": "Public Health Alert",
+  "field_last_modified_date": "2026-05-04",
+  "field_press_release": [],
+  "field_processing": [
+   "Heat Treated - Not Fully Cooked - Not Shelf Stable"
+  ],
+  "field_product_items": [
+   "\u2022\t32-oz. plastic bag packages containing \u201cGiovanni Rana RANA Rustic Beef Sauce &amp; Creamy Burrata Cheese Ravioli\u201d with \u201cuse by\u201d dates ranging 05/14/2026 \u2013 06/25/2026"
+  ],
+  "field_qty_recovered": "",
+  "field_recall_classification": "Public Health Alert",
+  "field_recall_date": "2026-05-04",
+  "field_recall_number": "PHA-05042026-01",
+  "field_recall_reason": [
+   "Mislabeling",
+   "Unreported Allergens"
+  ],
+  "field_recall_type": "Public Health Alert",
+  "field_related_to_outbreak": "False",
+  "field_summary": "<p><strong>WASHINGTON, May 4, 2026</strong> \u2013 The U.S. Department of Agriculture\u2019s Food Safety and Inspection Service (FSIS) is issuing a public health alert for ravioli pasta products due to misbranding and undeclared allergens. The ravioli labeled as beef and burrata may actually contain shrimp filling in lobster sauce. The shrimp and lobster, known allergens (shellfish), are not declared on the product label. FSIS is issuing this public health alert to ensure that consumers with shellfish allergies are aware that this product should not be consumed. A recall was not requested because the product is no longer available for purchase.</p>\n<p>The ravioli pasta items were produced between March 10, 2026, and April 21, 2026. The following product is subject to the public health alert [<a href=\"https://www.fsis.usda.gov/sites/default/files/food_label_pdf/2026-05/pha-05042026-01-labels.pdf\">view labels</a>]:</p>\n<ul>\n<li>32-oz. plastic bag packages containing \u201cGiovanni Rana RANA Rustic Beef Sauce &amp; Creamy Burrata Cheese Ravioli\u201d with \u201cuse by\u201d dates ranging 05/14/2026 \u2013 06/25/2026.</li>\n</ul>\n<p>The product bears establishment number \u201cEst. 44870\u201d inside the USDA mark of inspection. These items were shipped to Costco retail stores in Maryland and New Jersey.</p>\n<p>The problem was discovered when the establishment notified FSIS that they received two consumer complaints reporting the beef sauce and burrata ravioli actually contained shrimp ravioli.</p>\n<p>There have been no confirmed reports of adverse reactions due to consumption of these products. Anyone concerned about a reaction should contact a health care provider.</p>\n<p>FSIS is concerned that some product may be in consumers\u2019 refrigerators or freezers. Consumers who have purchased these products are urged not to consume them. These products should be thrown away or returned to the place of purchase.</p>\n<p>Media and consumers with questions regarding the public health alert can contact April Klein, Customer Service Manager, Rana Meal Solutions, at <a href=\"mailto:aklein@ranausa.us\">aklein@ranausa.us</a>.</p>\n<p>Consumers with food safety questions can call the toll-free USDA Meat and Poultry Hotline at 888-MPHotline (888-674-6854) or send a question via email to <a href=\"mailto:MPHotline@usda.gov\">MPHotline@usda.gov</a>. For consumers that need to report a problem with a meat, poultry, or egg product, the online Electronic Consumer Complaint Monitoring System can be accessed 24 hours a day at <a href=\"https://gcc02.safelinks.protection.outlook.com/?url=https%3A%2F%2Ffoodcomplaint.fsis.usda.gov%2FeCCF%2F&amp;data=05%7C01%7CMelissa.Cordell%40usda.gov%7C2ffd2d584176447889ea08dbb48bd749%7Ced5b36e701ee4ebc867ee03cfa0d4697%7C1%7C0%7C638302284933732023%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&amp;sdata=Jx%2BVgXbvTA0YVfEYBwKrSu9MQne%2BUQZ3bT04yRxlrAI%3D&amp;reserved=0\">https://foodcomplaint.fsis.usda.gov/eCCF/</a>.</p>\n",
+  "field_year": "2026",
+  "langcode": "English",
+  "field_has_spanish": "False"
+ },
+ {
+  "field_title": "FSIS Issues Public Health Alert for Various Meat and Poultry Products Containing FDA-Regulated Dairy Products That Have Been Recalled Due to Possible Salmonella Contamination",
+  "field_recall_number_export": "PHA-04302026-01",
+  "field_recall_url": "http://www.fsis.usda.gov/recalls-alerts/fsis-issues-public-health-alert-various-meat-and-poultry-products-containing-fda",
+  "field_active_notice": "False",
+  "field_states": [
+   "Nationwide"
+  ],
+  "field_archive_recall": "False",
+  "field_closed_year": "",
+  "field_company_media_contact": [],
+  "field_distro_list": [],
+  "field_en_press_release": [],
+  "field_establishment": [],
+  "field_labels": [
+   "PHA-04302026-01-Labels.pdf "
+  ],
+  "field_media_contact": "Tai Thompson",
+  "field_risk_level": "Public Health Alert",
+  "field_last_modified_date": "2026-05-15",
+  "field_press_release": [],
+  "field_processing": [
+   "Heat Treated - Not Fully Cooked - Not Shelf Stable"
+  ],
+  "field_product_items": [],
+  "field_qty_recovered": "",
+  "field_recall_classification": "Public Health Alert",
+  "field_recall_date": "2026-04-30",
+  "field_recall_number": "PHA-04302026-01",
+  "field_recall_reason": [
+   "Product Contamination"
+  ],
+  "field_recall_type": "Public Health Alert",
+  "field_related_to_outbreak": "False",
+  "field_summary": "<p><strong>Last Updated:</strong> This release was last updated on May 15, 2026, to reflect additional affected products and their corresponding labels.&nbsp;</p>\n<p><strong>WASHINGTON, APRIL 30, 2026</strong> \u2013 The U.S. Department of Agriculture\u2019s Food Safety and Inspection Service (FSIS) is issuing a public health alert for meat and poultry products containing FDA-regulated dairy ingredients that may be contaminated with <em>Salmonella</em>. FSIS expects additional downstream products will be identified as this ingredient recall progresses. As more information becomes available, FSIS will update this public health alert. Consumers should check back frequently.</p>\n<p>The list of products subject to the public health alert are available <a href=\"/sites/default/files/media_file/documents/PHA-04302026-01-Product-List.pdf\">here</a>, including information such as the establishment numbers and states where the products were distributed. The labels are available <a href=\"/sites/default/files/food_label_pdf/2026-04/PHA-04302026-01-Labels.pdf\">here</a>.</p>\n<p>The problem was discovered when FDA notified FSIS that multiple FSIS-regulated establishments received FDA-regulated ingredients formulated with dry milk powder that had been recalled.</p>\n<p>Consumption of food contaminated with&nbsp;<em>Salmonella</em>&nbsp;can cause salmonellosis, one of the most common bacterial foodborne illnesses. The most common symptoms of salmonellosis are diarrhea, abdominal cramps, and fever within 6 hours to 6 days after eating the contaminated product. The illness usually lasts 4 to 7 days. Most people recover without treatment. In some persons, however, the diarrhea may be so severe that the patient needs to be hospitalized. Older adults, infants, and persons with weakened immune systems are more likely to develop severe illness. Individuals concerned about an illness should contact their health care provider.</p>\n<p>There have been no confirmed reports of adverse reactions due to consumption of these products. Anyone concerned about a reaction should contact a health care provider.</p>\n<p>FSIS is concerned that some product may be in consumers\u2019 or retailers\u2019 refrigerators or freezers. Consumers who have purchased these products are urged not to consume them. Retailers who have purchased these products are urged not to serve or sell them. These products should be thrown away or returned to the place of purchase.</p>\n<p>Consumers with food safety questions can call the toll-free USDA Meat and Poultry Hotline at 888-MPHotline (888-674-6854) or send a question via email to <a href=\"mailto:MPHotline@usda.gov\">MPHotline@usda.gov</a>. For consumers that need to report a problem with a meat, poultry, or egg product, the online Electronic Consumer Complaint Monitoring System can be accessed 24 hours a day at <a href=\"https://foodcomplaint.fsis.usda.gov/eCCF/\">https://foodcomplaint.fsis.usda.gov/eCCF/</a>.</p>\n",
+  "field_year": "2026",
+  "langcode": "English",
+  "field_has_spanish": "False"
+ },
+ {
+  "field_title": "FSIS Issues Public Health Alert for Beef and Pork Products  Due to Misbranding and Undeclared Allergen",
+  "field_recall_number_export": "PHA-04092026-01",
+  "field_recall_url": "http://www.fsis.usda.gov/recalls-alerts/fsis-issues-public-health-alert-beef-and-pork-products-due-misbranding-and",
+  "field_active_notice": "False",
+  "field_states": [
+   "Florida",
+   "Maryland",
+   "New Jersey",
+   "Virginia"
+  ],
+  "field_archive_recall": "False",
+  "field_closed_year": "",
+  "field_company_media_contact": [
+   "\n  Company Contact\n  \n    President, Sky Ranch Meat LLC\n    Sang Min Lee\n        410-290-3643 ext. 9902 \n              a.lee@lotteplaza.com\n      \n\n"
+  ],
+  "field_distro_list": [],
+  "field_en_press_release": [],
+  "field_establishment": [
+   "Sky Ranch Meat LLC"
+  ],
+  "field_labels": [
+   "PHA-04092026-01-labels"
+  ],
+  "field_media_contact": "Meredith Carothers",
+  "field_risk_level": "Public Health Alert",
+  "field_last_modified_date": "2026-04-09",
+  "field_press_release": [],
+  "field_processing": [
+   "Raw - Intact"
+  ],
+  "field_product_items": [
+   "\u2022\t1.5-lb. clear plastic containers with safety lids containing \u201cQUALITY MEAT SKY RANCH PREMIUM PROVISIONS MARINATED BEEF RIBEYE ROLL /BULGOGI\u201d with \u201cSELL BY\u201d dates of \u201cDEC.11.25\u201d through \u201cAPR.16.26\u201d. ",
+   "\u2022\t1.5-lb. clear plastic containers with safety lids containing \u201cQUALITY MEAT SKY RANCH PREMIUM PROVISIONS MARINATED PORK TENDERIZED CT BUTT\u201d with \u201cSELL BY\u201d dates of \u201cDEC.11.25\u201d through \u201cAPR.16.26\u201d. ",
+   "\u2022\t1.5-lb. clear plastic containers with safety lids containing \u201cQUALITY MEAT SKY RANCH PREMIUM PROVISIONS MARINATED BEEF SLICED SHORT RIBS /LA STYLE\u201d with \u201cSELL BY\u201d dates of \u201cDEC.11.25\u201d through \u201cAPR.16.26\u201d. ",
+   "\u2022\t1.5-lb. clear plastic containers with safety lids containing \u201cQUALITY MEAT SKY RANCH PREMIUM PROVISIONS MRN PORK SINGLE BELLY CHOP / JUMULLEOK\u201d with \u201cSELL BY\u201d dates of \u201cDEC.11.25\u201d through \u201cAPR.16.26\u201d. "
+  ],
+  "field_qty_recovered": "",
+  "field_recall_classification": "Public Health Alert",
+  "field_recall_date": "2026-04-09",
+  "field_recall_number": "PHA-04092026-01",
+  "field_recall_reason": [
+   "Misbranding",
+   "Unreported Allergens"
+  ],
+  "field_recall_type": "Public Health Alert",
+  "field_related_to_outbreak": "False",
+  "field_summary": "<p><strong>WASHINGTON, April 9, 2026</strong> \u2013 The U.S. Department of Agriculture\u2019s Food Safety and Inspection Service (FSIS) is issuing a public health alert for raw beef and pork products due to misbranding and an undeclared allergen. The products may contain sesame, a known allergen, which is not declared on the product label.&nbsp;A recall was not requested because the products are no longer available for purchase.</p>\n<p>The raw beef and pork items were produced from December 1, 2025, through April 6, 2026. The following products are subject to the public health alert [<a href=\"https://www.fsis.usda.gov/sites/default/files/food_label_pdf/2026-04/PHA-04092026-01-labels.pdf\">view labels</a>]:</p>\n<ul>\n<li>1.5-lb. clear plastic containers with safety lids containing \u201cQUALITY MEAT SKY RANCH PREMIUM PROVISIONS MARINATED BEEF RIBEYE ROLL /BULGOGI\u201d with \u201cSELL BY\u201d dates of \u201cDEC.11.25\u201d through \u201cAPR.16.26\u201d.</li>\n<li>1.5-lb. clear plastic containers with safety lids containing \u201cQUALITY MEAT SKY RANCH PREMIUM PROVISIONS MARINATED PORK TENDERIZED CT BUTT\u201d with \u201cSELL BY\u201d dates of \u201cDEC.11.25\u201d through \u201cAPR.16.26\u201d.</li>\n<li>1.5-lb. clear plastic containers with safety lids containing \u201cQUALITY MEAT SKY RANCH PREMIUM PROVISIONS MARINATED BEEF SLICED SHORT RIBS /LA STYLE\u201d with \u201cSELL BY\u201d dates of \u201cDEC.11.25\u201d through \u201cAPR.16.26\u201d.</li>\n<li>1.5-lb. clear plastic containers with safety lids containing \u201cQUALITY MEAT SKY RANCH PREMIUM PROVISIONS MRN PORK SINGLE BELLY CHOP / JUMULLEOK\u201d with \u201cSELL BY\u201d dates of \u201cDEC.11.25\u201d through \u201cAPR.16.26\u201d.</li>\n</ul>\n<p>The products bear establishment number \u201cEST. 1377\u201d inside the USDA mark of inspection. These items were shipped to Lotte Plaza Market retail locations in Florida, Maryland, New Jersey, and Virginia.</p>\n<p>The problem was discovered by FSIS personnel during a routine label review. FSIS personnel noticed the use of sesame oil in the products, but sesame was not declared as an ingredient on the label.</p>\n<p>There have been no confirmed reports of adverse reactions due to consumption of these products. Anyone concerned about a reaction should contact a health care provider.</p>\n<p>FSIS is concerned that some product may be in consumers\u2019 refrigerators or freezers. Consumers who have purchased these products are urged not to consume them. These products should be thrown away or returned to the place of purchase.</p>\n<p>Media and consumers with questions regarding the public health alert can contact Sang Min Lee, President, Sky Ranch Meat LLC, at 410-290-3643 ext. 9902 or <a href=\"mailto:a.lee@lotteplaza.com\">a.lee@lotteplaza.com</a>.</p>\n<p>Consumers with food safety questions can call the toll-free USDA Meat and Poultry Hotline at 888-MPHotline (888-674-6854) or send a question via email to <a href=\"mailto:MPHotline@usda.gov\">MPHotline@usda.gov</a>. For consumers that need to report a problem with a meat, poultry, or egg product, the online Electronic Consumer Complaint Monitoring System can be accessed 24 hours a day at <a href=\"https://gcc02.safelinks.protection.outlook.com/?url=https%3A%2F%2Ffoodcomplaint.fsis.usda.gov%2FeCCF%2F&amp;data=05%7C01%7CMelissa.Cordell%40usda.gov%7C2ffd2d584176447889ea08dbb48bd749%7Ced5b36e701ee4ebc867ee03cfa0d4697%7C1%7C0%7C638302284933732023%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&amp;sdata=Jx%2BVgXbvTA0YVfEYBwKrSu9MQne%2BUQZ3bT04yRxlrAI%3D&amp;reserved=0\">https://foodcomplaint.fsis.usda.gov/eCCF/</a>.</p>\n",
+  "field_year": "2026",
+  "langcode": "English",
+  "field_has_spanish": "False"
+ },
+ {
+  "field_title": "FSIS Retracts Public Health Alert for Frozen, Ready-to-Eat Chicken Nuggets Due to Updated Laboratory Result",
+  "field_recall_number_export": "PHA-04012026-01",
+  "field_recall_url": "http://www.fsis.usda.gov/recalls-alerts/fsis-issues-public-health-alert-frozen-dinosaur-shaped-ready-eat-chicken-nuggets-due",
+  "field_active_notice": "False",
+  "field_states": [
+   "Nationwide"
+  ],
+  "field_archive_recall": "False",
+  "field_closed_year": "",
+  "field_company_media_contact": [
+   "\n  Company Contact\n  \n    Dorada Foods\n    John Patrick Lopez\n              john.patrick@lopezdorada.com\n      \n\n"
+  ],
+  "field_distro_list": [],
+  "field_en_press_release": [],
+  "field_establishment": [
+   "Dorada Foods"
+  ],
+  "field_labels": [
+   "PHA-04012026-01.pdf"
+  ],
+  "field_media_contact": "Bailey McWilliams",
+  "field_risk_level": "Public Health Alert",
+  "field_last_modified_date": "2026-04-06",
+  "field_press_release": [],
+  "field_processing": [
+   "Fully Cooked - Not Shelf Stable"
+  ],
+  "field_product_items": [
+   "29-oz. plastic bags containing approx. 36 \u201cGREAT VALUE FULLY COOKED DINO SHAPED CHICKEN BREAST NUGGETS\u201d with \u201cBEST IF USED BY\u201d date \u201cFEB 10 2027,\u201d lot code\u201d 0416DPO1215,\u201d and establishment number \u201cP44164\u201d printed on the back of the bag."
+  ],
+  "field_qty_recovered": "",
+  "field_recall_classification": "Public Health Alert",
+  "field_recall_date": "2026-04-06",
+  "field_recall_number": "PHA-04012026-01",
+  "field_recall_reason": [
+   "Product Contamination"
+  ],
+  "field_recall_type": "Public Health Alert",
+  "field_related_to_outbreak": "False",
+  "field_summary": "<p><strong>WASHINGTON, April 6, 2026</strong> \u2013 The U.S. Department of Agriculture\u2019s Food Safety and Inspection Service (FSIS) is retracting the public health alert issued on April 1, 2026, for Walmart Great Value Fully Cooked Dino Shaped Chicken Breast Nuggets with \u201cBest If Used By\u201d date \u201cFeb 10 2027\u201d &nbsp;produced by Dorada Foods after confirming that the product does not pose a public health concern.&nbsp;</p>\n<p>The public health alert was originally issued based on routine surveillance sampling conducted by the New York State Department of Public Health that indicated elevated trace levels of lead. Because this product is commonly consumed by children, FSIS issued the alert to inform consumers of a potential risk.</p>\n<p>Following the alert, additional sampling was conducted by the New York State Department of Public Health and the producing establishment, Dorada Foods. As part of that process, the original lot of product was tested as well as additional lots.</p>\n<p>All follow\u2011up testing, including testing of the original lot, found no elevated levels of lead in the product.</p>\n<p>FSIS subsequently reviewed the underlying laboratory data in coordination with the New York State Department of Health and determined that the initial result was a false positive, caused by&nbsp;sporadic lead contamination at the laboratory during analysis, not contamination of the product itself. Follow up testing confirmed no elevated levels of lead were present in any of the products tested.</p>\n<p>FSIS has therefore concluded that the product does not pose a public health concern.</p>\n<p>FSIS has notified the company and is updating this page to ensure consumers have accurate and up-to-date information.</p>\n",
+  "field_year": "2026",
+  "langcode": "English",
+  "field_has_spanish": "False"
+ },
+ {
+  "field_title": "FSIS Issues Public Health Alert For Frozen Ready-To-Eat Turkey Stuffed Pastry Products Due To Misbranding",
+  "field_recall_number_export": "PHA-03132026-01",
+  "field_recall_url": "http://www.fsis.usda.gov/recalls-alerts/fsis-issues-public-health-alert-frozen-ready-eat-turkey-stuffed-pastry-products-due",
+  "field_active_notice": "False",
+  "field_states": [
+   "Midwest"
+  ],
+  "field_archive_recall": "False",
+  "field_closed_year": "",
+  "field_company_media_contact": [
+   "\n  Company Contact\n  \n    Company Contact\n    \n              Complaints@shawbakers.com\n      \n\n"
+  ],
+  "field_distro_list": [],
+  "field_en_press_release": [],
+  "field_establishment": [
+   "Shaw Bakers LLC"
+  ],
+  "field_labels": [
+   "PHA_03132026-Food_Labels.pdf "
+  ],
+  "field_media_contact": "Bailey McWilliams",
+  "field_risk_level": "Public Health Alert",
+  "field_last_modified_date": "2026-03-16",
+  "field_press_release": [],
+  "field_processing": [
+   "Fully Cooked - Not Shelf Stable"
+  ],
+  "field_product_items": [
+   " 25.4-oz. boxes containing eight pieces of \u201cLA BOULANGERIE TURKEY PESTO &amp; SWISS CHEESE POCKETS\u201d with lot code 04926 and \u201cbest by\u201d date 02/18/27 printed on the packaging."
+  ],
+  "field_qty_recovered": "",
+  "field_recall_classification": "Public Health Alert",
+  "field_recall_date": "2026-03-13",
+  "field_recall_number": "PHA-03132026-01",
+  "field_recall_reason": [
+   "Misbranding"
+  ],
+  "field_recall_type": "Public Health Alert",
+  "field_related_to_outbreak": "False",
+  "field_summary": "<p><strong>WASHINGTON, March 13, 2026 \u2013</strong> The U.S. Department of Agriculture\u2019s Food Safety and Inspection Service (FSIS) is issuing a public health alert for frozen ready-to-eat turkey stuffed pastry products due to misbranding. Some boxes of the turkey, pesto, and cheese stuffed pastries contain ham and cheese instead. A recall was not requested because the product is no longer available for purchase.</p>\n<p>The turkey, pesto, and cheese stuffed pastries were packaged on Feb. 18, 2026, and may contain ham and cheese stuffed pastry items. The following product is subject to the public health alert [<a href=\"https://www.fsis.usda.gov/sites/default/files/food_label_pdf/2026-03/PHA_03132026-Food_Labels.pdf\">view labels</a>]:</p>\n<ul>\n<li>25.4-oz. boxes containing eight pieces of \u201cLA BOULANGERIE TURKEY PESTO &amp; SWISS CHEESE POCKETS\u201d with lot code 04926 and \u201cbest by\u201d date 02/18/27 printed on the packaging.</li>\n</ul>\n<p>The products bear establishment number \u201cP-51243A\u201d inside the USDA mark of inspection. These items were shipped to Costco locations across the Midwest.</p>\n<p>The problem was discovered when the establishment notified FSIS that it received two consumer complaints regarding turkey and cheese stuffed pastry boxes containing ham and cheese instead.</p>\n<p>There have been no reports of adverse reactions due to consumption of these products. Anyone concerned about a reaction should contact a health care provider.</p>\n<p>FSIS is concerned that some mislabeled product may be in consumers\u2019 freezers. Consumers who purchased this product should check their packaging to see if they have the affected item. The product may be returned to the place of purchase.</p>\n<p>Media and consumers with questions regarding the public health alert can contact Shaw Bakers LLC, at&nbsp;<a href=\"Mailto:Complaints@shawbakers.com\">Complaints@shawbakers.com</a></p>\n<p>Consumers with food safety questions can call the toll-free USDA Meat and Poultry Hotline at 888-MPHotline (888-674-6854) or send a question via email to <a href=\"mailto:MPHotline@usda.gov\">MPHotline@usda.gov</a>. For consumers that need to report a problem with a meat, poultry, or egg product, the online Electronic Consumer Complaint Monitoring System can be accessed 24 hours a day at <a href=\"https://gcc02.safelinks.protection.outlook.com/?url=https%3A%2F%2Ffoodcomplaint.fsis.usda.gov%2FeCCF%2F&amp;data=05%7C01%7CMelissa.Cordell%40usda.gov%7C2ffd2d584176447889ea08dbb48bd749%7Ced5b36e701ee4ebc867ee03cfa0d4697%7C1%7C0%7C638302284933732023%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&amp;sdata=Jx%2BVgXbvTA0YVfEYBwKrSu9MQne%2BUQZ3bT04yRxlrAI%3D&amp;reserved=0\">https://foodcomplaint.fsis.usda.gov/eCCF/</a>.</p>\n",
+  "field_year": "2026",
+  "langcode": "English",
+  "field_has_spanish": "False"
+ },
+ {
+  "field_title": "FSIS Issues Public Health Alert for Ground Beef Products Due to Possible Foreign Material Contamination",
+  "field_recall_number_export": "PHA-03232026-01",
+  "field_recall_url": "http://www.fsis.usda.gov/recalls-alerts/fsis-issues-public-health-alert-ground-beef-products-due-possible-foreign-material",
+  "field_active_notice": "False",
+  "field_states": [
+   "District of Columbia",
+   "Massachusetts",
+   "Maryland",
+   "New Jersey",
+   "Pennsylvania",
+   "Virginia"
+  ],
+  "field_archive_recall": "False",
+  "field_closed_year": "",
+  "field_company_media_contact": [
+   "\n  Company Contact\n  \n     Processing Operations Manager, White Oak Pastures\n    Mr. Justin Wiley\n        (229) 641-2081\n              feedback@whiteoakpastures.com\n      \n\n"
+  ],
+  "field_distro_list": [],
+  "field_en_press_release": [],
+  "field_establishment": [
+   "White Oak Pastures"
+  ],
+  "field_labels": [
+   "PHA-03232026-01-Labels.pdf"
+  ],
+  "field_media_contact": "Keith Komosinski",
+  "field_risk_level": "Public Health Alert",
+  "field_last_modified_date": "2026-03-23",
+  "field_press_release": [],
+  "field_processing": [
+   "Raw - Non Intact"
+  ],
+  "field_product_items": [
+   "16oz (1 lb.) PLASTIC, VACUUM-PACKED, packages containing &quot;WHITE OAK PASTURES, RADICALLY TRADITIONAL FARMING, GRASSFED GROUND BEEF&quot;."
+  ],
+  "field_qty_recovered": "",
+  "field_recall_classification": "Public Health Alert",
+  "field_recall_date": "2026-03-23",
+  "field_recall_number": "PHA-03232026-01",
+  "field_recall_reason": [
+   "Product Contamination"
+  ],
+  "field_recall_type": "Public Health Alert",
+  "field_related_to_outbreak": "False",
+  "field_summary": "<p><strong>WASHINGTON, March 23, 2026 - </strong>The U.S. Department of Agriculture's Food Safety and Inspection Service (FSIS) is issuing a public health alert for a ground beef product that may be contaminated with foreign material, specifically metal. A recall was not requested because the product is no longer available for purchase.</p>\n\n<p>The ground beef item was produced on Feb 26, 2026. The following product is subject to the public health alert [<a href=\"https://www.fsis.usda.gov/sites/default/files/food_label_pdf/2026-03/PHA-03232026-01-Labels.pdf\">view labels</a>]:</p>\n\n<ul>\n\t<li>16oz (1 lb.) PLASTIC, VACUUM-PACKED, packages containing \"WHITE OAK PASTURES, RADICALLY TRADITIONAL FARMING, GRASSFED GROUND BEEF\".</li>\n</ul>\n\n<p>The product bears establishment number \"EST 34729\" inside the USDA mark of inspection and is stamped on the back with \"105761 Sell by 03/19/26\". This item was shipped to a distributor, and Mom's Organic Markets retail locations in D.C., Mass., Md., N.J., Pa. and Va.</p>\n\n<p>The problem was discovered by the establishment after receiving two complaints from consumers.</p>\n\n<p>There have been no confirmed reports of injury due to consumption of this product. Anyone concerned about an injury should contact a health care provider. FSIS has received no additional reports of injury from consumption of these products.</p>\n\n<p>FSIS is concerned that some product may be in consumers' freezers. Consumers who have purchased these products are urged not to consume them. These products should be thrown away or returned to the place of purchase.</p>\n\n<p>Media and consumers with questions regarding the public health alert can contact Mr. Justin Wiley, Processing Operations Manager, White Oak Pastures, at (229) 641-2081 or <a href=\"mailto:feedback@whiteoakpastures.com\">feedback@whiteoakpastures.com</a>.</p>\n\n<p>Consumers with food safety questions can call the toll-free USDA Meat and Poultry Hotline at 888-MPHotline (888-674-6854) or send a question via email to <a href=\"mailto:MPHotline@usda.gov\">MPHotline@usda.gov</a>. For consumers that need to report a problem with a meat, poultry, or egg product, the online Electronic Consumer Complaint Monitoring System can be accessed 24 hours a day at <a href=\"https://foodcomplaint.fsis.usda.gov/eCCF/\">https://foodcomplaint.fsis.usda.gov/eCCF/</a>.</p>\n",
+  "field_year": "2026",
+  "langcode": "English",
+  "field_has_spanish": "False"
+ },
+ {
+  "field_title": "Ajinomoto Foods North America, Inc. Expands Recall for Chicken and Pork Fried Rice, Ramen, and Shu Mai Products Due to Possible Foreign Matter Contamination",
+  "field_recall_number_export": "005-2026-EXP",
+  "field_recall_url": "http://www.fsis.usda.gov/recalls-alerts/ajinomoto-foods-north-america-inc--expands-recall-chicken-and-pork-fried-rice-ramen",
+  "field_active_notice": "False",
+  "field_states": [
+   "Nationwide"
+  ],
+  "field_archive_recall": "True",
+  "field_closed_year": "2026",
+  "field_company_media_contact": [
+   "\n  Company Contact\n  \n    Consumer Affairs, Ajinomoto Foods North America\n    \n        (855) 742-5011\n              customercare@ajinomotofoods.com\n      \n\n"
+  ],
+  "field_distro_list": [
+   "RC-005-2026-EXP-Retail-List.pdf"
+  ],
+  "field_en_press_release": [],
+  "field_establishment": [
+   "Ajinomoto Foods North America",
+   "Ajinomoto Toyo Frozen Noodle, Inc.",
+   "Ajinomoto Foods North America"
+  ],
+  "field_labels": [
+   "Recall-005-2026-EXP-Labels.pdf "
+  ],
+  "field_media_contact": "Ethan Pickrell",
+  "field_risk_level": "High - Class I",
+  "field_last_modified_date": "2026-04-15",
+  "field_press_release": [],
+  "field_processing": [
+   "Fully Cooked - Not Shelf Stable",
+   "Heat Treated - Not Fully Cooked - Not Shelf Stable"
+  ],
+  "field_product_items": [],
+  "field_qty_recovered": "6,037,289 lbs",
+  "field_recall_classification": "Class I",
+  "field_recall_date": "2026-03-03",
+  "field_recall_number": "005-2026-EXP",
+  "field_recall_reason": [
+   "Product Contamination"
+  ],
+  "field_recall_type": "Closed Recall",
+  "field_related_to_outbreak": "False",
+  "field_summary": "<p><strong>Editor\u2019s Note: Mar. 9, 2026</strong> \u2013 The product list in this release has been updated to reflect that products with the listed lot numbers, regardless of best-by date, are subject to the recall.&nbsp;<a href=\"/sites/default/files/media_file/documents/Recall-005-2026-EXP-Product-List.pdf\">View product list</a>. <a href=\"/sites/default/files/food_label_pdf/2026-03/Recall-005-2026-EXP-Labels.pdf\">View labels</a>.</p>\n<p><strong>WASHINGTON, March 3, 2026</strong> \u2013 Ajinomoto Foods North America, Inc., a Portland, Ore., establishment, is expanding its <a data-entity-substitution=\"canonical\" data-entity-type=\"node\" data-entity-uuid=\"9ebdde64-6907-45d7-a213-f988faa61207\" href=\"/recalls-alerts/ajinomoto-foods-north-america-inc--recalls-chicken-fried-rice-products-due-0\">Feb. 19, 2026, recall of frozen not ready-to-eat (NRTE) chicken products that may be contaminated with foreign material, specifically glass</a>, the U.S. Department of Agriculture\u2019s Food Safety and Inspection Service (FSIS) announced today. The establishment is recalling approximately 33,617,045 additional pounds of various ready-to-eat (RTE) and NRTE chicken and pork fried rice, ramen, and shu mai dumpling products, for a combined total of 36,987,575 pounds subject to recall.</p>\n<p>This expansion includes 16 products produced between October 21, 2024, and February 26, 2026, under brand names Ajinomoto, Kroger, Ling Ling, Tai Pei, and Trader Joe\u2019s.&nbsp;</p>\n<p>The products subject to recall bear establishment number P-18356, P-18356B, or P-47971 inside the USDA mark of inspection. The items were shipped to retail locations nationwide. Certain Ajinomoto items were exported to Canada and Mexico.</p>\n<p>The problem was discovered when the establishment notified FSIS that it received multiple consumer complaints involving glass found in product. Upon further investigation, the establishment determined that a vegetable source ingredient, specifically carrots, was the likely source of the glass contamination, which also impacted the additional products subject to this expanded recall. There have been no confirmed reports of injury due to consumption of this product. Anyone concerned about an injury should contact a healthcare provider.</p>\n<p>FSIS is concerned that some product may be in retailers\u2019 or consumers\u2019 freezers. Consumers who have purchased these products are urged not to consume them. These products should be thrown away or returned to the place of purchase.</p>\n<p>FSIS routinely conducts recall effectiveness checks to verify recalling firms notify their<strong> </strong>customers of the recall and that steps are taken to make certain that the product is no longer available to consumers. When available, the retail distribution list(s) will be posted on the FSIS website at&nbsp;<a data-entity-substitution=\"canonical\" data-entity-type=\"node\" data-entity-uuid=\"44ea4e6a-ea7d-43e2-af2e-d3d6d5c412e8\" href=\"/recalls\">www.fsis.usda.gov/recalls</a>.</p>\n<p>Members of the media with questions about the recall can contact Corporate PR at <a href=\"mailto:MediaInquiry@ajinomotofoods.com\">MediaInquiry@ajinomotofoods.com</a> or call (909) 477-4800. Consumers with questions about the recall can contact Consumer Affairs, Ajinomoto Foods North America, at (855) 742-5011 or email at <a href=\"mailto:customercare@ajinomotofoods.com\">customercare@ajinomotofoods.com</a>.</p>\n<p>Consumers with food safety questions can call the toll-free USDA Meat and Poultry Hotline at 888-MPHotline (888-674-6854) or send a question via email to <a href=\"mailto:MPHotline@usda.gov\">MPHotline@usda.gov</a>. For consumers that need to report a problem with a meat, poultry, or egg product, the online Electronic Consumer Complaint Monitoring System can be accessed 24 hours a day at <a href=\"https://foodcomplaint.fsis.usda.gov/eCCF/\">https://foodcomplaint.fsis.usda.gov/eCCF/</a>.</p>\n",
+  "field_year": "2026",
+  "langcode": "English",
+  "field_has_spanish": "False"
+ },
+ {
+  "field_title": "FSIS Issues Public Health Alert for Ready-To-Eat Beef Jerky Products Due to Misbranding and Undeclared Allergen",
+  "field_recall_number_export": "PHA-03012026-01",
+  "field_recall_url": "http://www.fsis.usda.gov/recalls-alerts/fsis-issues-public-health-alert-ready-eat-beef-jerky-products-due-misbranding-and",
+  "field_active_notice": "False",
+  "field_states": [
+   "Nationwide"
+  ],
+  "field_archive_recall": "False",
+  "field_closed_year": "",
+  "field_company_media_contact": [
+   "\n  Company Contact\n  \n    Food Safety and QA Compliance Officer\n    Sabrina Vaughn\n        808-961-0877\n          \n\n"
+  ],
+  "field_distro_list": [],
+  "field_en_press_release": [],
+  "field_establishment": [
+   "Punahele Jerky Company, Inc."
+  ],
+  "field_labels": [
+   "PHA-03012026-01-Labels.pdf"
+  ],
+  "field_media_contact": "Okechi Chigewe",
+  "field_risk_level": "Public Health Alert",
+  "field_last_modified_date": "2026-03-01",
+  "field_press_release": [],
+  "field_processing": [
+   "Heat Treated - Shelf Stable"
+  ],
+  "field_product_items": [
+   "6-oz. plastic packages containing &quot;DRIED HAWAIIAN STYLE BEEF CRISPS, ORIGINAL SALT &amp;amp; PEPPER FLAVOR&quot;, and bearing establishment number &quot;EST. 2625&quot; inside the USDA mark of inspection.",
+   "4-oz. plastic packages containing &quot;PUNAHELE JERKY COMPANY INC UNCLE K&#039;S BEEF CRISPS&quot;.",
+   "4-oz. plastic packages containing &quot;PUNAHELE JERKY COMPANY INC KILAUEA FIRE SPICY BEEF CRISPS&quot;."
+  ],
+  "field_qty_recovered": "",
+  "field_recall_classification": "Public Health Alert",
+  "field_recall_date": "2026-03-01",
+  "field_recall_number": "PHA-03012026-01",
+  "field_recall_reason": [
+   "Unreported Allergens"
+  ],
+  "field_recall_type": "Public Health Alert",
+  "field_related_to_outbreak": "False",
+  "field_summary": "<p><strong>WASHINGTON, March 1, 2026 \u2013</strong> The U.S. Department of Agriculture's Food Safety and Inspection Service (FSIS) is issuing a public health alert for beef jerky products due to misbranding and undeclared allergens. The products may contain soy lecithin, a known allergen, which is not declared on the product label. A recall was not requested because the products are no longer available for purchase.</p>\n\n<p>The ready-to-eat beef jerky items bear best by dates of February 17, 2027 or prior. The following products subject to the public health alert are [<a href=\"/sites/default/files/food_label_pdf/2026-03/PHA-03012026-01-Labels.pdf\">view labels</a>]:</p>\n\n<ul>\n\t<li>6-oz. plastic packages containing \"DRIED HAWAIIAN STYLE BEEF CRISPS, ORIGINAL SALT &amp; PEPPER FLAVOR\", and bearing establishment number \"EST. 2625\" inside the USDA mark of inspection.</li>\n\t<li>4-oz. plastic packages containing \"PUNAHELE JERKY COMPANY INC UNCLE K'S BEEF CRISPS\".</li>\n\t<li>4-oz. plastic packages containing \"PUNAHELE JERKY COMPANY INC KILAUEA FIRE SPICY BEEF CRISPS\".</li>\n</ul>\n\n<p>These items were distributed to retail stores in Hawaii and sold via online sales nationwide.</p>\n\n<p>The problem was discovered during a routine FSIS label review.</p>\n\n<p>There have been no confirmed reports of adverse reactions due to consumption of these products. Anyone concerned about a reaction should contact a health care provider.</p>\n\n<p>FSIS is concerned that some product may be in consumers' pantries. Consumers who have purchased these products are urged not to consume them. These products should be thrown away or returned to the place of purchase.</p>\n\n<p>Media and consumers with questions regarding the public health alert can contact Sabrina Vaughn, Food Safety and QA Compliance Officer, at 808-961-0877.</p>\n\n<p>Consumers with food safety questions can call the toll-free USDA Meat and Poultry Hotline at 888-MPHotline (888-674-6854) or send a question via email to <a href=\"mailto:MPHotline@usda.gov\">MPHotline@usda.gov</a>. For consumers that need to report a problem with a meat, poultry, or egg product, the online Electronic Consumer Complaint Monitoring System can be accessed 24 hours a day at <a href=\"https://foodcomplaint.fsis.usda.gov/eCCF/\">https://foodcomplaint.fsis.usda.gov/eCCF/</a>.</p>\n",
+  "field_year": "2026",
+  "langcode": "English",
+  "field_has_spanish": "False"
+ },
+ {
+  "field_title": "Rosina Food Products, Inc. Recalls Ready-To-Eat Frozen Meatball Products Due To Possible Foreign Matter Contamination",
+  "field_recall_number_export": "006-2026",
+  "field_recall_url": "http://www.fsis.usda.gov/recalls-alerts/rosina-food-products-inc--recalls-ready-eat-frozen-meatball-products-due-possible",
+  "field_active_notice": "False",
+  "field_states": [
+   "Nationwide"
+  ],
+  "field_archive_recall": "True",
+  "field_closed_year": "2026",
+  "field_company_media_contact": [
+   "\n  Company Contact\n  \n    Rosina Food Products, Inc\n    \n        1-888-767-4621 \n              CService@rosina.com\n      \n\n"
+  ],
+  "field_distro_list": [
+   "RC-006-2026-Retail-List.pdf"
+  ],
+  "field_en_press_release": [],
+  "field_establishment": [
+   "Rosina Food Products, Inc."
+  ],
+  "field_labels": [
+   "Recall-006-2026-Food_Labels.pdf"
+  ],
+  "field_media_contact": "Tai Thompson",
+  "field_risk_level": "High - Class I",
+  "field_last_modified_date": "2026-02-22",
+  "field_press_release": [],
+  "field_processing": [
+   "Fully Cooked - Not Shelf Stable"
+  ],
+  "field_product_items": [
+   " \u2022 32-oz. printed poly film bag packages of fully cooked frozen \u201cBremer FAMILY SIZE ITALIAN STYLE MEATBALLS\u201d containing \u201cabout 64 meatballs per package\u201d with \u201cBEST BY\u201d date of \u201c10/30/26\u201d with timestamps between 17:08 through 18:20 printed on the back of t"
+  ],
+  "field_qty_recovered": "9,462 lbs",
+  "field_recall_classification": "Class I",
+  "field_recall_date": "2026-02-22",
+  "field_recall_number": "006-2026",
+  "field_recall_reason": [
+   "Product Contamination"
+  ],
+  "field_recall_type": "Closed Recall",
+  "field_related_to_outbreak": "False",
+  "field_summary": "<p><strong>WASHINGTON, FEB. 22, 2026 </strong>\u2013 Rosina Food Products, Inc., a West Seneca, N.Y. establishment, is recalling approximately 9,462 pounds of ready-to-eat (RTE) frozen meatball products that may be contaminated with foreign material, specifically metal, the U.S. Department of Agriculture\u2019s Food Safety and Inspection Service (FSIS) announced today.&nbsp;&nbsp;</p>\n<p>The RTE fully cooked frozen meatball products were produced on July 30, 2025. The following products subject to the recall are [<a href=\"/sites/default/files/food_label_pdf/2026-02/Recall-006-2026-Food_Labels.pdf\">view labels</a>]:</p>\n<ul>\n<li>\n<p>32-oz. printed poly film bag packages of fully cooked frozen \u201cBremer FAMILY SIZE ITALIAN STYLE MEATBALLS\u201d containing \u201cabout 64 meatballs per package\u201d with \u201cBEST BY\u201d date of \u201c10/30/26\u201d with timestamps between 17:08 through 18:20 printed on the back of the label.</p>\n</li>\n</ul>\n<p>The products subject to recall bear establishment number \u201cEST. 4286B\u201d inside the USDA mark of inspection. The affected products have a 15-month shelf-life and were shipped to Aldi supermarket locations nationwide.</p>\n<p>The problem was discovered after FSIS received a consumer complaint regarding metal fragments found within the product.</p>\n<p>There have been no confirmed reports of injury due to consumption of these products. Anyone concerned about an injury should contact a health care provider.</p>\n<p>FSIS is concerned that some product may be in consumers\u2019 refrigerators or freezers. Consumers who have purchased these products are urged not to consume them. These products should be thrown away or returned to the place of purchase.</p>\n<p>FSIS routinely conducts recall effectiveness checks to verify recalling firms notify their&nbsp;customers of the recall and that steps are taken to make certain that the product is no longer available to consumers.&nbsp;When available, the retail distribution list(s) will be posted on the FSIS website at\u202f<a href=\"http://www.fsis.usda.gov/recalls\">www.fsis.usda.gov/recalls</a>.&nbsp;</p>\n<p>Members of the media and consumers with questions regarding the recall can contact Customer Service, Rosina Food Products, Inc., at 1-888-767-4621 or <a href=\"mailto:CService@rosina.com\">CService@rosina.com</a>.</p>\n<p>Consumers with food safety questions can call the toll-free USDA Meat and Poultry Hotline at 888-MPHotline (888-674-6854) or send a question via email to <a href=\"mailto:MPHotline@usda.gov\">MPHotline@usda.gov</a>. For consumers that need to report a problem with a meat, poultry, or egg product, the online Electronic Consumer Complaint Monitoring System can be accessed 24 hours a day at <a href=\"https://gcc02.safelinks.protection.outlook.com/?url=https%3A%2F%2Ffoodcomplaint.fsis.usda.gov%2FeCCF%2F&amp;data=05%7C01%7CMelissa.Cordell%40usda.gov%7C2ffd2d584176447889ea08dbb48bd749%7Ced5b36e701ee4ebc867ee03cfa0d4697%7C1%7C0%7C638302284933732023%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&amp;sdata=Jx%2BVgXbvTA0YVfEYBwKrSu9MQne%2BUQZ3bT04yRxlrAI%3D&amp;reserved=0\">https://foodcomplaint.fsis.usda.gov/eCCF/</a>.</p>\n",
+  "field_year": "2026",
+  "langcode": "English",
+  "field_has_spanish": "False"
+ },
+ {
+  "field_title": "Ajinomoto Foods North America, Inc. Recalls Chicken Fried Rice Products Due to Possible Foreign Matter Contamination",
+  "field_recall_number_export": "005-2026",
+  "field_recall_url": "http://www.fsis.usda.gov/recalls-alerts/ajinomoto-foods-north-america-inc--recalls-chicken-fried-rice-products-due-0",
+  "field_active_notice": "False",
+  "field_states": [
+   "Nationwide"
+  ],
+  "field_archive_recall": "True",
+  "field_closed_year": "2026",
+  "field_company_media_contact": [
+   "\n  Company Contact\n  \n    Consumer Affairs, Ajinomoto Foods North America\n    \n        (855) 742-5011\n              customercare@ajinomotofoods.com\n      \n\n"
+  ],
+  "field_distro_list": [
+   "RC-005-2026-Retail-List.pdf"
+  ],
+  "field_en_press_release": [],
+  "field_establishment": [
+   "Ajinomoto Foods North America"
+  ],
+  "field_labels": [
+   "Recall-005-2026_Food_Labels.pdf "
+  ],
+  "field_media_contact": "Keith Komosinski",
+  "field_risk_level": "High - Class I",
+  "field_last_modified_date": "2026-02-19",
+  "field_press_release": [],
+  "field_processing": [
+   "Heat Treated - Not Fully Cooked - Not Shelf Stable"
+  ],
+  "field_product_items": [
+   "1.53-kg. cardboard packages containing 6 bags of frozen \u201cAJINOMOTO YAKITORI CHICKEN WITH JAPANESE-STYLE FRIED RICE\u201d with BEST BEFORE/MEILLEUR AVANT dates 26 SE 09 through 26 NO 12.",
+   "20-oz. (1 lb. 4 oz.) plastic bag packages containing frozen \u201cTRADER JOE\u2019S Chicken Fried Rice with stir fried rice, vegetables, seasoned dark chicken meat and eggs\u201d with BEST BY dates 9/8/2026 through 11/17/2026."
+  ],
+  "field_qty_recovered": "6,037,289 lbs",
+  "field_recall_classification": "Class I",
+  "field_recall_date": "2026-02-19",
+  "field_recall_number": "005-2026",
+  "field_recall_reason": [
+   "Product Contamination"
+  ],
+  "field_recall_type": "Closed Recall",
+  "field_related_to_outbreak": "False",
+  "field_summary": "<p><strong>Editor\u2019s Note: Mar. 9, 2026</strong> \u2013 The product list in the expanded recall (See <a data-entity-substitution=\"canonical\" data-entity-type=\"node\" data-entity-uuid=\"0d9564d6-b989-4881-b617-4842e74f9b63\" href=\"/recalls-alerts/ajinomoto-foods-north-america-inc--expands-recall-chicken-and-pork-fried-rice-ramen\">Recall 005-2026-EXP</a>) was updated to reflect that products with the listed lot numbers, regardless of best-by date, are subject to the recall.&nbsp;<a href=\"/sites/default/files/media_file/documents/Recall-005-2026-EXP-Product-List.pdf\">View full product list</a>. <a href=\"/sites/default/files/food_label_pdf/2026-03/Recall-005-2026-EXP-Labels.pdf\">View all labels</a>.&nbsp;</p>\n<p><strong>Editor\u2019s Note: Mar. 3, 2026 </strong>\u2013 Ajinomoto Foods North America, Inc., expanded its recall on March 3, 2026 (See&nbsp;<a data-entity-substitution=\"canonical\" data-entity-type=\"node\" data-entity-uuid=\"0d9564d6-b989-4881-b617-4842e74f9b63\" href=\"/recalls-alerts/ajinomoto-foods-north-america-inc--expands-recall-chicken-and-pork-fried-rice-ramen\">Recall 005-2026-EXP</a>). The establishment recalled approximately 33,617,045 additional pounds of various ready-to-eat and not ready-to-eat chicken and pork fried rice, ramen, and shu mai dumpling products, for a combined total of 36,987,575 pounds subject to the recall. <a href=\"/sites/default/files/media_file/documents/Recall-005-2026-EXP-Product-List.pdf\">View full product list</a>. <a href=\"/sites/default/files/food_label_pdf/2026-03/Recall-005-2026-EXP-Labels.pdf\">View all labels</a>.</p>\n<p><strong>WASHINGTON, FEB. 19, 2026</strong> \u2013 Ajinomoto Foods North America, Inc., a Portland, Ore. establishment, is recalling approximately 3,370,530 pounds of frozen not ready-to-eat (NRTE) chicken fried rice products that may be contaminated with foreign material, specifically glass, the U.S. Department of Agriculture\u2019s Food Safety and Inspection Service (FSIS) announced today.</p>\n<p>The NRTE chicken fried rice items were produced between September 8, 2025, and November 17, 2025. The following products are subject to recall [<a href=\"/sites/default/files/food_label_pdf/2026-02/Recall-005-2026_Food_Labels.pdf\">view labels</a>]:</p>\n<ul>\n<li>1.53-kg. cardboard packages containing 6 bags of frozen \u201cAJINOMOTO YAKITORI CHICKEN WITH JAPANESE-STYLE FRIED RICE\u201d with BEST BEFORE/MEILLEUR AVANT dates 26 SE 09 through 26 NO 12.</li>\n<li>20-oz. (1 lb. 4 oz.) plastic bag packages containing frozen \u201cTRADER JOE\u2019S Chicken Fried Rice with stir fried rice, vegetables, seasoned dark chicken meat and eggs\u201d with BEST BY dates 9/8/2026 through 11/17/2026.</li>\n</ul>\n<p>The products subject to recall bear establishment number P-18356 inside the USDA mark of inspection. The Trader Joe\u2019s item was shipped to Trader Joe\u2019s retail locations nationwide. The Ajinomoto item was exported only to Canada.&nbsp; &nbsp;&nbsp;</p>\n<p>The problem was discovered after the establishment notified FSIS that it received four consumer complaints regarding glass found in product. There have been no confirmed reports of injury due to consumption of this product. Anyone concerned about an injury should contact a healthcare provider.</p>\n<p>FSIS is concerned that some product may be in retailers\u2019 or consumers\u2019 freezers. Consumers who have purchased these products are urged not to consume them. These products should be thrown away or returned to the place of purchase.</p>\n<p>FSIS routinely conducts recall effectiveness checks to verify recalling firms notify their<strong> </strong>customers of the recall and that steps are taken to make certain that the product is no longer available to consumers. When available, the retail distribution list(s) will be posted on the FSIS website at&nbsp;<a data-entity-substitution=\"canonical\" data-entity-type=\"node\" data-entity-uuid=\"44ea4e6a-ea7d-43e2-af2e-d3d6d5c412e8\" href=\"/recalls\">www.fsis.usda.gov/recalls</a>.</p>\n<p>Members of the media with questions about the recall can contact Corporate PR at <a href=\"mailto:MediaInquiry@ajinomotofoods.com\">MediaInquiry@ajinomotofoods.com</a> or call (909) 477-4800. Consumers with questions about the recall can contact Consumer Affairs, Ajinomoto Foods North America, at (855) 742-5011 or email at <a href=\"mailto:customercare@ajinomotofoods.com\">customercare@ajinomotofoods.com</a>.</p>\n<p>Consumers with food safety questions can call the toll-free USDA Meat and Poultry Hotline at 888-MPHotline (888-674-6854) or send a question via email to <a href=\"mailto:MPHotline@usda.gov\">MPHotline@usda.gov</a>. For consumers that need to report a problem with a meat, poultry, or egg product, the online Electronic Consumer Complaint Monitoring System can be accessed 24 hours a day at <a href=\"https://foodcomplaint.fsis.usda.gov/eCCF/\">https://foodcomplaint.fsis.usda.gov/eCCF/</a>.</p>\n",
+  "field_year": "2026",
+  "langcode": "English",
+  "field_has_spanish": "False"
+ },
+ {
+  "field_title": "Sobico USA LLC Recalls Siluriformes Fish Products Imported  Without The Benefit of Import Reinspection",
+  "field_recall_number_export": "004-2026",
+  "field_recall_url": "http://www.fsis.usda.gov/recalls-alerts/sobico-usa-llc-recalls-siluriformes-fish-products-imported-without-benefit-import",
+  "field_active_notice": "False",
+  "field_states": [
+   "Indiana",
+   "Michigan",
+   "Nebraska",
+   "New York",
+   "Ohio"
+  ],
+  "field_archive_recall": "True",
+  "field_closed_year": "2026",
+  "field_company_media_contact": [
+   "\n  Company Contact\n  \n    Sobico USA LLC\n    Long Nguyen\n        770-570-7077\n              long.nguyen@sobicousa.com\n      \n\n"
+  ],
+  "field_distro_list": [
+   "RC-004-2026-Retail-List.pdf "
+  ],
+  "field_en_press_release": [],
+  "field_establishment": [],
+  "field_labels": [
+   "Recall-004-2026_Food_Labels.pdf "
+  ],
+  "field_media_contact": "Keith Komosinski",
+  "field_risk_level": "High - Class I",
+  "field_last_modified_date": "2026-02-23",
+  "field_press_release": [],
+  "field_processing": [
+   "Raw - Intact"
+  ],
+  "field_product_items": [
+   " \u2022 36-lb. cardboard cases containing individually, vacuum-packed and frozen  packages of \u201cShera BROADHEAD CLARIAS FISH WHOLE/GUTTED\u201d weighing 10-18 oz/pc (300 \u2013 500gr) each. ",
+   " \u2022 36-lb. cardboard cases containing individually, vacuum-packed and frozen  packages of \u201cShera BROADHEAD CLARIAS FISH STEAKS\u201d weighing 1.8-lbs/package"
+  ],
+  "field_qty_recovered": "526 lbs",
+  "field_recall_classification": "Class I",
+  "field_recall_date": "2026-02-19",
+  "field_recall_number": "004-2026",
+  "field_recall_reason": [
+   "Import Violation"
+  ],
+  "field_recall_type": "Closed Recall",
+  "field_related_to_outbreak": "False",
+  "field_summary": "<p><strong>WASHINGTON, FEB 19, 2026 \u2013</strong> Sobico USA LLC, a West Hartford, Conn., importer, is recalling approximately 13,464 pounds of frozen, raw intact Siluriformes fish products that were imported from Vietnam without the benefit of import reinspection into the United States, the U.S. Department of Agriculture\u2019s Food Safety and Inspection Service (FSIS) announced today.</p>\n<p>The Siluriformes fish, both whole/gutted and steak items were produced in Vietnam on JUNE 24, 2025. The following products are subject to recall [<a href=\"/sites/default/files/food_label_pdf/2026-02/Recall-004-2026_Food_Labels.pdf\">view labels</a>]:</p>\n<ul>\n<li>\n<p>36-lb. cardboard cases containing individually, vacuum-packed and frozen packages of \u201cShera BROADHEAD CLARIAS FISH WHOLE/GUTTED\u201d weighing 10-18 oz/pc (300 \u2013 500gr) each.</p>\n</li>\n<li>\n<p>36-lb. cardboard cases containing individually, vacuum-packed and frozen packages of \u201cShera BROADHEAD CLARIAS FISH STEAKS\u201d weighing 1.8-lbs/package</p>\n</li>\n</ul>\n<p>The products subject to recall bear Vietnam ESTABLISHMENT NO: DL 811, shipping mark VN/811/IV/107 and best before dates of June 23, 2027.&nbsp; These items were shipped to wholesalers and retail locations in Indiana, Michigan, Nebraska, New York, and Ohio.</p>\n<p>The problem was discovered and reported by the importer after a review of the FSIS import requirements and establishment procedural guidance. There have been no confirmed reports of illness or injury due to consumption of these products. Anyone concerned about an illness or injury should contact a healthcare provider.&nbsp;&nbsp;</p>\n<p>FSIS is concerned that some product may be in retail locations or consumers\u2019 refrigerators or freezers. Consumers who have purchased these products are urged not to consume them. These products should be thrown away or returned to the place of purchase.</p>\n<p>FSIS routinely conducts recall effectiveness checks to verify recalling firms notify their customers of the recall and that steps are taken to make certain that the product is no longer available to consumers. When available, the retail distribution list(s) will be posted on the FSIS website at\u202f<a data-entity-substitution=\"canonical\" data-entity-type=\"node\" data-entity-uuid=\"44ea4e6a-ea7d-43e2-af2e-d3d6d5c412e8\" href=\"/recalls\">www.fsis.usda.gov/recalls</a>.</p>\n<p>Consumers and members of the media with questions about the recall can contact Long Nguyen, Creative and Business Representative at Sobico USA LLC, at <a href=\"mailto:long.nguyen@sobicousa.com\">long.nguyen@sobicousa.com</a> or 770-570-7077.</p>\n<p>Consumers with food safety questions can call the toll-free USDA Meat and Poultry Hotline at 888-MPHotline (888-674-6854) or send a question via email to <a href=\"mailto:MPHotline@usda.gov\">MPHotline@usda.gov</a>. For consumers that need to report a problem with a meat, poultry, or egg product, the online Electronic Consumer Complaint Monitoring System can be accessed 24 hours a day at <a href=\"https://gcc02.safelinks.protection.outlook.com/?url=https%3A%2F%2Ffoodcomplaint.fsis.usda.gov%2FeCCF%2F&amp;data=05%7C01%7CMelissa.Cordell%40usda.gov%7C2ffd2d584176447889ea08dbb48bd749%7Ced5b36e701ee4ebc867ee03cfa0d4697%7C1%7C0%7C638302284933732023%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&amp;sdata=Jx%2BVgXbvTA0YVfEYBwKrSu9MQne%2BUQZ3bT04yRxlrAI%3D&amp;reserved=0\">https://foodcomplaint.fsis.usda.gov/eCCF/</a>.</p>\n",
+  "field_year": "2026",
+  "langcode": "English",
+  "field_has_spanish": "False"
+ },
+ {
+  "field_title": "CS Beef Packers, LLC Recalls Ground Beef Products That May be Contaminated With E. Coli O145 ",
+  "field_recall_number_export": "003-2026",
+  "field_recall_url": "http://www.fsis.usda.gov/recalls-alerts/cs-beef-packers-llc-recalls-ground-beef-products-may-be-contaminated-e--coli-o145",
+  "field_active_notice": "False",
+  "field_states": [
+   "California",
+   "Idaho",
+   "Oregon"
+  ],
+  "field_archive_recall": "True",
+  "field_closed_year": "2026",
+  "field_company_media_contact": [
+   "\n  Company Contact\n  \n    President of Caviness Beef Packers\n    Trevor Caviness\n        806-372-5781 ext 4308 \n              Trevor@cavinessbeef.com\n      \n\n"
+  ],
+  "field_distro_list": [
+   "RC-003-2026-Retail-List.pdf"
+  ],
+  "field_en_press_release": [],
+  "field_establishment": [
+   "CS Beef Packers, LLC"
+  ],
+  "field_labels": [
+   "Recall-003-2026-Labels.pdf"
+  ],
+  "field_media_contact": "Meredith Carothers",
+  "field_risk_level": "High - Class I",
+  "field_last_modified_date": "2026-03-20",
+  "field_press_release": [],
+  "field_processing": [
+   "Raw - Non Intact"
+  ],
+  "field_product_items": [
+   "\u2022\tCardboard cases containing eight 10-lb. chubs of \u201cBEEF, COARSE GROUND, 73 L\u201d with case code 18601, \u201cUse/Freeze By: 02/04/26\u201d and time stamps between 07:03 and 08:32 printed on two stickers placed on the outside of the case. The date and time stamps are ",
+   "\u2022\tCardboard cases containing four 10-lb. chubs of \u201cFIRE RIVER FARMS CLASSIC BEEF FINE GROUND 73L\u201d with case code 19583, \u201cUse/Freeze By: 02/04/26\u201d and time stamps between 07:03 and 08:32 printed on two stickers placed on the outside of the case. The date a",
+   "\u2022\tCardboard cases containing four 10-lb. chubs of \u201cFIRE RIVER FARMS CLASSIC BEEF FINE GROUND 81L\u201d with case code 19563, \u201cUse/Freeze By: 02/04/26\u201d and time stamps between 07:03 and 08:32 printed on two stickers placed on the outside of the case. The date a"
+  ],
+  "field_qty_recovered": "120 lbs",
+  "field_recall_classification": "Class I",
+  "field_recall_date": "2026-02-11",
+  "field_recall_number": "003-2026",
+  "field_recall_reason": [
+   "Product Contamination"
+  ],
+  "field_recall_type": "Closed Recall",
+  "field_related_to_outbreak": "False",
+  "field_summary": "<p><strong>WASHINGTON, Feb. 11, 2026</strong> \u2013 CS Beef Packers, LLC, a Kuna, Idaho establishment, is recalling approximately 22,912 pounds of raw ground beef products that may be contaminated with <em>E. coli</em> O145, the U.S. Department of Agriculture\u2019s Food Safety and Inspection Service (FSIS) announced today.</p>\n<p>The raw ground beef items were produced on January 14, 2026. The following products are subject to recall [<a href=\"https://www.fsis.usda.gov/sites/default/files/food_label_pdf/2026-02/Recall-003-2026-Labels.pdf\">view labels</a>]:</p>\n<ul>\n<li>Cardboard cases containing eight 10-lb. chubs of \u201cBEEF, COARSE GROUND, 73 L\u201d with case code 18601, \u201cUse/Freeze By: 02/04/26\u201d and time stamps between 07:03 and 08:32 printed on two stickers placed on the outside of the case. The date and time stamps are also printed directly onto the clear packaging of the chub.</li>\n<li>Cardboard cases containing four 10-lb. chubs of \u201cFIRE RIVER FARMS CLASSIC BEEF FINE GROUND 73L\u201d with case code 19583, \u201cUse/Freeze By: 02/04/26\u201d and time stamps between 07:03 and 08:32 printed on two stickers placed on the outside of the case. The date and time stamps are also printed directly onto the clear packaging of the chub.</li>\n<li>Cardboard cases containing four 10-lb. chubs of \u201cFIRE RIVER FARMS CLASSIC BEEF FINE GROUND 81L\u201d with case code 19563, \u201cUse/Freeze By: 02/04/26\u201d and time stamps between 07:03 and 08:32 printed on two stickers placed on the outside of the case. The date and time stamps are also printed directly onto the clear packaging of the chub.</li>\n</ul>\n<p>The products subject to recall bear establishment number \u201cEST. 630\u201d inside the USDA mark of inspection on the outside of the case and printed directly onto the clear packaging of the chub. These items were shipped to distributors in California, Idaho, and Oregon for further distribution to foodservice locations.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>\n<p>The problem was discovered during FSIS testing at a downstream customer, and the sampling results showed the presence of&nbsp;<em>E. coli&nbsp;</em>O145.</p>\n<p>There have been no confirmed reports of illness due to consumption of these products. Anyone concerned about an illness should contact a healthcare provider.&nbsp;&nbsp;</p>\n<p><em>E. coli</em>&nbsp;O145, like the more common&nbsp;<em>E. coli</em>&nbsp;O157:H7, is a serovar of Shiga toxin-producing&nbsp;<em>E. coli</em>&nbsp;(STEC). People can become ill from STECs 2\u20138 days (average of 3\u20134 days) after exposure to the organism.</p>\n<p>Most people infected with STEC O145 develop diarrhea (often bloody) and vomiting. Some illnesses last longer and can be more severe. Infection is usually diagnosed by testing of a stool sample. Vigorous rehydration and other supportive care is the usual treatment; antibiotic treatment is generally not recommended. Most people recover within a week, but, rarely, some develop a more severe infection. Hemolytic uremic syndrome (HUS), a type of kidney failure, is uncommon with STEC O145 infection. HUS can occur in people of any age but is most common in children under 5 years old, older adults and persons with weakened immune systems. It is marked by easy bruising, pallor and decreased urine output. Persons who experience these symptoms should seek emergency medical care immediately.</p>\n<p>FSIS is concerned that some products may be in foodservice freezers. Foodservice locations are urged not to serve these products. These products should be thrown away or returned to the place of purchase.</p>\n<p>FSIS routinely conducts recall effectiveness checks to verify recalling firms notify their<strong> </strong>customers of the recall and that steps are taken to make certain that the product is no longer available to consumers. When available, the retail distribution list(s) will be posted on the FSIS website at&nbsp;<a href=\"https://gcc02.safelinks.protection.outlook.com/?url=http%3A%2F%2Fwww.fsis.usda.gov%2Frecalls&amp;data=05%7C02%7CJohn.Jung%40usda.gov%7Cc6295aa3bc3c400cef6708de69c68032%7Ced5b36e701ee4ebc867ee03cfa0d4697%7C1%7C0%7C639064498953333882%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=8POXGEeLcEKgc01jjdBr2BRwhl21ctVOsJdE%2B2bHzHc%3D&amp;reserved=0\">www.fsis.usda.gov/recalls</a>.</p>\n<p>FSIS advises all consumers to safely prepare their raw meat products, including fresh and frozen, and only consume ground beef that has been cooked to a temperature of 160 degrees F. The only way to confirm that ground beef is cooked to a temperature high enough to kill harmful bacteria is to use a food thermometer that measures internal temperature, <a href=\"https://gcc02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.fsis.usda.gov%2Fsafetempchart&amp;data=05%7C02%7CJohn.Jung%40usda.gov%7Cc6295aa3bc3c400cef6708de69c68032%7Ced5b36e701ee4ebc867ee03cfa0d4697%7C1%7C0%7C639064498953357116%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=eiWa%2Buu6nj%2F9oy7vZejToaf2x7wyzq72Gskxbg37OgI%3D&amp;reserved=0\">https://www.fsis.usda.gov/safetempchart</a>.</p>\n<p>Media with questions regarding the recall can contact Trevor Caviness, President of Caviness Beef Packers, at 806-372-5781 ext 4308 or <a href=\"mailto:Trevor@cavinessbeef.com\">Trevor@cavinessbeef.com</a>. Consumers with questions regarding the recall can contact Roger Cooper, Operations Manager of CS Beef Packers, LLC, at 208-810-7510 ext 7531 or <a href=\"mailto:roger.cooper@csbeef.com\">roger.cooper@csbeef.com</a>.</p>\n<p>Consumers with food safety questions can call the toll-free USDA Meat and Poultry Hotline at 888-MPHotline (888-674-6854) or send a question via email to <a href=\"mailto:MPHotline@usda.gov\">MPHotline@usda.gov</a>. For consumers that need to report a problem with a meat, poultry, or egg product, the online Electronic Consumer Complaint Monitoring System can be accessed 24 hours a day at <a href=\"https://gcc02.safelinks.protection.outlook.com/?url=https%3A%2F%2Ffoodcomplaint.fsis.usda.gov%2FeCCF%2F&amp;data=05%7C02%7CJohn.Jung%40usda.gov%7Cc6295aa3bc3c400cef6708de69c68032%7Ced5b36e701ee4ebc867ee03cfa0d4697%7C1%7C0%7C639064498953373446%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=qM%2Bsh9A%2BoSst8NSp8EbufXx6JUJlCK7xKbNWWbn0Rtc%3D&amp;reserved=0\">https://foodcomplaint.fsis.usda.gov/eCCF/</a>.</p>\n",
+  "field_year": "2026",
+  "langcode": "English",
+  "field_has_spanish": "False"
+ }
 ]

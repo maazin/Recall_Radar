@@ -60,9 +60,30 @@ def test_ambiguous_grocery_brands_are_not_mistagged(name):
 
 
 def test_chain_named_only_in_the_description_still_counts():
-    assert categorize("Not identified", "Illnesses linked to Chipotle locations") == (
+    assert categorize("Not identified", "Illnesses linked to Panera locations") == (
         CATEGORY_RESTAURANT
     )
+
+
+@pytest.mark.parametrize(
+    "name",
+    [
+        "Hatfield Smokey Chipotle Dry Rub Seasoned Ribs",
+        "Chipotle Aioli Sauce",
+        "Chipotle Cheddar Sausage",
+    ],
+)
+def test_chipotle_the_pepper_is_not_the_chain(name):
+    """Chipotle is a pepper long before it is a burrito chain.
+
+    Real FSIS product names use it constantly, so only the full company name
+    "Chipotle Mexican Grill" counts as the restaurant.
+    """
+    assert categorize(name) == CATEGORY_GROCERY
+
+
+def test_the_chipotle_chain_itself_still_counts():
+    assert categorize("Chipotle Mexican Grill") == CATEGORY_RESTAURANT
 
 
 def test_description_is_not_consulted_for_generic_terms():
