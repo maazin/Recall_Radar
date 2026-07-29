@@ -1,0 +1,48 @@
+[
+  {
+    "field_title": "Sunrise Meats Recalls Ground Beef Products Due to Possible E. coli O157:H7 Contamination",
+    "field_recall_number": "012-2026",
+    "field_recall_date": "2026-07-18",
+    "field_recall_reason": "Product Contamination",
+    "field_recall_classification": "Class I",
+    "field_summary": "<p>Sunrise Meats, a Nebraska establishment, is recalling approximately 24,000 pounds of ground beef products that may be contaminated with E. coli O157:H7.</p>",
+    "field_establishment": "Sunrise Meats",
+    "field_states": "Nebraska, Iowa, Kansas",
+    "field_active_notice": "True",
+    "field_press_release": "/recalls-alerts/sunrise-meats-recalls-ground-beef-products",
+    "field_last_modified_date": "2026-07-20",
+    "field_risk_level": "High",
+    "field_product_items": "10-lb chubs of GROUND BEEF 80/20",
+    "field_year": "2026"
+  },
+  {
+    "field_title": "Harbor Grill Restaurant Group Recalls Chicken Salad Due to Misbranding and Undeclared Allergens",
+    "field_recall_date": "2026-06-02",
+    "field_recall_reason": "Misbranding, Unreported Allergens",
+    "field_recall_classification": "Class II",
+    "field_summary": "Harbor Grill Restaurant Group is recalling chicken salad products because they contain milk, a known allergen, not declared on the label.",
+    "field_establishment": "Harbor Grill Restaurant Group",
+    "field_states": "CA, OR",
+    "field_active_notice": "False",
+    "field_closed_date": "2026-06-30",
+    "field_press_release": "/recalls-alerts/harbor-grill-recalls-chicken-salad",
+    "field_last_modified_date": "2026-06-30",
+    "field_product_items": "12-oz plastic tubs of CHICKEN SALAD",
+    "field_year": "2026"
+  },
+  {
+    "field_title": "Valley Foods Recalls Frozen Pizza Due to Foreign Matter Contamination",
+    "field_recall_number": "015-2026",
+    "field_recall_date": "2026-07-25",
+    "field_recall_reason": "Product Contamination",
+    "field_recall_classification": "Class II",
+    "field_summary": "Valley Foods is recalling frozen pepperoni pizza that may contain pieces of hard plastic.",
+    "field_establishment": "Valley Foods",
+    "field_states": "Nationwide",
+    "field_active_notice": "True",
+    "field_press_release": "https://www.fsis.usda.gov/recalls-alerts/valley-foods-frozen-pizza",
+    "field_last_modified_date": "2026-07-25",
+    "field_product_items": "22-oz cartons of PEPPERONI PIZZA",
+    "field_year": "2026"
+  }
+]
