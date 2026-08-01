@@ -224,23 +224,90 @@ def require(condition: bool, message: str) -> None:
         raise SourceStructureError(message)
 
 
-def fetch_url(client, url: str, source: str):
+# Transient refusals worth retrying. 429 is a rate limit and 5xx is the server
+# having a bad moment; both usually clear on their own. 403 is not here on
+# purpose: an IP-range block does not resolve by asking again a second later.
+_RETRYABLE_STATUS = (429, 500, 502, 503, 504)
+_MAX_ATTEMPTS = 3
+_BACKOFF_SECONDS = (2, 8)
+_MAX_RETRY_AFTER = 30
+
+
+def _retry_delay(response, attempt: int) -> float:
+    """How long to wait before retrying, honouring Retry-After when sensible."""
+    header = response.headers.get("retry-after", "").strip()
+    if header.isdigit():
+        # Cap it: some servers answer with an hour, which is longer than the
+        # whole job should take. Better to fail this run and try tomorrow.
+        return min(int(header), _MAX_RETRY_AFTER)
+    return _BACKOFF_SECONDS[min(attempt, len(_BACKOFF_SECONDS) - 1)]
+
+
+def fetch_url(client, url: str, source: str, *, params=None, allow_status=()):
     """GET a URL, turning any refusal into a SourceUnavailableError.
 
     Keeps availability failures from masquerading as bugs: an httpx status error
     surfacing raw from a fetch reads like something broke, when the ordinary
     cause is an agency declining to serve this IP.
+
+    `params` is passed through to the client, so JSON APIs that paginate with
+    query strings can use this too rather than calling the client directly.
+
+    `allow_status` lists codes the caller treats as a normal outcome and wants
+    to inspect itself. openFDA answers 404 when `skip` runs past the end of a
+    result set, which is the pagination loop's exit condition, not a failure.
+
+    Retries a couple of times on transient refusals before giving up.
     """
+    import time
+
     import httpx
 
-    try:
-        response = client.get(url)
-    except httpx.HTTPError as exc:
-        raise SourceUnavailableError(f"{source}: could not reach {url} — {exc}") from exc
+    last_response = None
 
-    check_not_bot_walled(response, source)
+    for attempt in range(_MAX_ATTEMPTS):
+        try:
+            response = client.get(url, params=params)
+        except httpx.HTTPError as exc:
+            raise SourceUnavailableError(
+                f"{source}: could not reach {url}: {exc}"
+            ) from exc
 
-    if response.status_code in (401, 403, 406, 429) or response.status_code >= 500:
+        check_not_bot_walled(response, source)
+
+        if response.status_code in allow_status:
+            return response
+
+        if response.status_code in _RETRYABLE_STATUS and attempt < _MAX_ATTEMPTS - 1:
+            delay = _retry_delay(response, attempt)
+            logger.warning(
+                "%s: %s returned HTTP %s, retrying in %ss (attempt %s of %s)",
+                source,
+                url,
+                response.status_code,
+                delay,
+                attempt + 1,
+                _MAX_ATTEMPTS,
+            )
+            last_response = response
+            time.sleep(delay)
+            continue
+
+        last_response = response
+        break
+
+    response = last_response
+
+    if response.status_code == 429:
+        raise SourceUnavailableError(
+            f"{source}: {url} returned HTTP 429 after {_MAX_ATTEMPTS} attempts. "
+            f"The request is rate limited, not malformed. For openFDA this is a "
+            f"per-IP daily cap of 1,000 unauthenticated requests, which shared CI "
+            f"runner addresses exhaust easily; setting OPENFDA_API_KEY raises it "
+            f"to 120,000 per day and scopes it to the key rather than the IP."
+        )
+
+    if response.status_code in (401, 403, 406) or response.status_code >= 500:
         raise SourceUnavailableError(
             f"{source}: {url} returned HTTP {response.status_code}. The mapper is "
             f"untouched; the site is refusing this request. 403 from an agency "
@@ -250,6 +317,6 @@ def fetch_url(client, url: str, source: str):
     try:
         response.raise_for_status()
     except httpx.HTTPStatusError as exc:
-        raise SourceUnavailableError(f"{source}: {url} — {exc}") from exc
+        raise SourceUnavailableError(f"{source}: {url}: {exc}") from exc
 
     return response

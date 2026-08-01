@@ -52,11 +52,31 @@ Settings → Secrets and variables → Actions:
 |---|---|
 | `DATABASE_URL` | Same Neon string as Render |
 | `APP_BASE_URL` | The static site URL |
-| `OPENFDA_API_KEY` | Optional — only if you hit rate limits |
+| `OPENFDA_API_KEY` | **Set this.** See below |
 | `SMTP_*`, `EMAIL_FROM` | Step 4, if enabling email |
 
 Run it once by hand: Actions → Scheduled ingestion → Run workflow. After that it
 runs daily at 09:17 UTC.
+
+### Get an openFDA API key before you rely on the schedule
+
+Without a key, openFDA allows **1,000 requests per day per IP address**. GitHub
+Actions runners come from shared address ranges used by an enormous number of
+jobs, so that daily cap gets exhausted by other people's workflows and openFDA
+starts answering 429 to yours.
+
+That matters more than it sounds, because openFDA is the *only* source a CI
+runner can reach (see the table below). When it is rate limited, nothing at all
+gets ingested and the run fails, which is what produces the failure email.
+
+A key is free, takes a minute, and raises the limit to 120,000 per day scoped to
+the key rather than the shared IP:
+
+1. Request one at https://open.fda.gov/apis/authentication/
+2. Add it to Settings → Secrets and variables → Actions as `OPENFDA_API_KEY`
+
+The workflow already forwards the secret, and the ingester already sends it when
+present, so there is no code change to make.
 
 ### Which sources actually work from CI
 

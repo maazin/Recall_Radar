@@ -154,7 +154,9 @@ class TestFetchUrl:
         # The message has to say the mapper is fine, or every 403 reads as a bug.
         assert "mapper is untouched" in message
 
-    def test_server_error_becomes_unavailable(self):
+    def test_server_error_becomes_unavailable(self, monkeypatch):
+        # 5xx is retryable, so skip the real backoff rather than sleeping.
+        monkeypatch.setattr("time.sleep", lambda _seconds: None)
         with self._client(lambda request: httpx.Response(503)) as client:
             with pytest.raises(SourceUnavailableError):
                 fetch_url(client, "https://example.test/x", "Example")
@@ -177,3 +179,88 @@ class TestFetchUrl:
         with self._client(lambda request: httpx.Response(404)) as client:
             with pytest.raises(SourceUnavailableError):
                 fetch_url(client, "https://example.test/gone", "Example")
+
+    def test_allowed_status_is_handed_back_for_the_caller_to_read(self):
+        """openFDA answers 404 when `skip` passes the end of the results.
+
+        That is the pagination loop's exit condition, so the caller has to be
+        able to see it rather than have it raised.
+        """
+        with self._client(lambda request: httpx.Response(404)) as client:
+            response = fetch_url(
+                client, "https://api.fda.gov/x", "openFDA", allow_status=(404,)
+            )
+        assert response.status_code == 404
+
+    def test_query_params_are_forwarded(self):
+        seen = {}
+
+        def handler(request):
+            seen["url"] = str(request.url)
+            return httpx.Response(200, text="ok")
+
+        with self._client(handler) as client:
+            fetch_url(client, "https://api.fda.gov/x", "openFDA", params={"limit": 100})
+        assert "limit=100" in seen["url"]
+
+
+class TestRateLimitRetry:
+    """429 is transient, so it is worth asking again before giving up."""
+
+    def _client(self, handler):
+        return httpx.Client(transport=httpx.MockTransport(handler))
+
+    def test_a_rate_limit_that_clears_is_retried_and_succeeds(self, monkeypatch):
+        monkeypatch.setattr("time.sleep", lambda _seconds: None)
+        attempts = {"n": 0}
+
+        def handler(request):
+            attempts["n"] += 1
+            if attempts["n"] == 1:
+                return httpx.Response(429, headers={"retry-after": "1"})
+            return httpx.Response(200, text="payload")
+
+        with self._client(handler) as client:
+            assert fetch_url(client, "https://api.fda.gov/x", "openFDA").text == "payload"
+        assert attempts["n"] == 2
+
+    def test_a_persistent_rate_limit_is_unavailable_not_broken(self, monkeypatch):
+        """The regression this whole change exists for.
+
+        openFDA's unauthenticated cap is per IP, and shared CI runner addresses
+        exhaust it. Before this, the raw httpx error fell through to the
+        runner's generic handler and was counted as a drifted source, turning a
+        rate limit into a failed job and a notification email.
+        """
+        monkeypatch.setattr("time.sleep", lambda _seconds: None)
+
+        with self._client(lambda request: httpx.Response(429)) as client:
+            with pytest.raises(SourceUnavailableError) as excinfo:
+                fetch_url(client, "https://api.fda.gov/x", "openFDA")
+
+        message = str(excinfo.value)
+        assert "429" in message
+        assert "rate limited, not malformed" in message
+        # The message has to name the fix, or the next person re-debugs it.
+        assert "OPENFDA_API_KEY" in message
+
+    def test_a_forbidden_response_is_not_retried(self, monkeypatch):
+        """An IP-range block does not clear by asking again a second later."""
+        monkeypatch.setattr("time.sleep", lambda _seconds: None)
+        attempts = {"n": 0}
+
+        def handler(request):
+            attempts["n"] += 1
+            return httpx.Response(403)
+
+        with self._client(handler) as client:
+            with pytest.raises(SourceUnavailableError):
+                fetch_url(client, "https://www.cdc.gov/x", "CDC")
+        assert attempts["n"] == 1
+
+    def test_an_absurd_retry_after_is_capped(self):
+        """Some servers answer with an hour, which outlasts the whole job."""
+        from app.ingest.base import _MAX_RETRY_AFTER, _retry_delay
+
+        response = httpx.Response(429, headers={"retry-after": "3600"})
+        assert _retry_delay(response, 0) == _MAX_RETRY_AFTER

@@ -17,6 +17,7 @@ from app.config import settings
 from app.ingest.base import (
     NormalizedAdvisory,
     SourceStructureError,
+    fetch_url,
     iso_from_compact,
     parse_states,
     require,
@@ -166,14 +167,21 @@ def fetch(lookback_days: int | None = None, page_size: int = 100) -> str:
             if settings.openfda_api_key:
                 params["api_key"] = settings.openfda_api_key
 
-            response = client.get(ENDPOINT, params=params)
+            # Routed through fetch_url like every other source, so a rate limit
+            # or a refusal raises SourceUnavailableError rather than a bare
+            # httpx error. That distinction decides whether the daily job goes
+            # red: an unreachable source is skipped, a drifted one fails the
+            # run. Calling the client directly here made every openFDA hiccup
+            # look like a broken mapper.
+            response = fetch_url(
+                client, ENDPOINT, "openFDA", params=params, allow_status=(404,)
+            )
 
             # openFDA returns 404 with a NOT_FOUND error once skip passes the
             # end of the result set, and for an empty date window.
             if response.status_code == 404:
                 logger.info("openFDA returned no further results at skip=%s", skip)
                 break
-            response.raise_for_status()
 
             page = response.json()
             meta = page.get("meta", meta)
