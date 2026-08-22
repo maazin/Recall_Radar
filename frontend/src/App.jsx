@@ -368,7 +368,10 @@ function LedgerColumn({ tone, label, value, caption }) {
         <span className="eyebrow ledger__label">{label}</span>
       </div>
       <span className="ledger__value">
-        {value === undefined || value === null ? '—' : value.toLocaleString()}
+        {/* No dash placeholder. Until the count arrives there is nothing true to
+            say, so the slot holds its height and stays empty rather than showing
+            a glyph a reader has to decode. */}
+        {value === undefined || value === null ? '\u00A0' : value.toLocaleString()}
       </span>
       <span className="ledger__caption">{caption}</span>
     </div>

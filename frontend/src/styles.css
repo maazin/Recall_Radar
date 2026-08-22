@@ -1,11 +1,15 @@
 /* ==========================================================================
    RecallRadar
 
-   The palette is taken from the logo: the bag's teal (#12c6b2 / #01ac9b) and
-   the exclamation's coral (#ff6e5b). Those two colours do all the semantic
-   work — teal for anything live or interactive, coral for anything urgent —
-   and recalls are left in graphite so a genuine outbreak is the only thing on
-   the page wearing red.
+   The palette takes its hues from the logo but not its intensity. The mark is
+   a bright teal and coral; at interface scale those read as neon, so the
+   interface uses deep, low-chroma versions of the same two hues. Teal does
+   anything live or interactive, terracotta does anything urgent, and recalls
+   sit in graphite so a genuine outbreak is the only thing on the page wearing
+   warm colour.
+
+   Values are chosen rather than borrowed. None are stock framework defaults,
+   which is what keeps the page from looking like an untouched starter theme.
 
    Type is Public Sans (the U.S. Web Design System face, so the same one the
    source agencies publish in) over Newsreader for headings, with a monospace
@@ -14,59 +18,63 @@
    ========================================================================== */
 
 :root {
-  --bg: #f8fafc;
+  --bg: #f7f8fa;
   --bg-elevated: #ffffff;
   --surface: #ffffff;
-  --surface-sunken: #f1f5f9;
+  --surface-sunken: #eef1f5;
 
   --border: #e4e9f0;
-  --border-strong: #cbd5e1;
+  --border-strong: #c6cfda;
   --hairline: #eceff4;
 
-  --text: #0f172a;
-  --text-muted: #475569;
-  --text-subtle: #6b7789;
+  --text: #101720;
+  --text-muted: #4a5462;
+  /* 4.5:1 or better on every light surface here (white 5.4, --bg 5.2,
+     --surface-sunken 5.0). The previous #6b7789 measured 4.34:1 on --bg,
+     under the minimum for text below 18pt. */
+  --text-subtle: #5c6b7f;
 
   /* Brand — sampled from the logo. */
-  --brand-400: #3ad6c4;
-  --brand-500: #12c6b2;
-  --brand-600: #0d9e8e;
-  --brand-700: #0b7d71;
-  --brand-800: #075e56;
+  --brand-400: #86b8ae;
+  --brand-500: #3f8a7f;
+  --brand-600: #2d766c;
+  --brand-700: #23625a;
+  --brand-800: #1a4b45;
 
   --accent: var(--brand-700);
   --accent-hover: var(--brand-800);
-  --accent-ring: rgba(18, 198, 178, 0.28);
+  --accent-ring: rgba(45, 118, 108, 0.26);
   --accent-on: #ffffff;
 
-  /* Coral — reserved for outbreak investigations. */
-  --coral-500: #ff6e5b;
-  --coral-600: #ef4e37;
-  --coral-700: #c0392a;
+  /* Terracotta, reserved for outbreak investigations. #c0392a, the previous
+     value here, is a stock flat-UI red; this is deeper and less saturated. */
+  --coral-500: #bf6c57;
+  --coral-600: #b05540;
+  --coral-700: #9a4632;
 
   --outbreak-fg: var(--coral-700);
-  --outbreak-bg: #fff5f2;
-  --outbreak-br: #ffd8cf;
+  --outbreak-bg: #faf2ef;
+  --outbreak-br: #ead5cd;
   --outbreak-rail: var(--coral-500);
 
   /* Recalls sit in graphite: routine, not alarming. */
-  --recall-fg: #334155;
-  --recall-bg: #f4f6f9;
+  --recall-fg: #364150;
+  --recall-bg: #f2f4f7;
   --recall-br: #dbe2ea;
-  --recall-rail: #94a3b8;
+  --recall-rail: #97a2b0;
 
   --live-fg: var(--brand-800);
-  --live-bg: #eafaf7;
-  --live-br: #b6ece4;
+  --live-bg: #eef4f2;
+  --live-br: #cbdfd9;
   --live-dot: var(--brand-500);
 
   --pending-fg: #92400e;
   --pending-bg: #fffbeb;
   --pending-br: #fde68a;
 
-  --muted-fg: #475569;
-  --muted-bg: #f1f5f9;
-  --muted-br: #e2e8f0;
+  --muted-fg: #4a5462;
+  --muted-bg: #eef1f5;
+  --muted-br: #dfe4ea;
 
   --font-sans: 'Public Sans', ui-sans-serif, -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -102,13 +110,13 @@
     --text-subtle: #7d8b9d;
 
     --accent: var(--brand-400);
-    --accent-hover: #6ee7d7;
-    --accent-ring: rgba(18, 198, 178, 0.3);
-    --accent-on: #04211d;
+    --accent-hover: #a5cec6;
+    --accent-ring: rgba(134, 184, 174, 0.28);
+    --accent-on: #08211d;
 
-    --outbreak-fg: #ff9d8b;
-    --outbreak-bg: #24120f;
-    --outbreak-br: #4a2119;
+    --outbreak-fg: #dda28f;
+    --outbreak-bg: #251411;
+    --outbreak-br: #46251d;
     --outbreak-rail: var(--coral-500);
 
     --recall-fg: #a9b6c7;
@@ -116,9 +124,9 @@
     --recall-br: #26334733;
     --recall-rail: #4a5a70;
 
-    --live-fg: #6ee7d7;
-    --live-bg: #06231f;
-    --live-br: #0e4840;
+    --live-fg: #a5cec6;
+    --live-bg: #0d2320;
+    --live-br: #1d443d;
     --live-dot: var(--brand-500);
 
     --pending-fg: #fcd34d;
@@ -181,7 +189,8 @@ a:hover {
 
 /* A micro-label used for every small uppercase caption on the page. */
 .eyebrow {
-  font-size: 0.685rem;
+  /* 11px exactly: the mobile minimum readable size. */
+  font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.09em;
   text-transform: uppercase;
@@ -325,7 +334,8 @@ a:hover {
 }
 
 .brand__tag {
-  font-size: 0.6rem;
+  /* Was 9.6px, under the 10px desktop minimum and well under mobile's 11px. */
+  font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -709,12 +719,12 @@ a:hover {
 .badge {
   display: inline-flex;
   align-items: center;
-  padding: 0.2rem 0.55rem;
+  padding: 0.24rem 0.6rem;
   border-radius: 4px;
   border: 1px solid transparent;
-  font-size: 0.665rem;
+  font-size: 0.6875rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -817,14 +827,13 @@ a:hover {
   border-top: 1px solid var(--hairline);
 }
 
+/* Also sentence case: "FDA · Grocery" is a fact about the record, not a chip. */
 .card__attribution {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  font-size: 0.78rem;
+  font-weight: 600;
   color: var(--text-subtle);
 }
 
@@ -834,8 +843,8 @@ a:hover {
 }
 
 .card__category {
-  font-weight: 500;
-  letter-spacing: 0.04em;
+  font-weight: 400;
+  text-transform: capitalize;
 }
 
 .dot {
@@ -990,12 +999,12 @@ a:hover {
   min-width: 0;
 }
 
+/* Sentence case, not caps. A form label is content to read rather than a
+   status chip, and small all-caps text is slower to scan. */
 .field__label {
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-subtle);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
 }
 
 .field input,
@@ -1152,5 +1161,45 @@ a:hover {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   Touch targets
+
+   Pointer-based screens are already above the 28px desktop default, so the
+   44px minimum is applied only where the input is a finger. Keying on
+   `pointer: coarse` rather than viewport width catches touch laptops and
+   large tablets, which a width breakpoint misses.
+   ========================================================================== */
+
+@media (pointer: coarse) {
+  .btn,
+  .select select,
+  .searchfield input,
+  .field input,
+  .field select {
+    min-height: 44px;
+  }
+
+  /* The submit sits inside the 44px field, so 3px of margin capped it at 38.
+     Flush to the right edge instead: it reaches 44 and reads as part of the
+     control rather than a chip floating inside it. */
+  .searchfield__go {
+    margin: 0;
+    min-height: 44px;
+    border-radius: 0 calc(var(--radius) - 1px) calc(var(--radius) - 1px) 0;
+  }
+
+  /* The source link is the primary action on every card, and was the smallest
+     control on the page at 30px. */
+  .card__foot .btn {
+    min-height: 44px;
+    padding-inline: 0.9rem;
+  }
+
+  /* Keep controls from crowding each other once they are finger-sized. */
+  .selects {
+    gap: 0.55rem;
   }
 }
