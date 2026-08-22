@@ -5,7 +5,15 @@
 
 Exit codes:
     0  at least one source ingested, and none had drifted
-    1  a source's structure changed, or nothing could be reached at all
+    1  a source's structure changed, and a human needs to look at the mapper
+    2  nothing could be reached this run
+
+1 and 2 are deliberately different. Drift is deterministic: running again gets
+the same answer, so the caller should stop and fail. Being refused by every
+source is transient, and because each run re-reads a rolling window rather than
+only yesterday's records, a skipped run costs nothing. The next successful run
+backfills whatever was missed. So 2 is worth retrying before it becomes a
+failure, which is what the scheduled workflow does with it.
 
 A structure failure is loud and fatal by design: a source whose shape has drifted
 produces no rows at all rather than partial ones.
@@ -37,6 +45,10 @@ from app.ingest.base import (
 from app.ingest.pipeline import ingest
 
 logger = logging.getLogger("app.ingest.run")
+
+# See the module docstring: drift and unreachability are not the same failure.
+EXIT_DRIFT = 1
+EXIT_NOTHING_REACHABLE = 2
 
 # name -> (fetch raw payload, parse raw payload)
 SOURCES: dict[str, tuple[Callable[[], str], Callable[[str], list[NormalizedAdvisory]]]] = {
@@ -119,15 +131,24 @@ def main(argv: list[str] | None = None) -> int:
     # A drifted source is a data integrity problem and always fails the run.
     if broken:
         logger.error("Ingestion failed for: %s", ", ".join(broken))
-        return 1
+        return EXIT_DRIFT
 
     # Blocked sources alone do not fail the run, as long as something got in.
     # Failing on them would mean a permanently red daily job, and a job that is
-    # always red is one nobody reads — which is exactly when a real structure
+    # always red is one nobody reads, which is exactly when a real structure
     # break would slip past.
+    #
+    # Reaching nothing at all gets its own code rather than sharing 1 with
+    # drift. From a cloud runner only openFDA is reachable, so any hiccup there
+    # means zero sources succeed; that was turning ordinary upstream flakiness
+    # into a failed job. Nothing is lost by it, because the next run re-reads
+    # the same window, so the caller should retry before treating it as broken.
     if unreachable and not succeeded:
-        logger.error("No source could be reached; nothing was ingested.")
-        return 1
+        logger.error(
+            "No source could be reached; nothing was ingested. This run is "
+            "recoverable: the next one re-reads the same window."
+        )
+        return EXIT_NOTHING_REACHABLE
 
     return 0
 

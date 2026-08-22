@@ -132,7 +132,13 @@ python -m app.ingest.run --source fda-recalls
 ```
 
 Exit `0` means at least one source ingested and none had drifted. Exit `1` means a structure check
-failed, or nothing could be reached at all. One bad source never stops the others.
+failed and a human should look at the mapper. Exit `2` means nothing could be reached this run.
+One bad source never stops the others.
+
+`1` and `2` are separate on purpose. Drift is deterministic, so running again gets the same answer
+and the caller should stop. Being refused by every source is transient, and costs nothing, because
+each run re-reads a rolling window rather than only yesterday's records. The scheduled workflow
+retries `2` up to three times before treating it as a failure.
 
 Two ways to schedule it, both already set up:
 

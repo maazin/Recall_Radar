@@ -52,6 +52,28 @@ jobs:
         run: alembic upgrade head
 
       - name: Ingest
-        # Exits non-zero if any source failed a structure check, which surfaces
-        # a drifted upstream page as a failed workflow run rather than silence.
-        run: python -m app.ingest.run --source "${{ inputs.source || 'all' }}"
+        # Exit codes carry different meanings, so they get handled differently:
+        #
+        #   0  something was ingested and nothing had drifted
+        #   1  a source's structure changed. Deterministic, so retrying just
+        #      gets the same answer. Fail immediately and let a human look.
+        #   2  nothing could be reached this run. Only openFDA is reachable from
+        #      a cloud runner, so any hiccup there means no source succeeds.
+        #      That was turning ordinary upstream flakiness into a failed job
+        #      roughly once a week, for a run that loses nothing: each run
+        #      re-reads a rolling window, so the next one backfills whatever was
+        #      missed. Worth retrying before calling it a failure.
+        run: |
+          for attempt in 1 2 3; do
+            python -m app.ingest.run --source "${{ inputs.source || 'all' }}" && exit 0
+            code=$?
+            if [ "$code" -ne 2 ]; then
+              exit "$code"
+            fi
+            if [ "$attempt" -lt 3 ]; then
+              echo "::warning::Attempt $attempt reached no source. Retrying in 90s."
+              sleep 90
+            fi
+          done
+          echo "::error::No source could be reached across 3 attempts over ~3 minutes."
+          exit 1

@@ -83,13 +83,23 @@ class TestExitCodes:
         )
         assert run_module.main(["--source", "all"]) == 1
 
-    def test_everything_unreachable_fails_the_run(self, sources, db):
-        """Nothing ingested at all is a real problem, even without drift."""
+    def test_everything_unreachable_is_its_own_exit_code(self, sources, db):
+        """Reaching nothing is recoverable, so it must not look like drift.
+
+        From a cloud runner only openFDA is reachable, so one hiccup there means
+        no source succeeds. Sharing exit 1 with drift turned ordinary upstream
+        flakiness into a failed job and a notification, for a run that costs
+        nothing because the next one re-reads the same window.
+        """
         sources(
             a=SourceUnavailableError("403"),
             b=SourceUnavailableError("403"),
         )
-        assert run_module.main(["--source", "all"]) == 1
+        assert run_module.main(["--source", "all"]) == run_module.EXIT_NOTHING_REACHABLE
+
+    def test_unreachable_and_drift_are_distinguishable(self, sources, db):
+        """The caller retries one and stops on the other, so they must differ."""
+        assert run_module.EXIT_DRIFT != run_module.EXIT_NOTHING_REACHABLE
 
     def test_an_unexpected_error_fails_the_run(self, sources, db):
         sources(good="ok", odd=ValueError("something nobody predicted"))
