@@ -1,13 +1,24 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { fetchAdvisories, fetchConfig, fetchStats } from './api'
 import AdvisoryCard from './components/AdvisoryCard'
 import SubscribeForm from './components/SubscribeForm'
 import { EmptyIcon, SearchIcon } from './components/Icons'
+import SourceCoverage from './components/SourceCoverage'
+import AdvisoryDetail from './components/AdvisoryDetail'
 import Logo from './components/Logo'
 
 const PAGE_SIZE = 30
 
 export default function App() {
+  if (window.location.pathname.startsWith('/advisories/')) {
+    const match = /^\/advisories\/(\d+)\/?$/.exec(window.location.pathname)
+    return <AdvisoryDetail id={match?.[1]} />
+  }
+  return <Feed />
+}
+
+function Feed() {
+  const requestRef = useRef(null)
   const [searchInput, setSearchInput] = useState('')
   const [search, setSearch] = useState('')
   const [category, setCategory] = useState('')
@@ -27,7 +38,11 @@ export default function App() {
   const [notificationsEnabled, setNotificationsEnabled] = useState(false)
 
   const load = useCallback(
-    async (nextOffset, { append } = { append: false }) => {
+    async (nextOffset, { append = false } = {}) => {
+      requestRef.current?.abort()
+      const controller = new AbortController()
+      requestRef.current = controller
+      const signal = controller.signal
       setLoading(true)
       setError('')
       try {
@@ -38,7 +53,9 @@ export default function App() {
           search,
           limit: PAGE_SIZE,
           offset: nextOffset,
+          signal,
         })
+        if (signal?.aborted) return
         setTotal(data.total)
         setOffset(nextOffset)
         setItems((current) => (append ? [...current, ...data.items] : data.items))
@@ -56,16 +73,18 @@ export default function App() {
             search,
             limit: 1,
             offset: 0,
+            signal,
           })
-          setOtherStatusTotal(wider.total)
+          if (!signal?.aborted) setOtherStatusTotal(wider.total)
         } else if (!append) {
           setOtherStatusTotal(0)
         }
       } catch (err) {
+        if (signal?.aborted) return
         setError(err.message)
         if (!append) setItems([])
       } finally {
-        setLoading(false)
+        if (!signal?.aborted) setLoading(false)
       }
     },
     [category, type, status, search],
@@ -73,7 +92,8 @@ export default function App() {
 
   // Re-query from the first page whenever a filter or the search term changes.
   useEffect(() => {
-    load(0, { append: false })
+    load(0)
+    return () => requestRef.current?.abort()
   }, [load])
 
   useEffect(() => {
@@ -119,7 +139,7 @@ export default function App() {
             </span>
           </a>
 
-          <div className="navlinks"><a href="#advisories">Advisories</a><a href="#sources">Our sources</a></div><span className="livepill" title="Indexed through scheduled polling">
+          <div className="navlinks"><a href="#advisories">Advisories</a><a href="#coverage">Sources & coverage</a></div><span className="livepill" title="Indexed through scheduled polling">
             <span className="livepill__dot" aria-hidden="true" />
             Public agency records
           </span>
@@ -169,8 +189,8 @@ export default function App() {
               type="search"
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
-              placeholder="Search a brand or restaurant chain…"
-              aria-label="Search by brand or chain"
+              placeholder="Search a product, brand or hazard…"
+              aria-label="Search products, brands and hazards"
             />
             <button type="submit" className="btn btn--primary searchfield__go">
               Search
@@ -221,14 +241,14 @@ export default function App() {
         <p className="resultline" role="status">
           {loading && items.length === 0 ? (
             'Loading advisories…'
-          ) : (
+          ) : error ? 'Advisories unavailable' : (
             <>
               <strong>{total.toLocaleString()}</strong>
               {total === 1 ? ' advisory' : ' advisories'}
               {search && (
                 <>
                   {' '}
-                  matching brand <strong>“{search}”</strong>
+                  matching <strong>“{search}”</strong>
                 </>
               )}
             </>
@@ -261,7 +281,7 @@ export default function App() {
             <h2>No advisories match these filters</h2>
             <p>
               {search
-                ? `No brand or chain matching “${search}” has a record under the current filters.`
+                ? `No product, brand or hazard matching “${search}” has a record under the current filters.`
                 : 'Nothing is indexed under this combination of filters right now.'}
             </p>
 
@@ -311,7 +331,7 @@ export default function App() {
           </button>
         )}
 
-        </div><aside className="guide"><section className="guide__intro"><span className="guide__symbol" aria-hidden="true">◎</span><p className="eyebrow">A LITTLE GUIDANCE</p><h2>Information you can act on.</h2><p>Found a product you recognize? The original agency record is your next stop.</p><ol><li><strong>Check the details</strong><span>Compare product names, lot numbers and dates with what you have.</span></li><li><strong>Read the agency record</strong><span>Follow the source link for the full recall or investigation details.</span></li><li><strong>Follow their guidance</strong><span>The agency explains what to do with an affected product.</span></li></ol></section><section className="guide__note"><h3>Independent. Source-backed.</h3><p>RecallRadar aggregates public records. It does not issue health alerts and is not affiliated with the FDA, USDA or CDC. Always read the original agency record.</p><a href="#sources">Explore our sources ↗</a></section></aside>
+        </div><aside className="guide"><SourceCoverage /><section className="guide__intro"><span className="guide__symbol" aria-hidden="true">◎</span><p className="eyebrow">A LITTLE GUIDANCE</p><h2>Information you can act on.</h2><p>Found a product you recognize? The original agency record is your next stop.</p><ol><li><strong>Check the details</strong><span>Compare product names, lot numbers and dates with what you have.</span></li><li><strong>Read the agency record</strong><span>Follow the source link for the full recall or investigation details.</span></li><li><strong>Follow their guidance</strong><span>The agency explains what to do with an affected product.</span></li></ol></section><section className="guide__note"><h3>Independent. Source-backed.</h3><p>RecallRadar aggregates public records. It does not issue health alerts and is not affiliated with the FDA, USDA or CDC. Always read the original agency record.</p><a href="#sources">Explore our sources ↗</a></section></aside>
         {/* Only offered when the deployment can actually send. */}
         {notificationsEnabled && <SubscribeForm />}
       </main>

@@ -34,6 +34,10 @@ _MUTABLE_FIELDS = (
     "started_at",
     "updated_at",
     "source_url",
+    "product_description",
+    "lot_codes",
+    "distribution_pattern",
+    "recall_number",
 )
 
 
