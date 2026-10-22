@@ -75,7 +75,7 @@ def test_notification_failure_does_not_hide_successful_ingestion(db, monkeypatch
     def fail(db, rows):
         raise RuntimeError('mail down')
 
-    monkeypatch.setattr(runner, 'notify_subscribers', fail)
+    monkeypatch.setattr(runner, 'deliver_pending', fail)
     assert runner.run_source('fda-recalls') == (1, 0)
     assert db.get(SourceHealth, 'fda-recalls').outcome == 'success'
 

@@ -56,8 +56,7 @@ def sources(monkeypatch):
                 table[name] = (lambda: "raw", lambda raw: [_advisory()])
         monkeypatch.setattr(run_module, "SOURCES", table)
         # Keep the database out of it; upserting is covered elsewhere.
-        monkeypatch.setattr(run_module, "upsert_advisories", lambda db, advisories: advisories)
-        monkeypatch.setattr(run_module, "notify_subscribers", lambda db, advisories: 0)
+        monkeypatch.setattr(run_module, "ingest", lambda db, advisories, **kwargs: (len(advisories), 0))
         return table
 
     return install

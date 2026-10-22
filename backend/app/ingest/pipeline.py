@@ -16,7 +16,8 @@ from sqlalchemy.orm import Session
 
 from app.ingest.base import NormalizedAdvisory
 from app.models import STATUS_ACTIVE, Advisory, Subscription
-from app.notify.email import EmailSender, default_sender, render_digest
+from app.notify.email import EmailSender, render_digest
+from app.notify.outbox import deliver_pending, enqueue_digest
 
 logger = logging.getLogger(__name__)
 
@@ -42,7 +43,7 @@ _MUTABLE_FIELDS = (
 
 
 def upsert_advisories(
-    db: Session, advisories: list[NormalizedAdvisory]
+    db: Session, advisories: list[NormalizedAdvisory], *, commit: bool = True
 ) -> list[Advisory]:
     """Insert or update advisories, returning the ones worth notifying about.
 
@@ -81,7 +82,10 @@ def upsert_advisories(
         if became_active:
             notable.append(current)
 
-    db.commit()
+    if commit:
+        db.commit()
+    else:
+        db.flush()
 
     logger.info(
         "Upserted %s advisories (%s new or newly active)", len(advisories), len(notable)
@@ -112,43 +116,38 @@ def _matches(advisory: Advisory, subscription: Subscription) -> bool:
     return True
 
 
-def notify_subscribers(
-    db: Session,
-    advisories: list[Advisory],
-    sender: EmailSender | None = None,
-) -> int:
-    """Email each subscriber the subset of `advisories` matching their filters.
-
-    Returns the number of messages sent.
-    """
+def queue_subscribers(db: Session, advisories: list[Advisory]) -> int:
+    """Stage digests in the same transaction as the new/reopened records."""
     if not advisories:
         return 0
-
-    sender = sender or default_sender
-    subscriptions = list(db.scalars(select(Subscription)))
-    sent = 0
-
-    for subscription in subscriptions:
+    queued = 0
+    for subscription in db.scalars(select(Subscription)):
         matches = [a for a in advisories if _matches(a, subscription)]
-        if not matches:
-            continue
-        subject, body = render_digest(matches)
-        sender.send(subscription.email, subject, body)
-        sent += 1
+        if matches:
+            subject, body = render_digest(matches)
+            enqueue_digest(db, subscription, subject, body)
+            queued += 1
+    return queued
 
-    logger.info("Sent %s subscription notification(s)", sent)
-    return sent
+
+def notify_subscribers(
+    db: Session, advisories: list[Advisory], sender: EmailSender | None = None
+) -> int:
+    queue_subscribers(db, advisories)
+    db.commit()
+    return deliver_pending(db, sender=sender)
 
 
 def ingest(
     db: Session,
     advisories: list[NormalizedAdvisory],
     sender: EmailSender | None = None,
+    *,
+    defer_notifications: bool = False,
 ) -> tuple[int, int]:
-    """Upsert a parsed batch and notify on the diff.
-
-    Returns (advisories upserted, notification emails sent).
-    """
-    notable = upsert_advisories(db, advisories)
-    sent = notify_subscribers(db, notable, sender=sender)
+    """Commit records and pending digests atomically, then attempt delivery."""
+    notable = upsert_advisories(db, advisories, commit=False)
+    queue_subscribers(db, notable)
+    db.commit()
+    sent = 0 if defer_notifications else deliver_pending(db, sender=sender)
     return len(advisories), sent

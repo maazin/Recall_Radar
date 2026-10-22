@@ -153,7 +153,7 @@ activity, and it does so quietly.
 
 Sends are driven by the ingestion diff, not by the feed. `upsert_advisories` returns only records
 that were newly inserted or that flipped from resolved back to active. A routine re-ingest of
-unchanged records returns nothing and sends nothing. Without that, every scheduled run would email
+unchanged records creates no new digests. Previously queued, undelivered digests may still be retried. Without that, every scheduled run would email
 the entire feed to every subscriber.
 
 ---
@@ -255,7 +255,7 @@ reads that way.
 ## Tests
 
 ```bash
-cd backend && pytest -q     # 211 tests, needs Postgres running
+cd backend && pytest -q     # 218 tests, needs Postgres running
 ```
 
 Every ingester is tested against saved fixtures, never a live endpoint, and every source has a
@@ -327,3 +327,20 @@ Each advisory has a direct `/advisories/{id}` page and a copy-link action. FDA i
 3. Run the usual ingestion job (`python -m app.ingest.run --source all`). That begins freshness tracking and enriches records in the configured lookback window. Older records retain nullable detail fields until reingested. Source blocks remain visible; this change does not bypass agency access restrictions.
 
 Implementation uses the existing project dependencies; no third-party repository code was copied or relicensed.
+
+
+## Scheduled ingestion and SMTP failures
+
+The recurring October 2026 Actions failures were SMTP authentication errors (`525 Unauthorized IP address`) after records had already committed. Migration `0003` adds a durable notification outbox: records and matching digests commit together, then the runner attempts due deliveries after fetching sources. A failed send retains its digest for a later run; an unchanged source refresh does not enqueue it again. Sent digests are not retried. Authentication failures back off six hours and stop that delivery batch; other transport failures back off 15 minutes. Actual retry frequency follows the daily/manual ingestion schedule. Pending counts and sanitized mail error categories appear in the Actions job summary and warning annotations. Parser/database failures still fail the run.
+
+A successful ingestion run does **not** confirm mail delivery. SMTP `525` requires correcting the provider's authorization for the sending environment or using an approved fixed-egress sender; do not remove IP restrictions merely to make Actions green. The application does not change those provider settings. A crash after SMTP accepts a message but before the database records success can cause a duplicate on retry (at-least-once delivery).
+
+For a diagnostic refresh without sending any emails, manually run the ingestion workflow with **defer_notifications** checked, or use:
+
+```bash
+cd backend
+alembic upgrade head
+python -m app.ingest.run --source all --defer-notifications
+```
+
+Digests remain queued for the next normal run. The workflow serializes scheduled and manual runs so they do not race to enqueue the same new records. Notifications lost before the outbox was deployed are not automatically reconstructed or resent.

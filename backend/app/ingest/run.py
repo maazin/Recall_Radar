@@ -31,9 +31,13 @@ from __future__ import annotations
 
 import argparse
 import logging
+import os
 import sys
 from collections.abc import Callable
 from datetime import UTC, datetime
+from pathlib import Path
+
+from sqlalchemy import func, select
 
 from app.config import settings
 from app.db import SessionLocal
@@ -43,8 +47,9 @@ from app.ingest.base import (
     SourceStructureError,
     SourceUnavailableError,
 )
-from app.ingest.pipeline import notify_subscribers, upsert_advisories
-from app.models import SourceHealth
+from app.ingest.pipeline import ingest
+from app.models import NotificationDelivery, SourceHealth
+from app.notify.outbox import deliver_pending
 
 logger = logging.getLogger("app.ingest.run")
 
@@ -85,14 +90,8 @@ def run_source(name: str) -> tuple[int, int]:
         raw = fetch()
         advisories = parse(raw)
         with SessionLocal() as db:
-            notable = upsert_advisories(db, advisories)
-            _record_health(db, name, "success", len(advisories))
-            # A mail failure does not undo a successful source refresh.
-            try:
-                sent = notify_subscribers(db, notable)
-            except Exception:
-                logger.exception("[%s] data refreshed, but notification delivery failed", name)
-                sent = 0
+            count, sent = ingest(db, advisories, defer_notifications=True)
+            _record_health(db, name, "success", count)
         return len(advisories), sent
     except Exception as exc:
         outcome = (
@@ -111,6 +110,10 @@ def main(argv: list[str] | None = None) -> int:
         default="all",
         choices=[*SOURCES.keys(), "all"],
         help="Which source to ingest (default: all).",
+    )
+    parser.add_argument(
+        "--defer-notifications", action="store_true",
+        help="Save digests for a later run without contacting SMTP (diagnostic runs).",
     )
     args = parser.parse_args(argv)
 
@@ -145,6 +148,35 @@ def main(argv: list[str] | None = None) -> int:
         except Exception as exc:  # noqa: BLE001 - one bad source must not stop the rest
             logger.exception("[%s] ingestion failed: %s", name, exc)
             broken.append(name)
+
+    with SessionLocal() as db:
+        sent = 0 if args.defer_notifications else deliver_pending(db)
+        pending = db.scalar(select(func.count()).select_from(NotificationDelivery).where(
+            NotificationDelivery.sent_at.is_(None)
+        )) or 0
+        last_error = db.scalar(select(NotificationDelivery.last_error).where(
+            NotificationDelivery.sent_at.is_(None), NotificationDelivery.last_error.is_not(None)
+        ).order_by(NotificationDelivery.id.desc()).limit(1))
+    logger.info("Notification delivery: %s sent; %s pending", sent, pending)
+    if pending and not args.defer_notifications:
+        message = last_error or "Pending digests will be attempted on the next ingestion run"
+        logger.warning("%s (%s pending)", message, pending)
+        if os.environ.get("GITHUB_ACTIONS") == "true":
+            print(f"::warning::{message}. {pending} notification(s) retained for retry.")
+    summary = os.environ.get("GITHUB_STEP_SUMMARY")
+    if summary:
+        with Path(summary).open("a") as report:
+            report.write(
+                "## Ingestion result\n\n"
+                f"- Refreshed sources: {len(succeeded)}\n"
+                f"- Unavailable sources: {len(unreachable)}\n"
+                f"- Failed sources: {len(broken)}\n"
+                f"- Notifications sent: {sent}\n"
+                f"- Notifications pending: {pending}\n"
+                f"- Delivery deferred for this run: {args.defer_notifications}\n"
+            )
+            if last_error:
+                report.write(f"- Mail provider: {last_error}\n")
 
     if succeeded:
         logger.info("Ingested: %s", ", ".join(succeeded))

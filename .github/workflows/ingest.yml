@@ -14,11 +14,25 @@ on:
         default: all
         type: choice
         options: [all, fda-recalls, fsis-recalls, cdc-outbreaks, fda-outbreaks]
+      defer_notifications:
+        description: Queue notifications without sending mail (diagnostic run)
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+# Cron, retries and manual refreshes must not race to enqueue the same records.
+concurrency:
+  group: recallradar-ingestion
+  cancel-in-progress: false
 
 jobs:
   ingest:
     name: Ingest agency sources
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     defaults:
       run:
@@ -28,6 +42,8 @@ jobs:
       # Point at the deployed database. Set these in the repository's
       # Settings -> Secrets and variables -> Actions.
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      INGEST_SOURCE: ${{ inputs.source || 'all' }}
+      DEFER_NOTIFICATIONS: ${{ inputs.defer_notifications && 'true' || 'false' }}
       OPENFDA_API_KEY: ${{ secrets.OPENFDA_API_KEY }}
       SMTP_HOST: ${{ secrets.SMTP_HOST }}
       SMTP_PORT: ${{ secrets.SMTP_PORT }}
@@ -64,8 +80,12 @@ jobs:
         #      re-reads a rolling window, so the next one backfills whatever was
         #      missed. Worth retrying before calling it a failure.
         run: |
+          args=(--source "$INGEST_SOURCE")
+          if [ "$DEFER_NOTIFICATIONS" = true ]; then
+            args+=(--defer-notifications)
+          fi
           for attempt in 1 2 3; do
-            python -m app.ingest.run --source "${{ inputs.source || 'all' }}" && exit 0
+            python -m app.ingest.run "${args[@]}" && exit 0
             code=$?
             if [ "$code" -ne 2 ]; then
               exit "$code"
