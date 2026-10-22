@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { fetchAdvisory } from '../api'
 import Logo from './Logo'
+import { feedReturnUrl } from '../utils/feedState'
 import { ExternalLinkIcon } from './Icons'
 
 function Field({ label, children }) {
@@ -16,10 +17,13 @@ function Field({ label, children }) {
 }
 
 export default function AdvisoryDetail({ id }) {
+  const returnUrl = feedReturnUrl()
   const [advisory, setAdvisory] = useState(null)
   const [error, setError] = useState('')
   const [revision, setRevision] = useState(0)
   const [copied, setCopied] = useState('')
+  const productUnknown = /^(not\s+yet\s+identified|not\s+identified|unknown|tbd|pending)$/i.test(advisory?.brand_or_chain || '')
+  const title = productUnknown ? advisory?.reason : advisory?.brand_or_chain
   useEffect(() => {
     const controller = new AbortController()
     setError('')
@@ -37,12 +41,12 @@ export default function AdvisoryDetail({ id }) {
   useEffect(() => {
     const previous = document.title
     document.title = advisory
-      ? `${advisory.brand_or_chain} — RecallRadar`
+      ? `${title} — RecallRadar`
       : 'Advisory details — RecallRadar'
     return () => {
       document.title = previous
     }
-  }, [advisory])
+  }, [advisory, title])
 
   async function copyLink() {
     try {
@@ -61,12 +65,12 @@ export default function AdvisoryDetail({ id }) {
             <Logo size={30} />
             <span className="brand__name">RecallRadar</span>
           </a>
-          <a href="/#advisories">Browse advisories →</a>
+          <a href="/#advisories">All records</a>
         </div>
       </nav>
       <main className="shell detail">
-        <a className="detail__back" href="/#advisories">
-          ← Back to advisories
+        <a className="detail__back" href={returnUrl}>
+          ← Back to results
         </a>
         {error ? (
           <section className="panel panel--error" role="alert">
@@ -97,8 +101,8 @@ export default function AdvisoryDetail({ id }) {
                 </span>
                 <span className="detail__agency">{advisory.source_agency}</span>
               </div>
-              <h1>{advisory.brand_or_chain}</h1>
-              <p className="detail__reason">{advisory.reason}</p>
+              <h1>{title}</h1>
+              <p className="detail__reason">{productUnknown ? 'Product not yet identified by the agency.' : advisory.reason}</p>
               <div className="detail__actions">
                 <a
                   className="btn btn--primary"
@@ -110,7 +114,7 @@ export default function AdvisoryDetail({ id }) {
                   <ExternalLinkIcon width="15" height="15" />
                 </a>
                 <button className="btn btn--secondary" onClick={copyLink}>
-                  Copy share link
+                  Copy link
                 </button>
                 <span role="status">{copied}</span>
               </div>

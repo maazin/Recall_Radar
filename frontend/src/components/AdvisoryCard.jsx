@@ -1,9 +1,4 @@
-import {
-  CalendarIcon,
-  ExternalLinkIcon,
-  MapPinIcon,
-  UsersIcon,
-} from './Icons'
+import { CalendarIcon, ExternalLinkIcon, MapPinIcon, UsersIcon } from './Icons'
 
 const AGENCY_LABELS = {
   FDA: 'U.S. Food & Drug Administration',
@@ -12,7 +7,8 @@ const AGENCY_LABELS = {
 }
 
 // Agencies use several phrasings for "we don't know the food yet".
-const UNIDENTIFIED = /^(not\s+yet\s+identified|not\s+identified|unknown|tbd|pending)$/i
+const UNIDENTIFIED =
+  /^(not\s+yet\s+identified|not\s+identified|unknown|tbd|pending)$/i
 
 /**
  * Render a date at the precision actually known.
@@ -80,12 +76,14 @@ function extractCaseCount(description) {
  * product is demoted to a badge.
  */
 function deriveDisplay(advisory) {
-  const productUnknown = UNIDENTIFIED.test((advisory.brand_or_chain || '').trim())
+  const productUnknown = UNIDENTIFIED.test(
+    (advisory.brand_or_chain || '').trim(),
+  )
 
   const title = productUnknown ? advisory.reason : advisory.brand_or_chain
   const subtitle = productUnknown ? null : advisory.reason
 
-  let body = advisory.description || ''
+  let body = advisory.product_description || advisory.description || ''
   if (advisory.type === 'outbreak') {
     // Both of these are shown elsewhere on the card now — as the title/badge and
     // as a metadata field — so leaving them in the prose just repeats them.
@@ -121,12 +119,19 @@ export default function AdvisoryCard({ advisory }) {
       <header className="card__head">
         <span className={`badge badge--${advisory.type}`}>{badgeLabel}</span>
         {productUnknown && (
-          <span className="badge badge--pending">Product pending identification</span>
+          <span className="badge badge--pending">
+            Product pending identification
+          </span>
         )}
-        <span className="card__status"><span className={`dot dot--${advisory.status}`} aria-hidden="true" />{isResolved ? 'Resolved' : 'Active'}</span>
+        <span className="card__status">
+          <span className={`dot dot--${advisory.status}`} aria-hidden="true" />
+          {isResolved ? 'Resolved' : 'Active'}
+        </span>
       </header>
 
-      <h2 className="card__title"><a href={`/advisories/${advisory.id}`}>{title}</a></h2>
+      <h2 className="card__title">
+        <a href={`/advisories/${advisory.id}`}>{title}</a>
+      </h2>
       {subtitle && <p className="card__subtitle">{subtitle}</p>}
       {body && <p className="card__body">{body}</p>}
 
@@ -152,14 +157,12 @@ export default function AdvisoryCard({ advisory }) {
         agency and links to that agency's original record. RecallRadar presents
         the record; it does not issue the advisory.
       */}
-      <a className="card__details" href={`/advisories/${advisory.id}`}>View details & affected products <span aria-hidden="true">→</span></a>
+
       <footer className="card__foot">
+        <a className="card__details" href={`/advisories/${advisory.id}`}>
+          Details <span aria-hidden="true">→</span>
+        </a>
         <span className="card__attribution">
-          <span
-            className={`dot dot--${advisory.status}`}
-            title={isResolved ? 'Resolved' : 'Active'}
-            aria-hidden="true"
-          />
           <span title={AGENCY_LABELS[advisory.source_agency] || ''}>
             {advisory.source_agency}
           </span>
@@ -175,7 +178,7 @@ export default function AdvisoryCard({ advisory }) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          View original {advisory.source_agency} record
+          {advisory.source_agency} source
           <ExternalLinkIcon width="14" height="14" />
         </a>
       </footer>
