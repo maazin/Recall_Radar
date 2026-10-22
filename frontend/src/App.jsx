@@ -105,9 +105,9 @@ export default function App() {
 
   return (
     <div className="page">
-      <div className="masthead-rule" aria-hidden="true" />
+      <a className="skip-link" href="#advisories">Skip to advisories</a>
 
-      <nav className="navbar">
+      <nav className="navbar" aria-label="Main navigation">
         <div className="navbar__inner">
           <a className="brand" href="/">
             <span className="brand__mark">
@@ -119,35 +119,25 @@ export default function App() {
             </span>
           </a>
 
-          <span className="livepill" title="Indexed from official agency sources">
+          <div className="navlinks"><a href="#advisories">Advisories</a><a href="#sources">Our sources</a></div><span className="livepill" title="Indexed through scheduled polling">
             <span className="livepill__dot" aria-hidden="true" />
-            FDA / USDA / CDC Live Data
+            Public agency records
           </span>
         </div>
       </nav>
 
       <header className="hero">
         <div className="shell">
-          <p className="eyebrow hero__eyebrow">Updated continuously from federal sources</p>
+          <p className="eyebrow hero__eyebrow">Know what’s in your kitchen</p>
           <h1 className="hero__title">
-            Food recalls and outbreak investigations, in one place
+            A little awareness. A safer everyday.
           </h1>
           <p className="hero__lede">
-            Records published by the FDA, USDA/FSIS and CDC: what to avoid, why, and
-            where, in plain language.
+            Stay informed about food recalls and outbreak investigations. Search official records from the FDA, USDA and CDC, all in one place.
           </p>
 
-          {/*
-            Compliance: state plainly what this site is. RecallRadar aggregates and
-            links to published agency records; it is not an alerting authority and
-            must not be read as issuing one.
-          */}
-          <p className="notice">
-            RecallRadar is an independent aggregator. It does not issue health alerts.
-            Every entry links to the original agency record. Always read that record
-            for authoritative details.
-          </p>
-
+          <div className="hero__actions"><a href="#advisories" className="btn btn--primary">Explore advisories ↗</a><span>Official sources. Clear information.</span></div>
+          <div className="hero__art" aria-hidden="true"><div className="radar-ring radar-ring--outer" /><div className="radar-ring radar-ring--middle" /><div className="radar-ring radar-ring--inner" /><div className="radar-center"><Logo size={66} /></div><span className="radar-point radar-point--one" /><span className="radar-point radar-point--two" /><span className="radar-caption">A clearer picture of food safety</span></div>
           <div className="ledger">
             <LedgerColumn
               tone="active"
@@ -171,7 +161,7 @@ export default function App() {
         </div>
       </header>
 
-      <div className="toolbar">
+      <div className="shell section-heading" id="advisories"><div><p className="eyebrow">THE ADVISORY FEED</p><h2>Know before you buy.</h2></div><span>Browse records. Check the source. Stay informed.</span></div><div className="toolbar">
         <div className="shell toolbar__inner">
           <form className="searchfield" onSubmit={handleSearchSubmit} role="search">
             <SearchIcon className="searchfield__icon" width="17" height="17" />
@@ -179,7 +169,7 @@ export default function App() {
               type="search"
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
-              placeholder="Search a brand or chain (e.g. Chipotle, Acme Foods)"
+              placeholder="Search a brand or restaurant chain…"
               aria-label="Search by brand or chain"
             />
             <button type="submit" className="btn btn--primary searchfield__go">
@@ -227,7 +217,7 @@ export default function App() {
         </div>
       </div>
 
-      <main className="shell content">
+      <main className="shell content"><div className="feed-column" aria-busy={loading}>
         <p className="resultline" role="status">
           {loading && items.length === 0 ? (
             'Loading advisories…'
@@ -321,11 +311,12 @@ export default function App() {
           </button>
         )}
 
+        </div><aside className="guide"><section className="guide__intro"><span className="guide__symbol" aria-hidden="true">◎</span><p className="eyebrow">A LITTLE GUIDANCE</p><h2>Information you can act on.</h2><p>Found a product you recognize? The original agency record is your next stop.</p><ol><li><strong>Check the details</strong><span>Compare product names, lot numbers and dates with what you have.</span></li><li><strong>Read the agency record</strong><span>Follow the source link for the full recall or investigation details.</span></li><li><strong>Follow their guidance</strong><span>The agency explains what to do with an affected product.</span></li></ol></section><section className="guide__note"><h3>Independent. Source-backed.</h3><p>RecallRadar aggregates public records. It does not issue health alerts and is not affiliated with the FDA, USDA or CDC. Always read the original agency record.</p><a href="#sources">Explore our sources ↗</a></section></aside>
         {/* Only offered when the deployment can actually send. */}
         {notificationsEnabled && <SubscribeForm />}
       </main>
 
-      <footer className="sitefoot">
+      <footer className="sitefoot" id="sources">
         <div className="shell">
           <p>
             Data indexed from{' '}
@@ -367,7 +358,8 @@ function LedgerColumn({ tone, label, value, caption }) {
         <span className="ledger__chip" aria-hidden="true" />
         <span className="eyebrow ledger__label">{label}</span>
       </div>
-      <span className="ledger__value">
+      <span className={`ledger__value ${value == null ? 'ledger__value--loading' : ''}`}
+        aria-label={value == null ? `${label} count unavailable` : undefined}>
         {/* No dash placeholder. Until the count arrives there is nothing true to
             say, so the slot holds its height and stays empty rather than showing
             a glyph a reader has to decode. */}
