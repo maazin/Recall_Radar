@@ -142,9 +142,9 @@ class TestSearch:
         body = client.get("/api/advisories/search", params={"q": "Harbor Grill"}).json()
         assert body["items"][0]["category"] == CATEGORY_RESTAURANT
 
-    def test_does_not_match_description_text(self, client, seeded):
-        # Search is scoped to brand_or_chain; "peanut butter" is description text.
-        assert client.get("/api/advisories/search", params={"q": "peanut butter"}).json()["total"] == 0
+    def test_matches_description_text(self, client, seeded):
+        # Product text is searchable alongside brands and hazards.
+        assert client.get("/api/advisories/search", params={"q": "peanut butter"}).json()["total"] == 1
 
     def test_unknown_brand_returns_empty(self, client, seeded):
         assert client.get("/api/advisories/search", params={"q": "nonesuch"}).json()["total"] == 0

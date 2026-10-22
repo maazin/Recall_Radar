@@ -28,7 +28,7 @@ export default function SubscribeForm() {
       <div className="subscribe__intro">
         <h2>Get notified</h2>
         <p>
-          Enter an email and an optional brand or chain. When RecallRadar indexes a
+          Enter an email and an optional product, brand or hazard. When RecallRadar indexes a
           newly published agency record that matches, you&apos;ll get a message with a
           link to the original record.
         </p>
@@ -56,7 +56,7 @@ export default function SubscribeForm() {
         </label>
 
         <label className="field">
-          <span className="field__label">Brand or keyword (optional)</span>
+          <span className="field__label">Product, brand or hazard (optional)</span>
           <input
             type="text"
             value={keywordFilter}

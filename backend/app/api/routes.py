@@ -15,10 +15,12 @@ from app.models import (
     TYPE_OUTBREAK,
     TYPE_RECALL,
     Advisory,
+    SourceHealth,
     Subscription,
 )
 from app.notify.email import notifications_enabled
 from app.schemas import AdvisoryOut, FeedResponse, SubscriptionCreate, SubscriptionOut
+from app.sources import SOURCES, STALE_AFTER_HOURS, coverage_status
 
 router = APIRouter(prefix="/api")
 
@@ -60,12 +62,13 @@ def list_advisories(
     if status:
         filters.append(Advisory.status == status)
     if q and q.strip():
-        needle = f"%{q.strip()}%"
+        needle = "%" + q.strip().replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_") + "%"
         filters.append(
             or_(
-                Advisory.brand_or_chain.ilike(needle),
-                Advisory.reason.ilike(needle),
-                Advisory.description.ilike(needle),
+                Advisory.brand_or_chain.ilike(needle, escape="\\"),
+                Advisory.reason.ilike(needle, escape="\\"),
+                Advisory.description.ilike(needle, escape="\\"),
+                Advisory.product_description.ilike(needle, escape="\\"),
             )
         )
 
@@ -84,7 +87,7 @@ def list_advisories(
 
 @router.get("/advisories/search", response_model=FeedResponse)
 def search_advisories(
-    q: str = Query(..., min_length=1, description="Brand or chain name"),
+    q: str = Query(..., min_length=1, description="Product, brand or hazard"),
     db: Session = Depends(get_db),
     category: str | None = Query(
         None, pattern=f"^({CATEGORY_GROCERY}|{CATEGORY_RESTAURANT})$"
@@ -96,30 +99,49 @@ def search_advisories(
     limit: int = Query(50, ge=1, le=200),
     offset: int = Query(0, ge=0),
 ) -> FeedResponse:
-    """Brand/chain lookup against `advisories.brand_or_chain`.
-
-    The category/type/status filters compose with the search so the UI's filter
-    controls keep working while a search is active.
-    """
-    filters = [Advisory.brand_or_chain.ilike(f"%{q.strip()}%")]
-    if category:
-        filters.append(Advisory.category == category)
-    if type:
-        filters.append(Advisory.type == type)
-    if status:
-        filters.append(Advisory.status == status)
-
-    total = db.scalar(select(func.count()).select_from(Advisory).where(*filters)) or 0
-    rows = db.scalars(
-        _ordered(select(Advisory).where(*filters)).limit(limit).offset(offset)
-    ).all()
-
-    return FeedResponse(
-        total=total,
-        limit=limit,
-        offset=offset,
-        items=[AdvisoryOut.model_validate(r) for r in rows],
+    """Search product names, firms and hazards using the same feed filters."""
+    if not q.strip():
+        raise HTTPException(status_code=422, detail="Enter a product, brand or hazard.")
+    return list_advisories(
+        db=db, category=category, type=type, status=status, q=q, limit=limit, offset=offset
     )
+
+
+@router.get("/advisories/{advisory_id}", response_model=AdvisoryOut)
+def advisory_detail(advisory_id: int, db: Session = Depends(get_db)) -> Advisory:
+    advisory = db.get(Advisory, advisory_id)
+    if advisory is None:
+        raise HTTPException(status_code=404, detail="Advisory not found.")
+    return advisory
+
+
+@router.get("/sources")
+def source_coverage(db: Session = Depends(get_db)) -> dict:
+    now = datetime.now(UTC)
+    health = {row.source_key: row for row in db.scalars(select(SourceHealth))}
+    counts = {
+        (agency, kind): count for agency, kind, count in db.execute(
+            select(Advisory.source_agency, Advisory.type, func.count()).group_by(
+                Advisory.source_agency, Advisory.type
+            )
+        )
+    }
+    sources = []
+    for key, definition in SOURCES.items():
+        row = health.get(key)
+        success = row.last_success_at if row else None
+        sources.append({
+            "key": key, **definition,
+            "last_attempt_at": row.last_attempt_at if row else None,
+            "last_success_at": success,
+            "outcome": row.outcome if row else None,
+            "status": coverage_status(
+                success, row.outcome if row else None, now, row.last_attempt_at if row else None
+            ),
+            "record_count": counts.get((definition["agency"], definition["type"]), 0),
+            "last_fetch_count": row.last_record_count if row else None,
+        })
+    return {"checked_at": now, "stale_after_hours": STALE_AFTER_HOURS, "sources": sources}
 
 
 @router.get("/stats")

@@ -1,7 +1,7 @@
 # RecallRadar
 
 Food recalls and foodborne-illness outbreak investigations from the FDA, USDA/FSIS and CDC, in
-one searchable feed. Search a brand or chain, filter by grocery or restaurant, and subscribe by
+one searchable feed. Search a product, brand or hazard, filter by grocery or restaurant, and subscribe by
 email for new matches.
 
 **Live:** [recallradar-web.onrender.com](https://recallradar-web.onrender.com)
@@ -180,7 +180,9 @@ Setup instructions, including a free provider that works without owning a domain
 | Endpoint | Purpose |
 |---|---|
 | `GET /api/advisories` | The feed, newest first. Filters: `category`, `type`, `status`, `q`, `limit`, `offset`. |
-| `GET /api/advisories/search?q=` | Brand or chain lookup. Composes with the same filters. |
+| `GET /api/advisories/search?q=` | Product, firm and hazard search. Composes with the same filters. |
+| `GET /api/advisories/{id}` | Shareable record details with product, lot-code and distribution fields where available. |
+| `GET /api/sources` | Four feed-level outcomes, fetch timestamps and indexed record counts. |
 | `GET /api/stats` | Counts for the feed header. |
 | `GET /api/config` | Whether notifications are enabled on this deployment. |
 | `POST /api/subscriptions` | Subscribe an email, with optional `category_filter` and `keyword_filter`. |
@@ -253,7 +255,7 @@ reads that way.
 ## Tests
 
 ```bash
-cd backend && pytest -q     # 186 tests, needs Postgres running
+cd backend && pytest -q     # 211 tests, needs Postgres running
 ```
 
 Every ingester is tested against saved fixtures, never a live endpoint, and every source has a
@@ -307,4 +309,21 @@ Two deployment footguns are handled in code rather than left in the docs:
   into the description and the card reads it back with a regex. It should be a real column.
 - **`GET /api/advisories?status=` returns 422** on an empty value. The frontend omits empty params
   so it never hits this, but another client would.
-- **No frontend tests.** The filter logic has grown enough to deserve some.
+- **No automated frontend test suite.** Browser checks cover the feed and detail pages; backend tests exercise the search, coverage, and detail API contracts.
+
+
+## Coverage, search, and record details
+
+The **Sources & coverage** panel reports each of the four feeds separately. It records ingestion attempt and success times in UTC, independently of agency publication dates. A successful fetch becomes delayed after 36 hours (daily polling plus retry headroom). An unavailable or failed feed retains its previous success time and previously indexed records. Existing installations initially show **Not yet tracked**; historical fetch times are not fabricated. A successful fetch of zero matching records still counts as a successful refresh. Indexed counts describe retained records, not the number newly published today. A notification delivery failure is logged separately and does not change successful ingestion to failed coverage.
+
+Search matches literal, case-insensitive text across firms, product descriptions and hazards. Both `/api/advisories?q=` and `/api/advisories/search?q=` apply the same category, type and status filters. The frontend cancels superseded requests and reports a timeout rather than loading indefinitely.
+
+Each advisory has a direct `/advisories/{id}` page and a copy-link action. FDA ingestion preserves product descriptions, `code_info` lot codes, raw distribution text and recall numbers. FSIS preserves structured product items, state distribution text and recall numbers. Fields absent from a source remain explicitly unknown; the UI does not invent lot codes or infer safety from missing data. Original agency links remain available on every record.
+
+### Deploying these changes
+
+1. Deploy the backend first. The existing Render start command runs `alembic upgrade head`, applying migration `0002` before serving requests. Locally, run that command from `backend/` against your development database.
+2. Deploy the frontend after the backend is healthy. Existing Render rewrites send direct `/advisories/{id}` URLs to the React entrypoint.
+3. Run the usual ingestion job (`python -m app.ingest.run --source all`). That begins freshness tracking and enriches records in the configured lookback window. Older records retain nullable detail fields until reingested. Source blocks remain visible; this change does not bypass agency access restrictions.
+
+Implementation uses the existing project dependencies; no third-party repository code was copied or relicensed.

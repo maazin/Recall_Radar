@@ -119,6 +119,10 @@ def parse(payload: str | dict[str, Any]) -> list[NormalizedAdvisory]:
                 category=categorize(firm, description),
                 brand_or_chain=firm,
                 description=description,
+                product_description=description,
+                lot_codes=str(record.get("code_info") or "").strip() or None,
+                distribution_pattern=str(record.get("distribution_pattern") or "").strip() or None,
+                recall_number=recall_number,
                 reason=str(record["reason_for_recall"]).strip(),
                 severity=(str(record["classification"]).strip() or None)
                 if record.get("classification")

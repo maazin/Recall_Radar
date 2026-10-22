@@ -42,7 +42,7 @@ def _schema():
 def db():
     with SessionLocal() as session:
         session.execute(
-            text("TRUNCATE advisories, subscriptions RESTART IDENTITY CASCADE")
+            text("TRUNCATE advisories, subscriptions, source_health RESTART IDENTITY CASCADE")
         )
         session.commit()
         yield session

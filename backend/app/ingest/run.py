@@ -33,6 +33,7 @@ import argparse
 import logging
 import sys
 from collections.abc import Callable
+from datetime import UTC, datetime
 
 from app.config import settings
 from app.db import SessionLocal
@@ -42,7 +43,8 @@ from app.ingest.base import (
     SourceStructureError,
     SourceUnavailableError,
 )
-from app.ingest.pipeline import ingest
+from app.ingest.pipeline import notify_subscribers, upsert_advisories
+from app.models import SourceHealth
 
 logger = logging.getLogger("app.ingest.run")
 
@@ -59,22 +61,47 @@ SOURCES: dict[str, tuple[Callable[[], str], Callable[[str], list[NormalizedAdvis
 }
 
 
+def _record_health(db, name, outcome, count=None):
+    health = db.get(SourceHealth, name)
+    if health is None:
+        health = SourceHealth(source_key=name, outcome=outcome)
+        db.add(health)
+    health.outcome = outcome
+    if outcome == "running":
+        health.last_attempt_at = datetime.now(UTC)
+    if outcome == "success":
+        health.last_success_at = datetime.now(UTC)
+        health.last_record_count = count
+    db.commit()
+
+
 def run_source(name: str) -> tuple[int, int]:
-    """Fetch, parse, upsert and notify for one source."""
+    """Record attempts and outcomes, preserving the previous successful fetch."""
     fetch, parse = SOURCES[name]
-
-    logger.info("[%s] fetching", name)
-    raw = fetch()
-
-    logger.info("[%s] parsing %s bytes", name, len(raw))
-    advisories = parse(raw)
-    logger.info("[%s] parsed %s advisories", name, len(advisories))
-
     with SessionLocal() as db:
-        count, sent = ingest(db, advisories)
-
-    logger.info("[%s] upserted %s advisories, sent %s notification(s)", name, count, sent)
-    return count, sent
+        _record_health(db, name, "running")
+    try:
+        logger.info("[%s] fetching", name)
+        raw = fetch()
+        advisories = parse(raw)
+        with SessionLocal() as db:
+            notable = upsert_advisories(db, advisories)
+            _record_health(db, name, "success", len(advisories))
+            # A mail failure does not undo a successful source refresh.
+            try:
+                sent = notify_subscribers(db, notable)
+            except Exception:
+                logger.exception("[%s] data refreshed, but notification delivery failed", name)
+                sent = 0
+        return len(advisories), sent
+    except Exception as exc:
+        outcome = (
+            "unavailable" if isinstance(exc, SourceUnavailableError)
+            else "invalid" if isinstance(exc, SourceStructureError) else "failed"
+        )
+        with SessionLocal() as db:
+            _record_health(db, name, outcome)
+        raise
 
 
 def main(argv: list[str] | None = None) -> int:

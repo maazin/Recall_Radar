@@ -33,6 +33,10 @@ class AdvisoryOut(BaseModel):
     started_at: str
     updated_at: str
     source_url: str
+    product_description: str | None = None
+    lot_codes: str | None = None
+    distribution_pattern: str | None = None
+    recall_number: str | None = None
 
 
 class FeedResponse(BaseModel):

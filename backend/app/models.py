@@ -1,4 +1,6 @@
-from sqlalchemy import Index, Integer, Text
+from datetime import datetime
+
+from sqlalchemy import DateTime, Index, Integer, Text
 from sqlalchemy.dialects.postgresql import ARRAY
 from sqlalchemy.orm import Mapped, mapped_column
 
@@ -51,6 +53,11 @@ class Advisory(Base):
     updated_at: Mapped[str] = mapped_column(Text, nullable=False)
     source_url: Mapped[str] = mapped_column(Text, nullable=False)
 
+    product_description: Mapped[str | None] = mapped_column(Text, nullable=True)
+    lot_codes: Mapped[str | None] = mapped_column(Text, nullable=True)
+    distribution_pattern: Mapped[str | None] = mapped_column(Text, nullable=True)
+    recall_number: Mapped[str | None] = mapped_column(Text, nullable=True)
+
     __table_args__ = (
         Index("ix_advisories_started_at", "started_at"),
         Index("ix_advisories_category", "category"),
@@ -69,3 +76,15 @@ class Subscription(Base):
     created_at: Mapped[str] = mapped_column(Text, nullable=False)
 
     __table_args__ = (Index("ix_subscriptions_email", "email"),)
+
+
+class SourceHealth(Base):
+    """One row per feed; timestamps describe our ingestion, not the agency."""
+
+    __tablename__ = "source_health"
+
+    source_key: Mapped[str] = mapped_column(Text, primary_key=True)
+    last_attempt_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    last_success_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    outcome: Mapped[str] = mapped_column(Text, nullable=False)
+    last_record_count: Mapped[int | None] = mapped_column(Integer)

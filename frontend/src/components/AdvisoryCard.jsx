@@ -126,7 +126,7 @@ export default function AdvisoryCard({ advisory }) {
         <span className="card__status"><span className={`dot dot--${advisory.status}`} aria-hidden="true" />{isResolved ? 'Resolved' : 'Active'}</span>
       </header>
 
-      <h2 className="card__title">{title}</h2>
+      <h2 className="card__title"><a href={`/advisories/${advisory.id}`}>{title}</a></h2>
       {subtitle && <p className="card__subtitle">{subtitle}</p>}
       {body && <p className="card__body">{body}</p>}
 
@@ -152,6 +152,7 @@ export default function AdvisoryCard({ advisory }) {
         agency and links to that agency's original record. RecallRadar presents
         the record; it does not issue the advisory.
       */}
+      <a className="card__details" href={`/advisories/${advisory.id}`}>View details & affected products <span aria-hidden="true">→</span></a>
       <footer className="card__foot">
         <span className="card__attribution">
           <span

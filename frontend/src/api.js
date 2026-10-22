@@ -8,36 +8,45 @@ async function request(path, params = {}, options = {}) {
     }
   })
 
-  const response = await fetch(url, options)
-  if (!response.ok) {
-    let detail = `Request failed (${response.status})`
-    try {
-      const body = await response.json()
-      if (body.detail) detail = typeof body.detail === 'string' ? body.detail : detail
-    } catch {
-      // Non-JSON error body; keep the status-based message.
+  const controller = new AbortController()
+  const timeout = setTimeout(() => controller.abort(), 60000)
+  const abort = () => controller.abort()
+  options.signal?.addEventListener('abort', abort, { once: true })
+  let response
+  try {
+    if (options.signal?.aborted) controller.abort()
+    response = await fetch(url, { ...options, signal: controller.signal })
+    if (!response.ok) {
+      let detail = `Request failed (${response.status})`
+      try {
+        const body = await response.json()
+        if (typeof body.detail === 'string') detail = body.detail
+      } catch { /* Keep the status message for non-JSON responses. */ }
+      throw new Error(detail)
     }
-    throw new Error(detail)
+    return await response.json()
+  } catch (error) {
+    if (controller.signal.aborted && !options.signal?.aborted) {
+      throw new Error('The server took too long to respond. Please try again.')
+    }
+    throw error
+  } finally {
+    clearTimeout(timeout)
+    options.signal?.removeEventListener('abort', abort)
   }
-  return response.json()
 }
 
-/**
- * The unified feed. `search` is scoped to brand/chain names when set, which is
- * what the search box is for; the category and type filters apply either way.
- */
-export function fetchAdvisories({ category, type, status, search, limit = 50, offset = 0 }) {
-  if (search) {
-    return request('/api/advisories/search', {
-      q: search,
-      category,
-      type,
-      status,
-      limit,
-      offset,
-    })
-  }
-  return request('/api/advisories', { category, type, status, limit, offset })
+/** Product, firm and hazard search; empty filters are omitted by request(). */
+export function fetchAdvisories({ category, type, status, search, limit = 50, offset = 0, signal }) {
+  return request('/api/advisories', { category, type, status, q: search, limit, offset }, { signal })
+}
+
+export function fetchAdvisory(id, signal) {
+  return request(`/api/advisories/${encodeURIComponent(id)}`, {}, { signal })
+}
+
+export function fetchSources(signal) {
+  return request('/api/sources', {}, { signal })
 }
 
 export function fetchStats() {

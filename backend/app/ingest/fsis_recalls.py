@@ -254,6 +254,9 @@ def parse(payload: str | list[Any] | dict[str, Any]) -> list[NormalizedAdvisory]
                 category=categorize(brand, title),
                 brand_or_chain=brand,
                 description=summary,
+                product_description=_field(record, "field_product_items") or None,
+                distribution_pattern=_field(record, "field_states") or None,
+                recall_number=number,
                 reason=reason,
                 severity=_field(record, "field_recall_classification", "field_risk_level")
                 or None,

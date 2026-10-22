@@ -102,6 +102,10 @@ class NormalizedAdvisory:
     states_affected: list[str] = field(default_factory=list)
     # Filled in by the category tagger after parsing.
     category: str = ""
+    product_description: str | None = None
+    lot_codes: str | None = None
+    distribution_pattern: str | None = None
+    recall_number: str | None = None
 
 
 US_STATES = {
