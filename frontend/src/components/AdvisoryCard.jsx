@@ -123,7 +123,7 @@ export default function AdvisoryCard({ advisory }) {
         {productUnknown && (
           <span className="badge badge--pending">Product pending identification</span>
         )}
-        {isResolved && <span className="badge badge--resolved">Resolved</span>}
+        <span className="card__status"><span className={`dot dot--${advisory.status}`} aria-hidden="true" />{isResolved ? 'Resolved' : 'Active'}</span>
       </header>
 
       <h2 className="card__title">{title}</h2>
